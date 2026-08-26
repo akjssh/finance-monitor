@@ -100,7 +100,11 @@ exclude_keywords:
 
 # ---------- AI 精筛 ----------
 ai_enabled: true
-gemini_model: gemini-2.5-flash   # 免费额度模型；备用 gemini-2.0-flash
+# openai_compat = 任意OpenAI兼容接口（OpenRouter/智谱等，密钥走 Secrets 的 AI_API_KEY）
+ai_provider: openai_compat
+ai_base_url: "https://openrouter.ai/api/v1"           # OpenRouter
+ai_model: nvidia/nemotron-3.5-lightning:free          # 密钥走环境变量 AI_API_KEY
+gemini_model: gemini-2.5-flash   # 备选通道：Google Gemini 免费额度（需另配 GEMINI_API_KEY）
 min_score: 6                      # 影响评分 1-10，≥此值才推送；AI不可用时照推（标注未评级）
 
 # ---------- 推送 ----------
