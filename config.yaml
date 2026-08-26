@@ -1,0 +1,108 @@
+# ============================================================
+#  财经信息监控系统 - 配置文件
+#  日常修改只动这个文件：加/删博主、改关键词都在这里
+# ============================================================
+
+# ---------- 监控名单 ----------
+# handle = X 用户名（不带@），note = 备注（会显示在推送里）
+# 在管理页面里增删即可，也可以手动编辑这里
+accounts:
+  - handle: DeItaone
+    note: Walter Bloomberg 快讯
+  - handle: WatcherGuru
+    note: Watcher.Guru 快讯
+  - handle: elonmusk
+    note: 马斯克
+
+# ---------- 数据源 ----------
+# provider 可选值：
+#   x_graphql     - 免费！直连X官方接口（需在Secrets配置 TWITTER_AUTH_TOKEN）【当前使用】
+#   mock          - 本地测试数据（不联网，用于调试流程）
+#   rsshub        - 免费！自建 RSSHub（需在 Secrets 配置 RSSHUB_BASE）
+#   twitterapi_io - 按量付费接口（约$2-5/月，免费方案失效时切换到这里）
+provider: x_graphql
+
+rsshub_base: ""          # 例: https://你的域名 ，留空则读环境变量 RSSHUB_BASE
+twitterapi_io_key: ""    # 留空则读环境变量 TWITTERAPI_IO_KEY
+twitter_auth_token: ""   # ⚠️ 保持留空！走环境变量/GitHub Secrets，不要写进本文件
+
+# ---------- 关键词粗筛 ----------
+# 推文里【命中任意一个】才进入下一轮 AI 精筛（英文不区分大小写）
+keywords:
+  # 宏观/央行
+  - 美联储
+  - Fed
+  - 降息
+  - 加息
+  - rate cut
+  - rate hike
+  - CPI
+  - 非农
+  - QE
+  - 缩表
+  # 地缘/政策
+  - 关税
+  - tariff
+  - 制裁
+  - sanction
+  - 战争
+  - 军事
+  - China
+  - 中国
+  - 白宫
+  - 特朗普
+  - Trump
+  # 加密货币
+  - BTC
+  - bitcoin
+  - 比特币
+  - ETH
+  - ethereum
+  - 以太坊
+  - 加密
+  - crypto
+  - 稳定币
+  - stablecoin
+  - ETF
+  - SEC
+  - 币安
+  - Binance
+  # 股市/公司
+  - 股市
+  - stock market
+  - 熔断
+  - 破产
+  - bankruptcy
+  - 收购
+  - 财报
+  - earnings
+  - IPO
+  - 退市
+
+# 含以下词的直接跳过（噪音过滤）
+exclude_keywords:
+  - 抽奖
+  - give away
+  - giveaway
+  - 广告
+  - subscribe to
+
+# ---------- 推送通道 ----------
+# wecom    = 企业微信「消息推送/群机器人」直连（当前使用）
+# pushplus = 备用：走PushPlus中转
+push_channel: wecom
+
+wecom_webhook: ""   # ⚠️ 保持留空！密钥走环境变量/GitHub Secrets，不要写进本文件（本文件会同步到公开仓库）
+
+# ---------- AI 精筛 ----------
+# ai_provider: openai_compat = 任意OpenAI兼容接口（智谱/硅基流动/DeepSeek/Kimi等，推荐）
+#             gemini        = Google Gemini 免费额度
+ai_provider: openai_compat
+ai_base_url: "https://openrouter.ai/api/v1"           # OpenRouter
+ai_model: nvidia/nemotron-3.5-lightning:free          # 密钥走环境变量 AI_API_KEY
+gemini_model: gemini-2.5-flash                        # 仅 ai_provider=gemini 时使用
+ai_enabled: true
+min_score: 6                      # 影响评分 1-10，≥此值才推送；AI不可用时照推（标注未评级）
+
+# ---------- 推送 ----------
+max_push_per_run: 30              # 单次运行最多推送条数（防止刷屏/超免费额度）

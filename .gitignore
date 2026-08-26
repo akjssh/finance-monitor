@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+local_secrets.yaml
+*.log
+.DS_Store
+deploy_helper.py
+完成部署.bat
+.claude/

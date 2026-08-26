@@ -1,0 +1,44 @@
+name: 财经监控
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # 每5分钟一轮（GitHub 实际触发可能有几分钟浮动）
+  workflow_dispatch: {}       # 允许在网页上手动点一次立即运行
+
+concurrency:
+  group: monitor
+  cancel-in-progress: false   # 上一次没跑完就排队，避免并发写坏状态
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write   # 允许工作流提交 state.json（新仓库默认只读，必须显式开）
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 执行监控
+        env:
+          WECOM_WEBHOOK: ${{ secrets.WECOM_WEBHOOK }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RSSHUB_BASE: ${{ secrets.RSSHUB_BASE }}
+          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+        run: python monitor.py
+
+      - name: 保存去重状态
+        run: |
+          git config user.name "monitor-bot"
+          git config user.email "action@github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "更新推送状态"
+          git push
