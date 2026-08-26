@@ -63,7 +63,7 @@ ai_enabled: true
 # openai_compat = 任意OpenAI兼容接口（OpenRouter/智谱等，密钥走 Secrets 的 AI_API_KEY）
 ai_provider: @@AI_PROVIDER@@
 ai_base_url: "@@AI_BASE_URL@@"           # 例: https://openrouter.ai/api/v1
-ai_model: @@AI_MODEL@@                   # 例: nvidia/nemotron-3.5-lightning:free
+ai_model: @@AI_MODEL@@                   # 例: z-ai/glm-5.2:free
 gemini_model: gemini-2.5-flash   # 备选通道：Google Gemini 免费额度（需另配 GEMINI_API_KEY）
 min_score: 6                      # 影响评分 1-10，≥此值才推送；AI不可用时照推（标注未评级）
 
@@ -95,7 +95,7 @@ def render_config(accounts, keywords, exclude, old_cfg):
     out = out.replace("@@AI_BASE_URL@@", str(old_cfg.get("ai_base_url")
                                               or "https://openrouter.ai/api/v1"))
     out = out.replace("@@AI_MODEL@@", str(old_cfg.get("ai_model")
-                                          or "nvidia/nemotron-3.5-lightning:free"))
+                                          or "z-ai/glm-5.2:free"))
     out = out.replace("@@KEYWORDS@@", "\n".join(kw_lines) or "  []")
     out = out.replace("@@EXCLUDE@@", "\n".join(ex_lines) or "  []")
     return out

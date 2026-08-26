@@ -363,8 +363,15 @@ PROMPT_TMPL = """你是资深金融市场分析师。分析下面这条社交媒
 
 
 def _ai_parse(raw):
-    raw = re.sub(r"^```(json)?|```$", "", raw.strip(), flags=re.M).strip()
-    data = json.loads(raw)
+    """容错解析：剥掉推理型模型的思考块和代码围栏；失败则提取首个花括号JSON再试"""
+    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.S).strip()
+    raw = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw).strip()
+    body = raw
+    if not body.startswith("{"):
+        m = re.search(r"\{.*\}", raw, flags=re.S)
+        if m:
+            body = m.group(0)
+    data = json.loads(body)
     return {
         "score": int(data.get("score", 0)),
         "reason": str(data.get("reason", ""))[:120],
