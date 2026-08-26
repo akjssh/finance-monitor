@@ -399,20 +399,27 @@ def ai_openai_compat(text, cfg):
     if not (key and base):
         return None
     model = cfg.get("ai_model", "glm-4-flash")
-    resp = requests.post(
-        f"{base}/chat/completions",
-        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-        json={
-            "model": model,
-            "messages": [{"role": "user", "content": PROMPT_TMPL.format(text=text[:2000])}],
-            "temperature": 0.1,
-            "max_tokens": 2000,
-            "reasoning": {"exclude": True},  # 推理型模型：不输出思考过程，省配额
-        },
-        timeout=60,
-    )
-    resp.raise_for_status()
-    return _ai_parse(resp.json()["choices"][0]["message"]["content"])
+    payload = {
+        "model": model,
+        "messages": [{"role": "user", "content": PROMPT_TMPL.format(text=text[:2000])}],
+        "temperature": 0.1,
+        "max_tokens": 2000,
+        "reasoning": {"exclude": True},  # 推理型模型：不输出思考过程，省配额
+    }
+    last_err = None
+    for attempt in range(3):  # 免费模型偶发抽风，重试3次
+        try:
+            resp = requests.post(
+                f"{base}/chat/completions",
+                headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+                json=payload, timeout=60,
+            )
+            resp.raise_for_status()
+            return _ai_parse(resp.json()["choices"][0]["message"]["content"])
+        except Exception as e:
+            last_err = e
+            time.sleep(4)
+    raise last_err
 
 
 def ai_evaluate(text, cfg):
