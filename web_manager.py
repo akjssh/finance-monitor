@@ -131,9 +131,13 @@ def sanitize(payload):
 # ------------------------------------------------------------
 
 def git_sync():
-    def run(*args):
+    def run(*args, use_proxy=True):
+        env = dict(os.environ)
+        if use_proxy:  # 国内直连GitHub不稳，优先走本地代理，失败自动换直连重试
+            env["HTTPS_PROXY"] = env["HTTP_PROXY"] = "http://127.0.0.1:7897"
         return subprocess.run(["git"] + list(args), cwd=BASE_DIR,
-                              capture_output=True, text=True, encoding="utf-8", errors="replace")
+                              capture_output=True, text=True, encoding="utf-8", errors="replace",
+                              env=env)
     try:
         if run("rev-parse", "--is-inside-work-tree").returncode != 0:
             return False, "已保存到本地（此文件夹还不是 Git 仓库，部署后自动具备同步功能）"
@@ -146,8 +150,10 @@ def git_sync():
         if c.returncode != 0:
             return False, f"提交失败: {c.stderr.strip()[:200]}"
         p = run("push")
+        if p.returncode != 0:  # 代理失败→直连重试
+            p = run("push", use_proxy=False)
         if p.returncode != 0:
-            return False, f"推送失败(可能没登录或网络问题): {p.stderr.strip()[:200]}"
+            return False, f"推送失败(网络问题，稍后重试即可): {p.stderr.strip()[:200]}"
         return True, "✅ 已保存并同步到 GitHub，约5分钟后云端生效"
     except Exception as e:
         return False, f"同步异常: {e}"
