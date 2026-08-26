@@ -12,6 +12,10 @@ accounts:
     note: "Watcher.Guru 快讯"
   - handle: "elonmusk"
     note: "马斯克"
+  - handle: "Jason60704294"
+    note: "十亿哥"
+  - handle: "saylor"
+    note: "Strategy公司"
 
 # ---------- 数据源 ----------
 # provider 可选值：
@@ -78,6 +82,8 @@ keywords:
   - "earnings"
   - "IPO"
   - "退市"
+  - "市场"
+  - "Strategy"
 
 # 含以下词的直接跳过（噪音过滤）
 exclude_keywords:
