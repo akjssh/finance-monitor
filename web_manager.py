@@ -63,7 +63,12 @@ ai_enabled: true
 # openai_compat = 任意OpenAI兼容接口（OpenRouter/智谱等，密钥走 Secrets 的 AI_API_KEY）
 ai_provider: @@AI_PROVIDER@@
 ai_base_url: "@@AI_BASE_URL@@"           # 例: https://openrouter.ai/api/v1
-ai_model: @@AI_MODEL@@                   # 例: z-ai/glm-5.2:free
+ai_model: @@AI_MODEL@@                   # 首选模型，例: z-ai/glm-5.2:free
+# 免费池随时可能限流：按顺序接力，前一个堵了自动换下一个（改动需懂技术，一般别动）
+ai_models:
+  - z-ai/glm-5.2:free
+  - nvidia/nemotron-3-super-120b-a12b:free
+  - minimax/minimax-m3:free
 gemini_model: gemini-2.5-flash   # 备选通道：Google Gemini 免费额度（需另配 GEMINI_API_KEY）
 min_score: 6                      # 影响评分 1-10，≥此值才推送；AI不可用时照推（标注未评级）
 

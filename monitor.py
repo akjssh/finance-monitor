@@ -400,32 +400,40 @@ def ai_gemini(text, cfg):
 
 
 def ai_openai_compat(text, cfg):
-    """任意 OpenAI 兼容接口：智谱/硅基流动/DeepSeek/Kimi/OpenRouter 等"""
+    """OpenAI 兼容接口（OpenRouter 等）；免费模型按列表接力，限流/坏输出自动切换"""
     key = os.environ.get("AI_API_KEY", "")
     base = (cfg.get("ai_base_url") or "").rstrip("/")
     if not (key and base):
         return None
-    model = cfg.get("ai_model", "glm-4-flash")
-    payload = {
-        "model": model,
-        "messages": [{"role": "user", "content": PROMPT_TMPL.format(text=text[:2000])}],
-        "temperature": 0.1,
-        "max_tokens": 2000,
-        "reasoning": {"exclude": True},  # 推理型模型：不输出思考过程，省配额
-    }
+    models = cfg.get("ai_models") or [cfg.get("ai_model", "glm-4-flash")]
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    prompt = PROMPT_TMPL.format(text=text[:2000])
     last_err = None
-    for attempt in range(3):  # 免费模型偶发抽风，重试3次
-        try:
-            resp = requests.post(
-                f"{base}/chat/completions",
-                headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-                json=payload, timeout=60,
-            )
-            resp.raise_for_status()
-            return _ai_parse(resp.json()["choices"][0]["message"]["content"])
-        except Exception as e:
-            last_err = e
-            time.sleep(4)
+    for model in models:
+        for attempt in range(2):  # 每个模型试2次，仍不行就换下一个
+            try:
+                resp = requests.post(
+                    f"{base}/chat/completions",
+                    headers=headers,
+                    json={
+                        "model": model,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.1,
+                        "max_tokens": 2000,
+                        "reasoning": {"exclude": True},  # 推理型：不输出思考过程，省配额
+                    },
+                    timeout=60,
+                )
+                if resp.status_code == 429:  # 免费池限流：退避后重试一次，再不行换模型
+                    time.sleep(10 * (attempt + 1))
+                    last_err = RuntimeError(f"{model} 限流(429)")
+                    continue
+                resp.raise_for_status()
+                return _ai_parse(resp.json()["choices"][0]["message"]["content"])
+            except Exception as e:
+                last_err = e
+                time.sleep(3)
+        log(f"↪️ {model} 两次尝试失败，切换下一模型…")
     raise last_err
 
 
