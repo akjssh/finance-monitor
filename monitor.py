@@ -358,8 +358,9 @@ PROMPT_TMPL = """你是资深金融市场分析师。分析下面这条社交媒
 {text}
 
 严格只输出JSON（不要多余文字）：
-{{"score": 整数1-10, "reason": "一句话中文理由", "translation": "整条发言的中文翻译"}}
-评分标准：9-10=重大(央行决议/开战/重大监管)；7-8=显著(政策信号/大额交易/重要人物表态)；4-6=一般相关；1-3=与市场无关"""
+{{"score": 整数1-10, "reason": "一句话中文理由", "translation": "整条发言的中文翻译", "event_time": "事件发生时间"}}
+评分标准：9-10=重大(央行决议/开战/重大监管)；7-8=显著(政策信号/大额交易/重要人物表态)；4-6=一般相关；1-3=与市场无关
+event_time规则：仅当原文明确提到事件发生/将发生的时间点才填写，格式尽量为"MM-DD HH:MM(时区)"（保持原文时区，不要换算）；原文没提时间点就填空字符串""。注意区分"发言发布时间"与"事件时间"，只要后者。"""
 
 
 def _ai_parse(raw):
@@ -376,6 +377,7 @@ def _ai_parse(raw):
         "score": int(data.get("score", 0)),
         "reason": str(data.get("reason", ""))[:120],
         "translation": str(data.get("translation", ""))[:1000],
+        "event_time": str(data.get("event_time", "") or "")[:50],
         "ok": True,
     }
 
@@ -454,7 +456,25 @@ def ai_evaluate(text, cfg):
 # 推送（企业微信群机器人 / PushPlus 二选一，config.yaml 里切换）
 # ------------------------------------------------------------
 
-SCORE_EMOJI = {9: "🔴🔴", 8: "🔴", 7: "🟠", 6: "🟡"}
+SCORE_EMOJI = {10: "🔴🔴", 9: "🔴🔴", 8: "🔴", 7: "🟠", 6: "🟡"}
+
+# 事件时间兜底提取：AI没返回时从原文抓 "周X/今天 H:MM (am/pm) (时区)"
+_EVENT_TIME_RE = re.compile(
+    r"((?:\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*|today|tomorrow|tonight)\s*,?\s*)?"
+    r"(?:\bat\s*)?\b(\d{1,2}:\d{2})\s*(am|pm)?\s*"
+    r"(ET|EST|EDT|PT|PST|PDT|GMT|UTC|CST|BST|JST|HKT)?\b", re.I)
+
+
+def _extract_event_time(text, ai):
+    """优先用AI提取的事件时间；为空则正则兜底，都没有返回空串"""
+    if ai and ai.get("ok") and ai.get("event_time"):
+        return ai["event_time"]
+    m = _EVENT_TIME_RE.search(text)
+    if not m:
+        return ""
+    day, hm, ampm, tz = (m.group(1) or ""), m.group(2), (m.group(3) or ""), (m.group(4) or "")
+    parts = [p.strip() for p in (day, hm, ampm.upper(), tz.upper()) if p.strip()]
+    return " ".join(parts)
 
 
 def _clip(s, limit=3800):
@@ -483,7 +503,9 @@ def build_message(tweet, kw_hits, ai, note):
         parts.append("<i>⚠️ AI 未评级（额度或网络问题），仅关键词命中</i>")
     parts.append(
         f"<b>🔑 命中</b>：{html.escape('、'.join(kw_hits))}"
-        + (f"<br><b>🕐 </b>{time_str}" if time_str else "")
+        + (f"<br><b>⚡ 事件时间</b>：{html.escape(_extract_event_time(tweet['text'], ai))}"
+           if _extract_event_time(tweet["text"], ai) else "")
+        + (f"<br><b>🕐 发推时间</b>：{time_str}" if time_str else "")
     )
     content = "<br><br>".join(parts) + f'<br><a href="{tweet["url"]}">查看原推 ➡️</a>'
     return title, content
@@ -509,8 +531,11 @@ def build_message_wecom(tweet, kw_hits, ai, note):
     else:
         lines.append("<font color=\"warning\">⚠️ AI未评级（额度/网络问题），仅关键词命中</font>")
     lines.append(f"**🔑 命中**：{'、'.join(kw_hits)}")
+    evt = _extract_event_time(tweet["text"], ai)
+    if evt:
+        lines.append(f"**⚡ 事件时间**：{evt}")
     if time_str:
-        lines.append(f"**🕐 时间**：{time_str}")
+        lines.append(f"**🕐 发推时间**：{time_str}")
     lines.append(f"[🔗 查看原推]({tweet['url']})")
     title = f"{emoji}{level}@{tweet['handle']}"
     return title, _clip("\n\n".join(lines))
