@@ -1,0 +1,28 @@
+name: AI自检
+on:
+  workflow_dispatch: {}   # 只能手动触发：Actions 页面选「AI自检」→ Run workflow
+
+permissions:
+  contents: read
+
+jobs:
+  ai-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 测试AI精筛（模型接力+翻译+评分，不推送任何消息）
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          PYTHONIOENCODING: utf-8
+        run: |
+          python -c "import monitor,json; r=monitor.ai_evaluate('BREAKING: FED CUTS RATES BY 25 BPS, SIGNALS TWO MORE CUTS THIS YEAR', monitor.load_config()); print(json.dumps(r,ensure_ascii=False)); assert r and r.get('ok'), 'AI链路故障'"
+          echo "✅ AI链路正常"
