@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事件交易基础知识手册</title>
+<style>
+  :root{
+    --bg:#0d1017; --panel:#141926; --panel2:#1a2133; --line:#262f45;
+    --tx:#e8ebf2; --tx2:#98a2b8; --ac:#4c8dff; --gold:#e8b93c; --red:#e8524a;
+    --green:#2fbf83; --purple:#a55eea; --cyan:#38bdf8; --orange:#e8963c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--tx);font:15.5px/1.85 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding-bottom:80px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px}
+
+  /* 封面 */
+  .cover{text-align:center;padding:56px 0 30px;background:
+    radial-gradient(600px 260px at 50% -60px,#1c2b52,transparent)}
+  .cover h1{font-size:32px;letter-spacing:2px}
+  .cover h1 b{color:var(--gold)}
+  .cover .sub{color:var(--tx2);margin-top:12px;font-size:14px;line-height:2}
+  .cover .badge{display:inline-block;margin-top:16px;border:1px solid var(--line);
+    background:var(--panel);border-radius:20px;padding:5px 18px;font-size:12.5px;color:var(--tx2)}
+
+  /* 章节导航 */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(13,16,23,.94);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);padding:10px 0}
+  .nav-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .nav-in::-webkit-scrollbar{display:none}
+  .nav-in a{flex:none;color:var(--tx2);text-decoration:none;font-size:13px;
+    border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:5px 14px}
+  .nav-in a:hover{color:var(--tx);border-color:var(--ac)}
+
+  /* 章节 */
+  .ch{margin-top:52px}
+  .ch-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:22px}
+  .ch-head .no{font-size:40px;font-weight:800;color:var(--line);line-height:1}
+  .ch-head h2{font-size:24px}
+  .ch-head .en{color:var(--tx2);font-size:13px;margin-left:auto}
+  .lead{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ac);
+    border-radius:12px;padding:14px 18px;color:#cdd5e4;font-size:14.5px;margin-bottom:20px}
+
+  h3.sec{font-size:18px;margin:30px 0 12px;display:flex;align-items:center;gap:9px}
+  h3.sec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+
+  p.body{color:#cdd5e4;margin-bottom:12px}
+  p.body b{color:var(--tx)}
+  .kw{color:var(--cyan);font-weight:600}
+
+  /* 概念盒 */
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin:16px 0}
+  .box .t{font-size:17px;font-weight:700}
+  .box .t .en{font-size:12px;color:var(--tx2);font-weight:400;margin-left:8px}
+  .box .t .lv{float:right;font-size:12px;color:var(--gold)}
+  .box .row{display:flex;gap:10px;margin-top:11px;font-size:14.5px}
+  .box .lab{flex:none;font-size:11px;color:#fff;border-radius:6px;padding:2px 9px;height:fit-content;margin-top:4px;font-weight:600;white-space:nowrap}
+  .box p{color:#cdd5e4}
+  .box p b{color:var(--tx)}
+  .l1{background:#4c8dff}.l2{background:#2fbf83}.l3{background:#e8963c}
+  .l4{background:#a55eea}.l5{background:#e8524a}
+
+  /* 信息台模拟框 */
+  .ui{background:#10141f;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+    font-family:Consolas,monospace;font-size:13.5px;color:#aeb9d0;white-space:pre-wrap;margin:12px 0}
+  .ui .hl{color:var(--gold)} .ui .gr{color:#2fbf83} .ui .rd{color:#e8524a} .ui .cy{color:#38bdf8}
+
+  /* 传导链 */
+  .chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+  .chain .node{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:8px 14px;font-size:13.5px;text-align:center}
+  .chain .arr{color:var(--gold);font-size:16px}
+  .chain .node small{display:block;color:var(--tx2);font-size:11px}
+
+  /* 误区 */
+  .warn{background:#211721;border:1px solid #4a2b33;border-radius:12px;padding:13px 17px;
+    margin:14px 0;font-size:14px;color:#e8c9cd}
+  .warn b{color:var(--red)}
+
+  /* 自测题 */
+  .quiz{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 19px;margin:12px 0}
+  .quiz .q{font-weight:600}
+  .quiz .ans{display:none;margin-top:11px;padding:11px 14px;background:var(--panel2);
+    border-radius:10px;color:#cdd5e4;font-size:14.5px}
+  .quiz.open .ans{display:block}
+  .quiz button{background:var(--ac);color:#fff;border:none;border-radius:8px;
+    padding:4px 14px;font-size:12.5px;cursor:pointer;margin-top:9px}
+
+  /* 学习计划 */
+  .plan{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px 20px;margin:10px 0}
+  .plan label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;
+    border-bottom:1px solid var(--line);cursor:pointer;font-size:14.5px;color:#cdd5e4}
+  .plan label:last-child{border-bottom:none}
+  .plan input{margin-top:5px;accent-color:var(--ac);width:16px;height:16px;flex:none}
+  .plan input:checked+span{color:var(--tx2);text-decoration:line-through}
+  .plan b{color:var(--tx)}
+
+  footer{color:var(--tx2);font-size:12px;text-align:center;margin-top:60px;line-height:2}
+  .totop{position:fixed;right:20px;bottom:24px;background:var(--panel);border:1px solid var(--line);
+    color:var(--tx2);border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;z-index:30}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>事件交易<b>基础知识手册</b></h1>
+  <div class="sub">为零基础写的系统教材 · 每一个概念都对着「你自己的工具」讲:<br>
+  信息台网站 · 每日晨会推送 · 事件日历 · 你正在用的这套事件交易系统</div>
+  <div class="badge">📖 系统学习版 · 建议配合 14 天计划使用 · 案例来自真实116笔交割单研究</div>
+</div>
+
+<div class="nav"><div class="wrap"><div class="nav-in">
+  <a href="#ch1">① 从你的工具开始</a>
+  <a href="#ch2">② 通胀与就业</a>
+  <a href="#ch3">③ 央行与利率</a>
+  <a href="#ch4">④ 市场如何消化消息</a>
+  <a href="#ch5">⑤ 公司与财报</a>
+  <a href="#ch6">⑥ 加密货币机制</a>
+  <a href="#ch7">⑦ 事件交易方法论</a>
+  <a href="#ch8">⑧ 自测30题</a>
+  <a href="#ch9">⑨ 14天学习计划</a>
+</div></div></div>
+
+<div class="wrap">
+
+<!-- ============ 第一章 ============ -->
+<div class="ch" id="ch1">
+<div class="ch-head"><span class="no">01</span><h2>从你的工具开始学</h2><span class="en">对照实物,而不是背定义</span></div>
+<div class="lead">这一章把你每天看到的东西逐行拆开讲。之后的章节里每次出现新概念,都会标注「它在你工具的哪里」。学完本章,你的晨会推送和信息台就不再有看不懂的行。</div>
+
+<h3 class="sec">晨会推送,逐行解读</h3>
+<p class="body">你每天早上7点在企微收到的推送,结构是固定的。下面是一份「假想晨会」,每一行都标注了含义(往后翻到对应章节可以深入学习):</p>
+<div class="ui"><span class="hl">### 🌅 每日晨会 08-28 四</span>
+
+<span class="cy">📅 今日事件(北京时间)</span>
+- 🟠 <span class="hl">L2</span> 20:30 美国PCE物价指数(USD) 预期2.6% 前值2.7%
+- ⚪ L1 22:00 密歇根消费者信心(USD) 预期51.0 前值51.0
+
+<span class="cy">🔭 未来7天看点(L2+,共3件)</span>
+- 🔴 <span class="hl">L3</span> 09-17 02:00 FOMC利率决议(USD)
+
+<span class="cy">📉 隔夜市场</span>
+比特币 79,453(+0.6%) ｜ 以太坊 2,507(+1.0%) ｜ 纳指期货 29,768(+2.3%) ｜ <span class="rd">美债30Y 5.176(-1.1%)</span> ｜ <span class="rd">WTI原油 82.94(-2.4%)</span> ｜ 黄金 4,622(-0.4%)
+
+<span class="cy">🌡️ 情绪读数</span>
+恐惧贪婪 <span class="gr">73·贪婪</span> ｜ 费率BTC +0.0100% ｜ 费率ETH +0.0056% ｜ Polymarket年内不降息 51.5%
+
+<span class="cy">⚠️ 仓位提醒</span>:今日有 1 件 L2+ 事件——不赌方向的仓位在事件公布前1小时清理</div>
+<dl style="margin:14px 0 4px">
+  <p class="body"><b>「🟠 L2 20:30 美国PCE物价指数 预期2.6% 前值2.7%」</b>——一条日历事件。L2是事件级别(→第七章),20:30是北京时间公布时刻,「预期2.6%」是市场共识的猜测(→第四章),「前值2.7%」是上个月的实际值。公布瞬间:实际值<b>低于</b>2.6%(通胀降温)→利好风险资产;高于2.6%→利空。</p>
+  <p class="body"><b>「隔夜市场」</b>——六个联动读数(→第四章「联动」):比特币/纳指期货代表风险偏好,美债30Y是「全球资产定价之锚」(→第三章),油价牵动通胀预期,黄金是避险风向标。这一行的用法:开盘前扫一眼,就知道今天市场「胆子大还是胆子小」。</p>
+  <p class="body"><b>「恐惧贪婪 73·贪婪」</b>——全市场情绪温度计,0到100(→第六章)。73偏贪婪:市场不缺勇气,追高要小心;若是25以下(极度恐惧),反而是经典左侧接多区。</p>
+  <p class="body"><b>「费率BTC +0.0100%」</b>——永续合约资金费率(→第六章),正值=多头更多。这个数字越高,多头越拥挤,越容易插针回调。</p>
+  <p class="body"><b>「Polymarket 年内不降息 51.5%」</b>——预测市场里真金白银投出来的降息概率(→第三章),它每天的变化就是「利率预期」的变化,是宏观行情的总开关。</p>
+  <p class="body"><b>「⚠️ 仓位提醒」</b>——事件交易的铁律之一:不赌数据方向的仓位,在L2以上事件公布前清掉(→第七章「清仓纪律」)。</p>
+</dl>
+
+<h3 class="sec">信息台网站的四个板块</h3>
+<p class="body"><b>情绪与读数</b> = 晨会「情绪读数」的实时版;<b>跨市场行情</b> = 晨会「隔夜市场」的展开版(9个标的);<b>事件日历</b> = 未来30天所有「确定会发生的事」,L1-L4彩标分级、标注了预期/前值,带「预估日期」的是程序推算的(以官方公告为准);<b>事件流</b> = 你的X监控+RSS+SEC公告+币安公告的汇总,带AI评分和中文翻译——评分≥6分才会推到你手机,但网站上是全量,适合复盘。</p>
+
+<div class="warn"><b>本章作业</b>:打开信息台,对照本章把每个数字的意思复述一遍。复述不出来回来看。这个动作值一章的书。</div>
+</div>
+
+<!-- ============ 第二章 ============ -->
+<div class="ch" id="ch2">
+<div class="ch-head"><span class="no">02</span><h2>通胀与就业:经济的温度计</h2><span class="en">CPI · PCE · 非农 · 失业率</span></div>
+<div class="lead">宏观两大主题:东西是不是太贵了(通胀),大家有没有工作(就业)。这两个数据直接决定央行加不加息,而加息/降息决定所有资产的价格。所以它们是每月最重要日历事件的来源。</div>
+
+<h3 class="sec">通胀:钱的购买力在缩水</h3>
+<p class="body">去年10块钱能买3个包子,今年只能买2个——这就是<span class="kw">通胀</span>。轻度通胀(2%左右)是健康的,经济在增长;通胀失控(比如5%以上)意味着钱在快速贬值,央行动用<span class="kw">加息</span>来降温:借钱变贵→企业少投资、个人少消费→需求下降→物价涨不动。但加息同时会压低股票和加密货币的价格。所以每一个通胀数据,市场都在问同一个问题:<b>它会让央行更倾向加息,还是更接近降息?</b></p>
+
+<div class="box"><div class="t">CPI<span class="en">消费者物价指数 / 居民消费价格指数</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>统计一篮子日用品(食品、房租、汽油、服务等)的价格比去年同月涨了百分之几。每月中旬公布,北京时间约20:30。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>全球关注度最高的通胀数据。公布瞬间市场剧烈波动,是标准L2事件。交易的不是数字本身,而是<b>「和预期比是高是低」</b>(→第四章预期差)。</p></div>
+  <div class="row"><span class="lab l3">在你工具里</span><p>晨会「今日事件」里的常客;信息台日历里标着「预期」和「前值」两个数——这就是你的比较基准。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-14公布的CPI环比-0.4%(降温远超预期),市场瞬间把「年内加息」概率从46.5%砍到30%,比特币小时级+3.8%。</p></div>
+</div>
+
+<div class="box"><div class="t">核心CPI<span class="en">Core CPI(剔除食品和能源)</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>把波动最大的油价、菜价剔除后的通胀——反映「底子里的」通胀趋势。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>美联储判断通胀走势主要看核心CPI。核心降温→降息更近;核心反弹→继续紧缩。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-14正是「核心CPI环比0.0%(几十年来首次)」引爆了整轮行情。</p></div>
+</div>
+
+<div class="box"><div class="t">PCE<span class="en">个人消费支出物价指数</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>美联储「官方指定」的通胀指标,每月末公布。和CPI类似但算法不同(会根据大家的消费习惯调整权重)。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>美联储的通胀目标是<b>核心PCE回到2%</b>。PCE决定美联储「敢不敢降息」,是政策转向的最终裁判。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>6-25 PCE高达4.1%(三年新高)吓跌市场;8月末的PCE则成了9月FOMC前最关键的验证数据。</p></div>
+</div>
+
+<h3 class="sec">就业:经济的发动机</h3>
+<div class="box"><div class="t">非农 NFP<span class="en">Non-Farm Payrolls 新增非农就业</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>美国上个月新增了多少个非农业就业岗位。每月<b>第一个周五</b>晚上(夏令时北京时间20:30)公布。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>就业强=经济过热=央行可能继续加息(利空);就业爆冷=经济在失速=央行被迫降息救经济(利空出尽/利好)。注意逻辑是双向的:爆冷太狠也可能引发「衰退恐慌」而暴跌——所以要结合幅度和背景判断。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>6-05非农172K超预期→加息定价,比特币破6万;7-02非农57K爆冷→降息预期点燃,比特币+4%。方向相反,逻辑相同:交易的是「对央行政策的影响」。</p></div>
+</div>
+
+<div class="box"><div class="t">失业率<span class="en">Unemployment Rate</span><span class="lv">★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>想工作却找不到工作的人占比。和非农同一时间公布,是一对搭档。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>失业率持续抬升是经济衰退的先行信号,会强行扭转市场预期——哪怕通胀还高,市场也会开始押注「被迫降息」。</p></div>
+</div>
+
+<div class="warn"><b>常见误区</b>:①「CPI降了所以一定涨」——错,要看<b>比预期</b>降了多少,市场可能早就提前涨完(→第四章 price in)。②「非农好=经济好=股市涨」——短期往往相反:非农太好→加息恐惧→股市跌。宏观数据的短线方向,永远通过「央行政策预期」这个中转站来判断。</div>
+</div>
+
+<!-- ============ 第三章 ============ -->
+<div class="ch" id="ch3">
+<div class="ch-head"><span class="no">03</span><h2>央行与利率:全球资产的总开关</h2><span class="en">美联储 · FOMC · 收益率 · 降息概率</span></div>
+<div class="lead">上一章的两个温度计(通胀/就业)决定这一章的主角:美联储加不加息。利率是全球资产的定价总开关——理解了本章的传导链,你就理解了宏观行情的「为什么」。</div>
+
+<h3 class="sec">美联储与FOMC</h3>
+<div class="box"><div class="t">美联储 Fed<span class="en">美国中央银行</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>美国的央行,管两件事(「双重使命」):<b>通胀稳定</b>(目标2%)和<b>充分就业</b>。手段主要是调「联邦基金利率」——美元资金的基础价格。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>美元是全球定价之锚:利率升=美元资产收益率升=全球资金回流美元=股票、加密货币等风险资产跌。反之亦然。所以币圈玩家天天盯美联储。</p></div>
+</div>
+
+<div class="box"><div class="t">FOMC<span class="en">联邦公开市场委员会(利率决议会议)</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>美联储的利率决策会议,一年8次,日期提前一年公布。决议在北京时间凌晨2:00公布,2:30主席开发布会。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>L3级事件的天花板。决议瞬间定价,发布会随时可能放出新信号二次引爆。成熟做法:<b>决议前清仓</b>,方向想清楚了再以低杠杆参与。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>6-17决议本身「按兵不动」,但点阵图意外鹰派,市场照样大跌——「会前的市场共识」和「会后传达的信号」之间的落差才是行情来源。</p></div>
+</div>
+
+<div class="box"><div class="t">鹰派 / 鸽派<span class="en">Hawkish / Dovish</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>鹰派=对通胀强硬,倾向加息或维持高利率;鸽派=担心经济,倾向降息放水。央行官员讲话的「立场」。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>官员讲话是「利率预期」的日常扰动源。突然的立场转变会瞬间重定价整个市场。日历上「Fed Chairman Speaks」「FOMC Member Speaks」就是这些讲话。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-02主席Warsh在辛特拉论坛突然转鸽,叠加非农爆冷,单日引爆4亿美元空单轧空,比特币+4%——一次讲话改变一轮趋势。</p></div>
+</div>
+
+<div class="box"><div class="t">点阵图<span class="en">Dot Plot</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>每季度FOMC后公布的图:19位决策者每人画一个点,标出他心中「今年底利率该是多少」。点的整体移动方向=央行的内心戏。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>它透露「未来」而不只是「现在」。点整体上移=未来更紧(利空),下移=未来更松(利好)。</p></div>
+</div>
+
+<h3 class="sec">利率如何传导到你的钱包</h3>
+<p class="body">这是全书最重要的一张图。<b>加息链(利空风险资产):</b></p>
+<div class="chain">
+  <div class="node">通胀升温<small>CPI/PCE超预期</small></div><span class="arr">→</span>
+  <div class="node">央行鹰派<small>加息/不降息</small></div><span class="arr">→</span>
+  <div class="node">美元利率升高<small>存美元更赚</small></div><span class="arr">→</span>
+  <div class="node">美债收益率↑ 美元指数↑<small>无风险回报更有吸引力</small></div><span class="arr">→</span>
+  <div class="node">资金撤离风险资产<small>科技股/比特币下跌</small></div>
+</div>
+<p class="body"><b>降息链(利多风险资产)</b>完全相反:通胀降温→降息预期→收益率与美元回落→资金回流风险资产。你在信息台看到的每个读数,都在这条链上:<b>美元指数、美债30Y、降息概率是「因」,比特币/纳指是「果」</b>。看懂因果顺序,就知道了先看哪个市场。</p>
+
+<div class="box"><div class="t">美债收益率<span class="en">Treasury Yield(信息台常显:美债30Y)</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>买美国国债能锁定的年化回报。2年期≈市场对短期政策的投票;10年/30年≈对长期经济与通胀的定价,被称为<b>「全球资产定价之锚」</b>。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>锚升高=全市场「无风险回报」变高=风险资产必须跌到更有吸引力为止。尤其杀伤「久期长」的资产(→第四章):高估值的科技股、AI概念股。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>8月中旬30Y收益率冲上5.33%(2007年以来最高),AI存储链被连续做空:SKHYNIX +33%、MU +24%、SNDK +13%——同一逻辑,连环收割。</p></div>
+</div>
+
+<div class="box"><div class="t">久期<span class="en">Duration</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>债券术语,衡量资产价格对利率的敏感度。粗暴记法:<b>利润越靠未来兑现的资产,久期越长,对利率越敏感</b>。高成长科技股=超长久期;收租公用事业股=短久期。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>利率行情里「选对品种」比「看对方向」更赚钱:同样做空,打久期最长的板块,弹性和胜率都最大。</p></div>
+</div>
+
+<div class="box"><div class="t">降息概率<span class="en">Rate Cut Odds(信息台:Polymarket读数)</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>预测市场用真金白银投出来的「下次会议降息/不降息的可能性」。CME FedWatch是官方常用工具,你的信息台读的是Polymarket。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>它是「利率预期」最直接的量化读数。<b>行情的本质=概率的大幅跳动</b>。每天记录它,你就拥有了机构级的宏观仪表盘。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-14 CPI行情的完整描述其实是:「加息概率从46.5%坍塌到30%」——概率的变化就是行情本身。</p></div>
+</div>
+
+<div class="box"><div class="t">QE / 缩表 / 财政部回购<span class="en">流动性三兄弟</span><span class="lv">★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>QE=央行印钞买债(大放水);缩表=反向收水;财政部回购=政府买回旧债,同样向市场注入资金。三者都在管一件事:<b>市场上的钱多不多</b>。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>币圈大周期和「全球流动性」高度同步。放水周期普涨,收水周期普跌——这决定你的「方向偏置」。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>8-19财政部宣布回购翻倍=放水信号,比特币当日+21%,这和利率决议一样是可以提前写进日历的确定性事件。</p></div>
+</div>
+
+<div class="warn"><b>常见误区</b>:①「降息=必涨」——不一定,降息若是因为「经济崩了」(衰退式降息),初期反而暴跌。看降息的<b>原因</b>。②「日历上只有CPI/FOMC重要」——财政部再融资、Jackson Hole年会、官员讲话都在改写预期,都是日历事件。③只看数字不看预期差(下一章专讲)。</div>
+</div>
+
+<!-- ============ 第四章 ============ -->
+<div class="ch" id="ch4">
+<div class="ch-head"><span class="no">04</span><h2>市场如何消化消息</h2><span class="en">预期差 · Price In · 联动 · 时区</span></div>
+<div class="lead">前两章搞懂了「消息是什么」,这一章搞懂「价格为什么这样动」。四个概念:预期差、price in、联动、时区——这是事件交易者真正的看家本领。</div>
+
+<h3 class="sec">预期差:市场只交易「意外」</h3>
+<div class="box"><div class="t">共识预期 / 预期差<span class="en">Consensus / Beat / Miss</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>共识预期=全市场分析师预测的平均值(日历里的「预期」列)。预期差=实际值与它的差距。Beat=超预期,Miss=不及预期。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p><b>市场交易的从来不是数字,而是意外。</b>一个「很好的数字」若完全符合预期,价格往往不动甚至回落——因为想买的人早就买了。</p></div>
+  <div class="row"><span class="lab l3">怎么用</span><p>事件前先记三个数:预期值、前值、市场当前押注的方向。公布后只做一件事:比较实际值和预期值的差,按预案执行(→第七章)。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>美光EPS 25.11 vs 预期21.39=超大beat→暴涨;若EPS是21.5(微超)可能没行情。同一个「好消息」,幅度决定一切。</p></div>
+</div>
+
+<h3 class="sec">Price In 与 Sell the News</h3>
+<div class="box"><div class="t">Price In<span class="en">已被定价</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>「这个利好市场早就提前涨过了」。价格反映的是全体参与者的预期总和,利好公告前往往已经抢跑。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>所以做事件要问两个问题:①事件会超预期吗?②市场提前定价了多少?第二个问题没答案,第一个答案再对也会亏钱。</p></div>
+</div>
+<div class="box"><div class="t">Sell the News<span class="en">利好兑现即卖出</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>「买预期,卖事实」:利好正式落地瞬间,提前埋伏者卖出离场,价格反而下跌。几乎每个重磅事件都有这个阶段。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>闪迪财报本身爆表但跌(指引不及=未来预期差);ASTER回购公告后进入退潮期;SpaceX纳入指数当天反而跌4.4%——全是同一个结构:「利好开始」买入,「利好兑现」卖出。</p></div>
+</div>
+
+<h3 class="sec">联动:一个市场出消息,另一个市场抢跑</h3>
+<p class="body">背下这张联动表(信息台行情栏就是按它设计的):</p>
+<div class="ui"><span class="cy">美元指数 ↑</span> → 比特币/风险资产 <span class="rd">承压</span>(美元虹吸效应)
+<span class="cy">美债30Y收益率 ↑</span> → 科技股/AI概念 <span class="rd">承压</span>(久期杀伤)  → 黄金分化(看实际利率)
+<span class="cy">油价 ↑</span> → 通胀预期 ↑ → 降息概率 ↓ → 风险资产 <span class="rd">承压</span>(间接链)
+<span class="cy">CPI/非农/决议</span> → 币圈<span class="gr">秒级反应</span>,股市开盘后二次确认
+<span class="cy">韩国股市(KOSPI)</span> → 存储股财报后全球<span class="gr">第一个定价</span>(首尔0点开盘)
+<span class="cy">纳指期货</span> → 美股开盘前1小时的风险偏好确认器</div>
+<p class="body">用法:事件发生时问「哪个市场先动?」——先动的市场是信号,后动的市场是你的进场点。这就是「时间+联动=入场时机」。</p>
+
+<div class="box"><div class="t">时区与开盘顺序<span class="en">谁先定价</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>全球接力:首尔0点(KOSPI)→欧洲盘7-13点UTC→美国数据12:30/14:00→美股21:30→美股盘后财报。每个事件都有「第一反应场」。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>项目里胜率73%的时段是欧洲盘——美国资金进场前埋伏、方向已被亚洲盘验证,进可攻退可守。他两笔海力士单都卡在首尔开盘后几分钟进场。</p></div>
+</div>
+
+<div class="box"><div class="t">流动性 / 插针<span class="en">Liquidity / Wick</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>流动性=市场里随时能成交的钱。数据公布瞬间流动性短暂蒸发→价格瞬间戳出又收回(插针)。亚洲凌晨流动性最薄,最容易出现假摔。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>插针不是「价格崩了」而是「流动性没了」。看懂这一点,你就不会在凌晨三点的针里恐慌割肉。</p></div>
+</div>
+
+<div class="box"><div class="t">风险偏好 Risk-On / Risk-Off<span class="en">胆大与胆小</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>全市场的情绪开关:On=追风险资产(股/币),Off=躲进避险资产(美元/黄金/美债)。CPI降温、降息预期=On;战争、危机=Off。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>中东战争爆发=Off,黄金暴涨油价飙升;CPI降温=On,币股齐涨。判断今天On还是Off,是每日晨会第一个要回答的问题。</p></div>
+</div>
+
+<div class="warn"><b>常见误区</b>:①把「涨了」当「利好」、把「跌了」当「利空」——顺序反了:是预期差决定方向,价格只是结果。②所有市场一起看涨看跌——不同市场对同一消息反应顺序不同,联动表就是你的「时间差地图」。③凌晨看到大插针当成趋势反转——先看流动性,再看结论。</div>
+</div>
+
+<!-- ============ 第五章 ============ -->
+<div class="ch" id="ch5">
+<div class="ch-head"><span class="no">05</span><h2>公司与财报:成绩单游戏</h2><span class="en">EPS · 指引 · 三段式 · 8-K</span></div>
+<div class="lead">财报是本案例集的金矿:42笔AI存储链交易,贡献83%净利润,胜率81%。财报的知识点不多,但每一环都要吃透。</div>
+
+<div class="box"><div class="t">财报三要素<span class="en">EPS · 营收 · 指引</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>EPS=每股赚了多少钱(当季成绩);营收=卖了多少钱;指引(Guidance)=公司对<b>下一季</b>的业绩预告。三者各自与「共识预期」比较,得出beat/miss。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>股市买的是未来,<b>指引往往比当季数字更重要</b>。当季爆表+指引拉胯=跌,是新手最常踩的坑。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>8-04闪迪:当季爆表,指引不及→sell the news,做空+16.5%。6-24美光:EPS超预期18%+指引炸裂→暴涨125%。</p></div>
+</div>
+
+<div class="box"><div class="t">财报三段式<span class="en">前 · 中 · 后,三笔独立交易</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>成熟打法把一次财报拆成三段:<b>前段</b>(公布前1-3天):顺着既有趋势轻仓吃「预期发酵」,不赌数据;<b>中段</b>(公布时刻):清掉所有不赌方向的仓,不参与开盲盒;<b>后段</b>(公布后1-3天):超预期→确认跳涨后吃延续;不及→等错杀修复或顺势做空;强势股常有一段sell the news回落可反手。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>它把「一次豪赌」变成「三次有纪律的交易」,每一环节都有独立的胜负率和止损点。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>6-24美光:财报前15小时布局多单(+125%)→6-25利好兑现反手空(+49.7%)——「前段+后段」两笔,完美演绎三段式。</p></div>
+</div>
+
+<div class="box"><div class="t">盘前盘后<span class="en">Pre-market / After-hours</span><span class="lv">★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>美股盘后(北京时间次日4-8点)是财报主发布时段。盘后流动性薄,第一波价格经常「过头」,次日开盘修正。</p></div>
+  <div class="row"><span class="lab l3">怎么用</span><p>盘后看清方向,不追盘后价;次日盘前/开盘确认后再进,牺牲一点利润换确定性。</p></div>
+</div>
+
+<div class="box"><div class="t">8-K / Investor Day<span class="en">突发公告与投资者日</span><span class="lv">★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>8-K=美股公司重大事项的即时官方公告(SEC EDGAR可查,你的系统自动监控);Investor Day=公司预先公告的战略宣讲日,常伴随大波动。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>Strategy卖比特币都是8-K先行;8-13闪迪Investor Day临近,财报后的超跌坑成了接多窗口(+14%)。</p></div>
+</div>
+
+<div class="box"><div class="t">产业链联动<span class="en">一荣俱荣</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>同一条产业链的公司同涨同跌:三星/海力士/美光/闪迪都是「AI存储链」,一家财报超预期=全行业需求验证,全体上涨。弹性最大的品种(SNDK>MU>SKHY)利润最大。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-30三星炸裂财报+缺货警告,他买的是弹性最大的SNDK(+60%,单笔+48万U)和SKHYNIX(+16%)——「链上事件,打弹性龙头」。</p></div>
+</div>
+
+<div class="warn"><b>常见误区</b>:①财报=赌大小——不,三段式里真正的「赌」只有公布瞬间,而那一瞬间恰好是你清仓的部分。②只盯一家公司——产业链事件要打「联动+弹性」。③把盘后第一波价格当真理——盘后薄流动性经常过头,等确认。</div>
+</div>
+
+<!-- ============ 第六章 ============ -->
+<div class="ch" id="ch6">
+<div class="ch-head"><span class="no">06</span><h2>加密货币特有机制</h2><span class="en">永续合约 · 资金费率 · 解锁 · 情绪</span></div>
+<div class="lead">币圈在传统金融机制之外多了一套自己的游戏规则。这一章的每个概念都能在你的信息台上找到对应读数。</div>
+
+<div class="box"><div class="t">永续合约与杠杆<span class="en">Perpetual Futures</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>无到期日的期货合约,可带杠杆做多做空。杠杆=放大器:10x时价格动1%,你的盈亏动10%。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>事件交易需要杠杆(事件的窗口短),但杠杆必须匹配事件级别:L2数据级5-10x,L3财报级2-5x,L4格局级2-5x拿更久。本项目数据:3-4x胜率81%,15x+只有55%。</p></div>
+</div>
+
+<div class="box"><div class="t">资金费率<span class="en">Funding Rate(信息台实时显示)</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>永续合约每8小时多空互付的费用:多头多→多头付费(正费率);空头多→负费率。它把合约价格锚在现货价格上。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>它是「哪边人多」的温度计:高正费率=多头拥挤(燃料,易回调);深度负费率=空头拥挤(易轧空)。极端费率+关键价位=行情一触即发。</p></div>
+</div>
+
+<div class="box"><div class="t">OI / 爆仓热图<span class="en">Open Interest</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>OI=未平仓合约总量。价格涨+OI涨=新钱进场的健康趋势;价格涨+OI跌=空头投降回补,涨不扎实。爆仓热图(Coinglass)显示哪些价位堆着会被强平的仓位——价格常被「吸」过去扫一圈。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>合约市场的价格经常被「爆仓流动性」牵引。看懂OI和热图,就理解了为什么价格「专治各种不服」。</p></div>
+</div>
+
+<div class="box"><div class="t">轧空<span class="en">Short Squeeze</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>空头拥挤时,价格一旦上涨,空头被迫买入平仓(止损),买入又推高价格,引发连环强平——雪崩式逼空上涨。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>7-02降息预期点燃,4亿美元空单被轧;8月出现40亿美元级超级轧空。轧空前的指纹:深度负费率+OI高位+利空不跌。</p></div>
+</div>
+
+<div class="box"><div class="t">代币解锁与Claim<span class="en">Unlock / Claim</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>项目方/投资人手里的代币按时间表解禁。公告的解锁量是「纸面利空」,但真正的利空要看链上<b>实际领取(claim)了多少</b>。</p></div>
+  <div class="row"><span class="lab l3">怎么用</span><p>解锁日历(Token Unlocks)是你系统的T0信源。解锁日临近+claim量大=真利空可做空;claim量远小于公告=假利空,警惕「利空不跌」后的轧空。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>8-06 HYPE公告6.2亿美元解锁,链上实际只claim 2265万——利空不跌,做空的被洗出去。这是「验证式做空」的教科书。</p></div>
+</div>
+
+<div class="box"><div class="t">上币与利好位置<span class="en">Listing:开始 vs 兑现</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>交易所上币是大事件,但要看位置:公告=利好<b>开始</b>(行情刚点火);正式上线=利好<b>兑现</b>(该卖的都卖了)。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>NEIRO公告上Bitget时追多+28.7%;ZAMA上Revolut当天做多-9.5%。事件一样,位置不同,结局相反。</p></div>
+</div>
+
+<div class="box"><div class="t">恐惧贪婪指数<span class="en">Fear & Greed Index(信息台顶部)</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>0-100的情绪合成指标(波动率、社交、调查等多因子)。≤25极度恐惧,≥75极度贪婪。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>不用于精确择时,用于「定位」:极度恐惧区出现利好催化剂=高胜率左侧机会;极度贪婪区+顶部K线形态+事件墙=警惕反转。三者叠加才出手。</p></div>
+</div>
+
+<div class="box"><div class="t">ETF资金流<span class="en">Farside每日申赎</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>比特币/以太坊现货ETF每天净买入(流入)或净卖出(流出)的金额,次日公布,免费可查。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>ETF是本轮周期最大的边际买家,连续流入/流出是价格趋势的「前导数据」,比价格本身早一步。</p></div>
+</div>
+
+<div class="warn"><b>常见误区</b>:①「负费率=必涨」——费率只是燃料,还需要催化剂(事件/价位)点火。②「解锁=必跌」——要看实际claim。③「F&G极值=立即反手」——极值是背景板,不是发令枪,叠加事件和价格结构才有交易价值。</div>
+</div>
+
+<!-- ============ 第七章 ============ -->
+<div class="ch" id="ch7">
+<div class="ch-head"><span class="no">07</span><h2>事件交易方法论</h2><span class="en">定级 · 预案 · 纪律 · 复盘</span></div>
+<div class="lead">前六章是「零件」,这一章是「发动机」:把所有知识组装成一套每天可执行的流程。这一章的每一条,都直接来自116笔真实交易的胜负统计。</div>
+
+<h3 class="sec">事件分级:一切的起点</h3>
+<div class="ui"><span class="cy">L1 消息级</span>  普通新闻/传闻/链上转账 → 热度15分钟-1小时 → <span class="rd">不做或轻仓</span>
+<span class="cy">L2 数据级</span>  CPI/非农/PCE/上币/解禁 → 2-10小时 → 5-10x → 胜率~70%
+<span class="cy">L3 事件级</span>  财报/FOMC/政策公告 → 10-30小时 → 2-5x → 胜率~75%
+<span class="cy">L4 格局级</span>  超级周期/IPO泡沫/战争升级 → 数天 → 2-5x → 胜率最高</div>
+<p class="body"><b>铁律:事件级别决定持仓时长和杠杆。错配=亏损的最大来源。</b>项目里三笔最大亏损(-37%、-29%、-48%)全是「用L2的杠杆去扛L1/L4的行情」。</p>
+
+<h3 class="sec">每日流程(你的系统已经自动化了一半)</h3>
+<div class="ui"><span class="gr">早上(晨会推送已自动到达)</span>
+  ① 今天日历上有什么事件?→ 定级 L1-L4
+  ② 每个事件映射到哪些标的?哪个市场先定价?(联动表)
+  ③ 市场price in了多少?(降息概率/预期读数)
+  ④ 写下双向预案:超预期怎么做?不及怎么做?
+  ⑤ 哪些现有仓位必须在事件前清掉?
+<span class="gr">盘中</span>
+  ⑥ 只执行预案,不发明新交易;L2以上事件才允许5x+
+<span class="gr">收盘后</span>
+  ⑦ 给当天事件打分:预期 vs 实际,更新自己的「事件→标的」映射表</div>
+
+<div class="box"><div class="t">双向预案<span class="en">公布前写好两套剧本</span><span class="lv">★★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>事件前明确:「超预期→做A;不及→做B;符合预期→不动」。没有预案就没有公布瞬间的操作资格。</p></div>
+  <div class="row"><span class="lab l2">为什么重要</span><p>公布瞬间人性本能是「追」。预案是对抗本能的唯一武器。项目赢单MFE/MAE=4.50——他们的从容全部来自提前准备。</p></div>
+</div>
+
+<div class="box"><div class="t">试错三步曲<span class="en">先错、后对、大赚</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>论点有了先小仓试;市场确认论点再加码;趋势走出来后持有吃主升。第一次就满仓=赌徒。</p></div>
+  <div class="row"><span class="lab l4">实战案例</span><p>「战争溢价不可持续」同一论点:抢跑-1.5%→确认后+9.2%→趋势空+23%。三次执行,论点没变,仓位跟着确认度走。</p></div>
+</div>
+
+<div class="box"><div class="t">事件映射表<span class="en">自己积累的「做到」层</span><span class="lv">★★</span></div>
+  <div class="row"><span class="lab l1">是什么</span><p>一张自己维护的表:事件类型→映射标的→哪个市场先定价→历史波动幅度。每周复盘更新一行,一年后就是你最值钱的信息资产。</p></div>
+  <div class="row"><span class="lab l3">起步模板</span><p>三星海力士财报→SNDK>MU>SKHY永续,首尔盘先动;CPI降温→BTC/ETH多+存储股多;FOMC→会前清仓;30Y新高→存储链空/黄金多;解锁→看claim量;上币公告→区分开始/兑现。</p></div>
+</div>
+
+<div class="warn"><b>三条最大的教训(来自真实亏损)</b>:①定级错误比方向错误更致命(7-14把L4当L1,被轧37%)。②利好兑现期追多=给别人的利润买单(ASTER-17.5%)。③新上市标的先观察价格结构,再定级别(SpaceX首月-13万学费)。这三个坑,每一条都比这一整本手册更贵。</div>
+</div>
+
+<!-- ============ 第八章 ============ -->
+<div class="ch" id="ch8">
+<div class="ch-head"><span class="no">08</span><h2>自测30题</h2><span class="en">不怕苦的验证环节 · 点击显示答案</span></div>
+<div class="lead">遮住答案先自己说一遍,再点开对。能连续答对25题以上,你的地基就算打牢了。错题回到对应章节重读。</div>
+<div id="quizbox"></div>
+</div>
+
+<!-- ============ 第九章 ============ -->
+<div class="ch" id="ch9">
+<div class="ch-head"><span class="no">09</span><h2>14天学习计划</h2><span class="en">每天30-40分钟 · 进度自动保存</span></div>
+<div class="lead">配套前面八章的实操计划。每天完成后打勾,进度保存在本机。学完之日,再去看信息台——它会是完全不同的东西。</div>
+<div class="plan" id="plan"></div>
+<div class="lead" style="margin-top:20px">🎓 <b>毕业标准</b>:14天做完后,随便打开一天的晨会,你能不看手册解释每一行、并且说出当天你自己的预案。做到这一点,你的地基就比绝大多数入场者扎实。</div>
+</div>
+
+<footer>
+  事件交易基础知识手册 · 配套「财经信息台」与每日晨会使用<br>
+  案例来自116笔真实交割单研究 · 仅供学习研究,不构成投资建议
+</footer>
+</div>
+<button class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ---------- 自测题 ----------
+const QUIZ=[
+["CPI公布值为2.9%,市场预期2.6%。这对风险资产是利好还是利空?为什么?","利空。实际高于预期(beat预期=通胀更顽固)→加息/不降息预期升温→利率与美元承压上升→风险资产下跌。注意:不是看「2.9%算高算低」,是看与预期的差。","ch2"],
+["「核心CPI」和「CPI」的区别是什么?美联储更看重哪个?","核心CPI剔除食品和能源(波动最大的项),反映底层通胀趋势;美联储的政策判断主要参考核心PCE/核心CPI。","ch2"],
+["非农爆冷(新增就业远低于预期),市场一定会涨吗?","不一定。常规逻辑:爆冷→降息预期→利好。但若爆冷到引发「衰退恐慌」,市场会先交易「经济要崩」而下跌。要看幅度、背景和市场当前押注。","ch2"],
+["美联储的双重使命是哪两个目标?","通胀稳定(目标2%)和充分就业。所有政策表态都是在这两个目标间权衡。","ch3"],
+["FOMC决议「维持利率不变」但点阵图上移,市场大概率怎么反应?为什么?","下跌(鹰派意外)。点阵图透露的是「未来的利率路径」,比本次决议更重要——未来更紧=预期恶化。","ch3"],
+["鹰派讲话利好哪些资产?利空哪些?","利好:美元、美债(收益率升)、黄金承压(实际利率升但避险属性会部分对冲);利空:科技股、加密货币等长久期风险资产。","ch3"],
+["30年期美债收益率创多年新高,最应该做空哪类股票?为什么?","长久期的成长股(高估值科技股,如AI存储链)。它们的利润在未来兑现,对利率最敏感——收益率升→估值被压缩最狠。","ch3"],
+["什么是「降息概率」?7-14那波行情的本质用概率语言怎么描述?","预测市场定价的「下次会议降息的可能性」。那波行情本质=加息概率从46.5%坍塌到30%——概率跳变就是行情本身。","ch3"],
+["财政部回购为什么利好比特币?","回购=财政部向市场注入流动性(和央行放水殊途同归),流动性宽松利好风险资产;且日期提前公布,是确定性事件。","ch3"],
+["「数据很好」但价格跌了,最可能的原因是什么?","利好已被price in(提前定价),公布瞬间sell the news。市场交易的是预期差,不是数字的绝对好坏。","ch4"],
+["闪迪财报「当季爆表但跌了」,最可能缺了什么?","指引(guidance)不及预期。股市定价未来,下季度预期比当季成绩更重要。","ch5"],
+["什么叫「三段式」?哪一段风险最大,你的处理方式是什么?","财报前1-3天(顺势轻仓吃发酵)、公布瞬间(开盲盒)、公布后1-3天(吃延续/反手)。中段风险最大——不赌方向,清仓躲开。","ch5"],
+["三星财报超预期,为什么买闪迪而不是三星本身?","产业链联动:一家的超预期=全行业需求验证。选弹性最大的品种(SNDK>MU>SKHY)利润最大,且规避单一个股的特有风险。","ch5"],
+["资金费率长期高度为正,说明什么?该怎么防?","多头极度拥挤(多头持续付费给空头)。拥挤结构下任何利空都可能引发连环回调/插针——降低杠杆、警惕「利好不涨」。","ch6"],
+["利空公告落地但价格不跌,这说明什么?","利空已被消化(price in)或实际影响远小于公告(如解锁公告大、实际claim小)。空头拥挤时,「利空不跌」常常是轧空的起手式。","ch6"],
+["恐慌贪婪指数24,你应该马上满仓抄底吗?","不。极值只是「定位」不是「发令枪」:还需要催化剂(利好事件)+价格结构确认。极值区可以开始关注,但入场要事件触发。","ch6"],
+["L1-L4分别举一个例子,并说出各自允许的杠杆和持仓时长。","L1消息级(普通新闻,<2h,不做/轻仓);L2数据级(CPI/非农/上币,2-10h,5-10x);L3事件级(财报/FOMC,10-30h,2-5x);L4格局级(战争/周期反转,数天,2-5x)。","ch7"],
+["「用L2级别的杠杆扛L4级别的行情」会发生什么?举一个真实案例。","行情级别超出杠杆承受力→被波动洗出或爆亏。7-14把CPI降温当L1短线做空ETH,实际是L4 regime转变,被轧-37%(最大亏损)。","ch7"],
+["为什么「数据公布瞬间」要清掉不赌方向的仓位?","公布瞬间流动性蒸发+波动不可预测,持无关仓位=白送风险。清仓后按预案再进,把「赌博」变成「执行」。","ch7"],
+["什么是双向预案?举个例子。","事件前写好两套剧本:如CPI「低于预期→做多BTC/ETH+存储股;高于预期→空或观望;符合→不动」。没有预案就没有公布瞬间的操作资格。","ch7"],
+["「先错、后对、大赚」是什么意思?","论点确立后先小仓试错;市场确认后加码;趋势走出来吃主升。用小成本验证,让仓位跟着确认度走,而不是一次性满仓赌。","ch7"],
+["CPI降温当天,哪个市场最先反应?你的进场点应该选在哪?","币圈秒级反应(12:30数据一出就动),股市开盘(21:30)后二次确认。稳妥进场点=先动的市场确认方向后,在联动市场或回踩时进。","ch4"],
+["ETF资金流入是「结果」还是「前导」?怎么用?","前导。机构申赎每天公布,常领先价格变化:连续大幅流入领先上涨。用来验证方向,不作为唯一依据。","ch6"],
+["price in和sell the news什么关系?","一体两面:price in是原因(利好被提前定价),sell the news是结果(兑现瞬间卖出潮)。判断price in程度,才能预判sell the news是否会发生。","ch4"],
+["久期是什么?用一句话向朋友解释。","资产价格对利率的敏感度:利润越靠未来兑现的资产(高成长科技股)对利率越敏感——加息时它们跌最狠。","ch3"],
+["比特币和美元指数、美债收益率的大致关系?","大致反向:美元强/收益率升→风险资产承压→比特币跌。它们是信息台上每天必看的三组因果读数。","ch3/4"],
+["Polymarket上「不降息」概率一天从30%跳到55%,这天发生了什么?该怎么交易?","发生了推动利率预期大幅转向的信息(大概率是CPI/FOMC/就业类事件)。概率跳变=行情本体;方向按新预期走,但要注意数据刚出时追单风险,等确认。","ch3"],
+["上币公告和正式上币,哪个阶段做多胜率高?为什么?","公告阶段(利好开始)。正式上线=利好兑现,埋伏盘卖出。NEIRO公告+28.7% vs ZAMA上线-9.5%。","ch6"],
+["赢单MFE/MAE=4.50说明什么?它把功劳归于什么环节?","进场后价格几乎不回头(MFE是MAE的4.5倍)。说明全部优势在「入场时机」——事件前埋伏,而不是事后追单。","ch7"],
+["14天计划的意义是什么?为什么强调「每天记录降息概率」?","把知识变成肌肉记忆。利率预期是宏观行情的总开关,连续记录概率变化=训练「看到预期跳变就理解行情」的直觉。","ch9"],
+];
+const qb=document.getElementById('quizbox');
+QUIZ.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='quiz';
+  d.innerHTML=`<div class="q">${i+1}. ${q[0]}</div><button>看答案</button><div class="ans">${q[1]}</div>`;
+  d.querySelector('button').onclick=()=>{d.classList.toggle('open');
+    d.querySelector('button').textContent=d.classList.contains('open')?'收起':'看答案';};
+  qb.appendChild(d);
+});
+
+// ---------- 14天计划 ----------
+const PLAN=[
+["第1天","读第一章。打开信息台,把每个数字的含义口头复述一遍,对照晨会推送逐行解释。"],
+["第2天","读第二章前半(CPI/核心CPI/PCE)。在日历里找到下次CPI日期,记下「预期」和「前值」两个数。"],
+["第3天","读第二章后半(非农/失业率)。查下次非农日期;回看7-02和6-05两笔案例的K线(信息台事件流)。"],
+["第4天","读第三章美联储/FOMC/鹰鸽。记下下次FOMC日期,画一遍「加息链传导图」。"],
+["第5天","读第三章收益率/久期/降息概率。开始每天记录一次降息概率(建个备忘录)。"],
+["第6天","读第四章预期差与price in。找一条昨天的推送,用「预期差」语言重述当天行情。"],
+["第7天","读第四章联动与时区。抄一遍联动表;看信息台行情栏,说出每组联动方向。做自测1-10题。"],
+["第8天","读第五章财报三要素与三段式。在日历里找最近的一家企业财报日,写出它的三段式计划。"],
+["第9天","读第六章永续/杠杆/资金费率。记录今天BTC和ETH的费率,判断多空哪边拥挤。"],
+["第10天","读第六章解锁/上币/F&G。在日历里找最近的代币解锁事件,查它的公告量和市值比。"],
+["第11天","读第七章定级与流程。给今天日历上的每个事件手动定级。做自测11-20题。"],
+["第12天","读第七章双向预案。为下一个L2事件写一份完整的双向预案(超预期/不及/符合)。"],
+["第13天","读第七章映射表。建立你自己的「事件→标的」表,填入手册给的6条起步模板。做自测21-30题。"],
+["第14天","总复习:重做错题;随便打开一天的晨会,逐行解释+说出你的预案。毕业。"],
+];
+const pl=document.getElementById('plan');
+PLAN.forEach((d,i)=>{
+  const lab=document.createElement('label');
+  lab.innerHTML=`<input type="checkbox" data-i="${i}"><span><b>${d[0]}</b>:${d[1]}</span>`;
+  const cb=lab.querySelector('input');
+  cb.checked=localStorage.getItem('hb_plan_'+i)==='1';
+  cb.onchange=()=>localStorage.setItem('hb_plan_'+i,cb.checked?'1':'0');
+  pl.appendChild(lab);
+});
+</script>
+</body>
+</html>
