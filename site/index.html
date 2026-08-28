@@ -224,7 +224,7 @@ async function sha256(s){
 async function tryGate(){
   const v=document.getElementById('gk').value.trim();
   if(await sha256(v)===GATE_HASH){
-    sessionStorage.setItem('gate','ok');
+    localStorage.setItem('gate','ok');
     document.getElementById('gate').style.display='none';
     load(); setInterval(load, 60000);
   }else{
@@ -233,7 +233,7 @@ async function tryGate(){
 }
 document.getElementById('gok').onclick=tryGate;
 document.getElementById('gk').addEventListener('keydown',e=>{ if(e.key==='Enter') tryGate(); });
-if(sessionStorage.getItem('gate')==='ok'){
+if(localStorage.getItem('gate')==='ok'){
   document.getElementById('gate').style.display='none';
   load(); setInterval(load, 60000);
 }
