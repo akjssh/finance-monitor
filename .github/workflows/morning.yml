@@ -1,0 +1,32 @@
+name: 每日晨会
+on:
+  schedule:
+    - cron: "0 23 * * *"   # UTC 23:00 = 北京时间早上7:00
+  workflow_dispatch: {}     # 手动触发立即看效果
+
+concurrency:
+  group: morning
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 发送晨会（今日事件+未来7天看点+隔夜行情+情绪读数）
+        env:
+          WECOM_WEBHOOK: ${{ secrets.WECOM_WEBHOOK }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          PYTHONIOENCODING: utf-8
+        run: python monitor.py --brief

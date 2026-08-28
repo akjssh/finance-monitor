@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财经信息台</title>
+<style>
+  :root{
+    --bg:#0e1117; --card:#161b26; --card2:#1c2333; --line:#262f42;
+    --tx:#e6e9f0; --tx2:#9aa4b8; --up:#f04a4a; --down:#22c07a;
+    --l1:#5b6478; --l2:#e8963c; --l3:#e8524a; --l4:#a55eea; --ac:#3b82f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding-bottom:40px}
+  .wrap{max-width:860px;margin:0 auto;padding:0 14px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 0 6px}
+  header h1{font-size:19px}
+  header .sub{color:var(--tx2);font-size:12px;display:flex;gap:10px;align-items:center}
+  #refresh{cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--tx2);
+    border-radius:8px;padding:3px 10px;font-size:12px}
+  #refresh:active{transform:scale(.96)}
+  h2{font-size:14px;color:var(--tx2);margin:18px 0 8px;font-weight:600;letter-spacing:.5px}
+  .strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13px}
+  .chip b{color:var(--tx)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+  .q .n{font-size:12px;color:var(--tx2)}
+  .q .p{font-size:17px;font-weight:700;margin-top:2px}
+  .q .c{font-size:12px;font-weight:600}
+  .up{color:var(--up)} .down{color:var(--down)}
+  .cal-group{margin-bottom:10px}
+  .cal-group>.gt{font-size:12px;color:var(--ac);margin:10px 0 6px;font-weight:700}
+  .ev{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:6px;
+      display:flex;gap:10px;align-items:baseline}
+  .lv{flex:none;font-size:11px;font-weight:800;border-radius:6px;padding:2px 7px;color:#fff}
+  .lv.l1{background:var(--l1)} .lv.l2{background:var(--l2)} .lv.l3{background:var(--l3)} .lv.l4{background:var(--l4)}
+  .ev .tm{flex:none;color:var(--tx2);font-size:13px;width:44px}
+  .ev .tt{flex:1}
+  .ev .meta{color:var(--tx2);font-size:12px;margin-left:6px}
+  .tag{display:inline-block;font-size:11px;color:var(--tx2);border:1px solid var(--line);
+       border-radius:5px;padding:0 5px;margin-left:6px}
+  .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .filters button{background:var(--card);border:1px solid var(--line);color:var(--tx2);
+    border-radius:20px;padding:4px 13px;font-size:13px;cursor:pointer}
+  .filters button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:8px}
+  .item .hd{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--tx2);margin-bottom:5px}
+  .item .hd .who{color:var(--tx);font-weight:600}
+  .item .txt{white-space:pre-wrap;word-break:break-word}
+  .item .zh{margin-top:7px;padding:7px 10px;background:var(--card2);border-radius:8px;font-size:14px;color:#cdd5e4}
+  .item .rs{margin-top:6px;font-size:13px;color:var(--tx2)}
+  .item .rs b{color:var(--tx2)}
+  .se{font-weight:800;margin-right:4px}
+  .empty{color:var(--tx2);text-align:center;padding:26px 0;font-size:13px}
+  footer{color:var(--tx2);font-size:11px;text-align:center;margin-top:26px;line-height:1.8}
+  a{color:var(--ac);text-decoration:none}
+  #err{display:none;background:#3a1f22;border:1px solid #6b2b30;color:#f3b3b3;border-radius:10px;
+       padding:9px 13px;font-size:13px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📰 财经信息台</h1>
+    <div class="sub"><span id="upd"></span><button id="refresh">刷新</button></div>
+  </header>
+  <div id="err"></div>
+
+  <h2>🌡️ 情绪与读数</h2>
+  <div class="strip" id="emo"></div>
+
+  <h2>📊 跨市场行情</h2>
+  <div class="grid" id="quotes"></div>
+
+  <h2>📅 事件日历（未来30天 · L1-L4定级）</h2>
+  <div id="cal"></div>
+
+  <h2>⚡ 事件流</h2>
+  <div class="filters" id="flt"></div>
+  <div id="feed"></div>
+
+  <footer>
+    数据来自公开接口（ForexFactory / SEC EDGAR / Yahoo Finance / Bybit / Polymarket / alternative.me 等）<br>
+    带「预估」的事件为按惯例推算的日期，以官方公告为准 · 仅供学习研究，不构成投资建议
+  </footer>
+</div>
+
+<script>
+let EVENTS=[], CAL=[], CUR={fsrc:'all', fscore:0};
+const LVE={L1:'l1',L2:'l2',L3:'l3',L4:'l4'};
+const SE={10:'🔴🔴',9:'🔴🔴',8:'🔴',7:'🟠',6:'🟡'};
+
+function fmtP(p){ if(p==null)return '-'; return p>=1000? p.toLocaleString('en-US',{maximumFractionDigits:0}) : p; }
+function esc(s){ return (s??'').toString().replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderEmo(m){
+  const el=document.getElementById('emo'); el.innerHTML='';
+  if(m.fng) el.innerHTML+=`<div class="chip">恐惧贪婪 <b>${m.fng.value}</b> · ${esc(m.fng.label)}</div>`;
+  (m.funding||[]).forEach(f=> el.innerHTML+=
+    `<div class="chip">${esc(f.symbol.replace('USDT',''))} 资金费率 <b>${f.rate_pct>=0?'+':''}${f.rate_pct}%</b></div>`);
+  (m.polymarket||[]).forEach(p=> el.innerHTML+=
+    `<div class="chip">🎯 ${esc(p.question.length>34?p.question.slice(0,34)+'…':p.question)} <b>${p.yes}%</b></div>`);
+  if(!el.innerHTML) el.innerHTML='<div class="empty">暂无读数</div>';
+}
+function renderQuotes(m){
+  const el=document.getElementById('quotes'); el.innerHTML='';
+  (m.quotes||[]).forEach(q=>{
+    const cls=(q.pct??0)>=0?'up':'down';
+    el.innerHTML+=`<div class="q"><div class="n">${esc(q.name)}</div>
+      <div class="p">${fmtP(q.price)}</div>
+      <div class="c ${cls}">${q.pct==null?'':(q.pct>=0?'+':'')+q.pct+'%'}</div></div>`;
+  });
+  if(!el.innerHTML) el.innerHTML='<div class="empty">行情暂不可用</div>';
+}
+function calGroups(){
+  const now=new Date(), d0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const d7=new Date(d0); d7.setDate(d0.getDate()+7);
+  const g={today:[],week:[],later:[]};
+  CAL.forEach(e=>{
+    const dd=new Date(e.date+'T'+(e.time||'00:00')+':00+08:00');
+    if(e.date===d0.toISOString().slice(0,10)) g.today.push(e);
+    else if(dd>=d0&&dd<d7) g.week.push(e);
+    else g.later.push(e);
+  });
+  return g;
+}
+function calItem(e){
+  const ap = e.approx?'<span class="tag">预估日期</span>':'';
+  const fc = e.forecast?` 预期<b>${esc(e.forecast)}</b>`:'';
+  const pv = e.previous?` 前值${esc(e.previous)}`:'';
+  return `<div class="ev"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span>
+    <span class="tm">${e.time||''}</span>
+    <span class="tt">${esc(e.title)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}</span></div>`;
+}
+function renderCal(){
+  const el=document.getElementById('cal');
+  if(!CAL.length){ el.innerHTML='<div class="empty">日历暂不可用</div>'; return; }
+  const g=calGroups();
+  let h='';
+  const sec=(t,arr)=>{ if(!arr.length)return;
+    h+=`<div class="cal-group"><div class="gt">${t}（${arr.length}）</div>${arr.map(calItem).join('')}</div>`; };
+  sec('📌 今天', g.today); sec('🔭 未来7天', g.week); sec('🗓️ 8-30天', g.later);
+  el.innerHTML=h;
+}
+function feedPass(e){
+  if(CUR.fsrc!=='all' && e.source!==CUR.fsrc) return false;
+  if(CUR.fscore && !(e.score && e.score>=CUR.fscore)) return false;
+  return true;
+}
+function renderFeed(){
+  const el=document.getElementById('feed');
+  const list=EVENTS.filter(feedPass).slice(0,80);
+  if(!list.length){ el.innerHTML='<div class="empty">暂无事件</div>'; return; }
+  el.innerHTML=list.map(e=>{
+    const se = e.score? (SE[e.score]||'⚪')+' '+e.score+'分' : '⚠️ 未评级';
+    const t=(e.created_at||'').replace('T',' ').slice(5,16);
+    const srcN={x:'X',rss:'RSS',edgar:'SEC',binance:'币安'}[e.source]||e.source;
+    return `<div class="item"><div class="hd">
+      <span><span class="who">${esc(e.author)}</span><span class="tag">${srcN}</span></span>
+      <span>${se} · ${t}</span></div>
+      <div class="txt">${esc(e.text)}</div>
+      ${e.translation?`<div class="zh">🇨🇳 ${esc(e.translation)}</div>`:''}
+      ${e.reason?`<div class="rs"><b>📌</b> ${esc(e.reason)}</div>`:''}
+      ${e.url?`<div style="margin-top:6px"><a href="${esc(e.url)}" target="_blank" rel="noopener">查看原文 ➡️</a></div>`:''}
+    </div>`;
+  }).join('');
+}
+function renderFlt(){
+  const el=document.getElementById('flt');
+  const opts=[['all','全部'],['x','X'],['rss','RSS快讯'],['edgar','SEC公告'],['binance','币安公告']];
+  el.innerHTML = opts.map(([v,t])=>
+    `<button data-k="fsrc" data-v="${v}" class="${CUR.fsrc===v?'on':''}">${t}</button>`).join('')
+    + [['0','任意分'],['6','≥6分'],['8','≥8分']].map(([v,t])=>
+    `<button data-k="fscore" data-v="${v}" class="${String(CUR.fscore)===v?'on':''}">${t}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    const k=b.dataset.k, v=b.dataset.v;
+    CUR[k] = k==='fscore'? parseInt(v) : v;
+    renderFlt(); renderFeed();
+  });
+}
+async function jget(f){
+  const r=await fetch('data/'+f+'?t='+Date.now());
+  if(!r.ok) throw new Error(f+' HTTP '+r.status);
+  return r.json();
+}
+async function load(){
+  const err=document.getElementById('err'); err.style.display='none';
+  let okEv=false,okCal=false,okMk=false;
+  await Promise.allSettled([
+    jget('events.json').then(d=>{EVENTS=d;okEv=true;}).catch(e=>{}),
+    jget('calendar.json').then(d=>{CAL=d.events||[];okCal=true;}).catch(e=>{}),
+    jget('market.json').then(d=>{renderEmo(d);renderQuotes(d);okMk=true;}).catch(e=>{}),
+  ]);
+  const miss=[!okEv&&'事件流',!okCal&&'日历',!okMk&&'行情'].filter(Boolean);
+  if(miss.length){ err.textContent='⚠️ 部分数据加载失败：'+miss.join('、')+'（数据可能尚未生成，稍后再试）'; err.style.display='block'; }
+  document.getElementById('upd').textContent='更新于 '+new Date().toLocaleTimeString('zh-CN',{hour12:false});
+  renderCal(); renderFlt(); renderFeed();
+}
+document.getElementById('refresh').onclick=load;
+load(); setInterval(load, 60000);
+</script>
+</body>
+</html>

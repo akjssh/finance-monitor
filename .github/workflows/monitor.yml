@@ -35,10 +35,10 @@ jobs:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: python monitor.py
 
-      - name: 保存去重状态
+      - name: 保存去重状态与数据文件
         run: |
           git config user.name "monitor-bot"
           git config user.email "action@github.com"
-          git add state.json
-          git diff --cached --quiet || git commit -m "更新推送状态"
+          git add state.json data site/data
+          git diff --cached --quiet || git commit -m "更新推送状态与数据"
           git push

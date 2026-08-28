@@ -1,0 +1,74 @@
+# ============================================================
+#  扩展信息源配置（monitor.py 读取）
+#  注意：本文件独立于 config.yaml，管理页面不会改写它，
+#        所以不存在「保存页面时配置被抹掉」的风险。
+#  全部免费免密钥；单个源失效不影响其他源和X监控主流程。
+# ============================================================
+
+# 事件流入库：非X来源进入网站事件流；score>=push_min_score 时才推企微（0=从不推）
+push_min_score: 8
+max_ai_per_run: 8          # 每次运行最多消耗AI评级的非X条数（保护免费额度）
+
+sources:
+  # T0 财经日历（ForexFactory 本月+下月，覆盖未来30天）
+  ff_calendar:
+    enabled: true
+    currencies: ["USD", "CNY"]   # 只保留这些货币的事件
+
+  # 币安公告（上币/合约上线等）
+  binance_ann:
+    enabled: true
+
+  # SEC EDGAR 公司公告（8-K/财报等，白名单公司）
+  edgar:
+    enabled: true
+    companies:                    # 名称: CIK（10位数字，可在 sec.gov 查询添加）
+      "美光MU": "0000723125"
+      "StrategyMSTR": "0001050446"
+      "英伟达NVDA": "0001045810"
+      "特斯拉TSLA": "0001318605"
+
+  # 中文/英文快讯 RSS（urls 按顺序兜底：前面失效自动换下一个）
+  rss:
+    enabled: true
+    feeds:
+      - name: "财联社电报"
+        urls:
+          - "https://rsshub.ktachibana.party/cls/telegraph"
+          - "https://rsshub.app/cls/telegraph"
+      - name: "TheBlock"
+        urls:
+          - "https://www.theblock.co/rss.xml"
+      - name: "CoinDesk"
+        urls:
+          - "https://www.coindesk.com/arc/outboundfeeds/rss/"
+      - name: "律动BlockBeats"
+        urls:
+          - "https://rsshub.ktachibana.party/theblockbeats/news"
+
+  # 定价与情绪读数（只进网站 market.json 快照，不推送）
+  market:
+    enabled: true
+    symbols:                      # 显示名: Yahoo代码
+      "美元指数": "DX-Y.NYB"
+      "美债30Y": "^TYX"
+      "WTI原油": "CL=F"
+      "纳指期货": "NQ=F"
+      "纳斯达克": "^IXIC"
+      "韩国KOSPI": "^KS11"
+      "比特币": "BTC-USD"
+      "以太坊": "ETH-USD"
+      "黄金": "GC=F"
+
+  # 资金费率（Bybit公共接口；失败自动换OKX）
+  funding:
+    enabled: true
+    symbols: ["BTCUSDT", "ETHUSDT"]
+
+  # 恐惧贪婪指数
+  fng:
+    enabled: true
+
+  # Polymarket 降息/宏观概率
+  polymarket:
+    enabled: true

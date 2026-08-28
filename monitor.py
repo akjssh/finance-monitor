@@ -10,6 +10,7 @@
 """
 
 import html
+import hashlib
 import json
 import os
 import re
@@ -17,7 +18,7 @@ import secrets
 import sys
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, date, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
 import requests
@@ -26,8 +27,16 @@ import yaml
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "config.yaml")
 STATE_PATH = os.path.join(BASE_DIR, "state.json")
+SOURCES_CFG_PATH = os.path.join(BASE_DIR, "sources.yaml")
+DATA_DIR = os.path.join(BASE_DIR, "data")
+SITE_DATA_DIR = os.path.join(BASE_DIR, "site", "data")
+EVENTS_PATH = os.path.join(DATA_DIR, "events.json")        # 事件流（网站展示）
+CALENDAR_PATH = os.path.join(DATA_DIR, "calendar.json")    # 未来30天财经日历
+MARKET_PATH = os.path.join(DATA_DIR, "market.json")        # 行情+情绪读数快照
 
 CST = timezone(timedelta(hours=8))  # 北京时间
+
+_HTTP_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; finance-monitor/1.0)"}
 
 # ------------------------------------------------------------
 # 工具函数
@@ -57,6 +66,38 @@ def save_state(state):
 def secret(env_name, cfg_value=""):
     """环境变量优先（云端走 Secrets），其次配置文件（本地测试用）"""
     return os.environ.get(env_name) or (cfg_value or "")
+
+
+def load_sources_cfg():
+    if os.path.exists(SOURCES_CFG_PATH):
+        with open(SOURCES_CFG_PATH, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f) or {}
+    return {}
+
+
+def _write_json(path, obj):
+    """同时写入 data/（仓库留存）和 site/data/（网站部署产物）"""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(SITE_DATA_DIR, exist_ok=True)
+    body = json.dumps(obj, ensure_ascii=False, indent=1)
+    for p in (path, os.path.join(SITE_DATA_DIR, os.path.basename(path))):
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(body)
+
+
+def load_events():
+    if os.path.exists(EVENTS_PATH):
+        with open(EVENTS_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
+def save_events(events, max_days=90, max_count=800):
+    """滚动保留：最多 max_days 天、max_count 条"""
+    cutoff = (datetime.now(CST) - timedelta(days=max_days)).isoformat()
+    events = [e for e in events if (e.get("created_at") or "") >= cutoff]
+    events.sort(key=lambda e: e.get("created_at") or "", reverse=True)
+    _write_json(EVENTS_PATH, events[:max_count])
 
 
 # ------------------------------------------------------------
@@ -349,6 +390,585 @@ def keyword_filter(text, cfg):
 
 
 # ------------------------------------------------------------
+# 扩展信息源：财经日历 / SEC EDGAR / RSS快讯 / 币安公告（进事件流）
+#             + 行情/资金费率/恐惧贪婪/Polymarket（进快照）
+# 全部免费免密钥（配置见 sources.yaml）；单个源失败只记日志，不影响主流程
+# ------------------------------------------------------------
+
+_EDGAR_ITEMS = {
+    "1.01": "重大协议", "1.02": "协议终止", "1.05": "网络安全事件",
+    "2.02": "经营业绩/财报", "2.03": "新财务义务", "2.04": "触发加速/违约",
+    "2.05": "退出与处置", "4.02": "审计意见变化", "5.02": "高管董事变动",
+    "8.01": "其他重要事件",
+}
+
+_LEVEL_EMOJI = {"L4": "🟣", "L3": "🔴", "L2": "🟠", "L1": "⚪"}
+
+
+def _sub(cfg, name):
+    return (cfg.get("sources") or {}).get(name) or {}
+
+
+def _get_json(url, params=None, headers=None, timeout=25):
+    r = requests.get(url, params=params, timeout=timeout,
+                     headers={**_HTTP_HEADERS, **(headers or {})})
+    r.raise_for_status()
+    return r.json()
+
+
+def _parse_dt(s):
+    """容错解析时间字符串 -> aware datetime；解析不了返回 None"""
+    if s is None or s == "":
+        return None
+    s = str(s).strip()
+    if s.isdigit() and len(s) >= 12:  # 毫秒时间戳
+        try:
+            return datetime.fromtimestamp(int(s) / 1000, tz=timezone.utc)
+        except Exception:
+            return None
+    s = s.replace("Z", "+00:00")
+    try:
+        return datetime.strptime(s, "%a %b %d %H:%M:%S %z %Y")
+    except Exception:
+        pass
+    try:
+        dt = datetime.fromisoformat(s)
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        return None
+
+
+def _grade_calendar(title, impact):
+    """按事件交易手册的 L1-L4 粗定级；L4(格局级)无法自动识别，需人工判断"""
+    t = (title or "").lower()
+    if "fomc member" in t:
+        return "L2" if impact == "High" else "L1"
+    if "fomc" in t or "federal funds" in t:
+        return "L3"
+    if any(k in t for k in ("powell", "fed chair", "jackson hole")):
+        return "L2"
+    if any(k in t for k in ("cpi", "non-farm", "nonfarm", "pce")):
+        return "L2"
+    if impact == "High":
+        return "L2"
+    return "L1"
+
+
+# FOMC 决议日（每年1月美联储官网公布全年日程后，手动更新一次）
+_FOMC_DECISIONS = {2026: [(9, 16), (10, 28), (12, 9)]}
+
+
+def _nth_sunday(year, month, n):
+    d = datetime(year, month, 1, tzinfo=timezone.utc)
+    return d + timedelta(days=(6 - d.weekday()) % 7 + (n - 1) * 7)
+
+
+def _us_et_event(year, month, day, hour_et, minute_et=0):
+    """美东时间 -> UTC aware datetime（自动判断夏令时）"""
+    d = datetime(year, month, day, tzinfo=timezone.utc)
+    dst_start, dst_end = _nth_sunday(year, 3, 2), _nth_sunday(year, 11, 1)
+    offset = 4 if dst_start <= d < dst_end else 5
+    et = timezone(timedelta(hours=-offset))
+    return datetime(year, month, day, hour_et, minute_et, tzinfo=et).astimezone(timezone.utc)
+
+
+def _mk_cal_event(dt_utc, title, level, forecast="", previous="", approx=False):
+    dt_cst = dt_utc.astimezone(CST)
+    return {
+        "date": dt_cst.strftime("%Y-%m-%d"), "time": dt_cst.strftime("%H:%M"),
+        "ts": dt_cst.isoformat(), "currency": "USD",
+        "title": title + ("（预估日期）" if approx else ""),
+        "impact": "High" if level in ("L2", "L3") else "Medium",
+        "level": level, "forecast": forecast, "previous": previous,
+        "approx": approx,
+    }
+
+
+def _recurring_macro_events(start_cst, end_cst, ff_events):
+    """推算未来30天的周期性宏观数据（FF周历只覆盖本周，其余靠推算+固定表）
+    非农(第一个周五)/FOMC(固定日程)日期是确定的；CPI/PCE为惯例日期，标注预估"""
+    evs = []
+    ff_by_date = {}
+    for e in ff_events:
+        ff_by_date.setdefault(e["date"], []).append(e["title"].lower())
+
+    def ff_has(key, day):
+        return any(key in t for t in ff_by_date.get(day.isoformat(), []))
+
+    def bus_day_on_or_after(y, m, d0):
+        d = date(y, m, d0)
+        while d.weekday() >= 5:  # 周末顺延
+            d += timedelta(days=1)
+        return d
+
+    months = set()
+    d = start_cst.date()
+    while d <= end_cst.date():
+        months.add((d.year, d.month))
+        d += timedelta(days=1)
+
+    for (y, m) in sorted(months):
+        first = date(y, m, 1)
+        # 非农：每月第一个周五 8:30 ET（日期确定）
+        nfp = first + timedelta(days=(4 - first.weekday()) % 7)
+        if start_cst.date() <= nfp <= end_cst.date() \
+                and not ff_has("non-farm", nfp) and not ff_has("nonfarm", nfp):
+            evs.append(_mk_cal_event(_us_et_event(y, nfp.month, nfp.day, 8, 30),
+                                     "美国非农就业报告", "L2"))
+        # CPI：每月10日起首个工作日 8:30 ET（BLS实际日期以公告为准）
+        cpi = bus_day_on_or_after(y, m, 10)
+        if start_cst.date() <= cpi <= end_cst.date() and not ff_has("cpi", cpi):
+            evs.append(_mk_cal_event(_us_et_event(y, cpi.month, cpi.day, 8, 30),
+                                     "美国CPI通胀数据", "L2", approx=True))
+        # PCE：当月最后一个工作日 8:30 ET（BEA实际日期以公告为准）
+        last = (date(y, m + 1, 1) if m < 12 else date(y + 1, 1, 1)) - timedelta(days=1)
+        while last.weekday() >= 5:
+            last -= timedelta(days=1)
+        if start_cst.date() <= last <= end_cst.date() and not ff_has("pce", last):
+            evs.append(_mk_cal_event(_us_et_event(y, last.month, last.day, 8, 30),
+                                     "美国PCE物价指数", "L2", approx=True))
+
+    # FOMC 决议：固定日程表 14:00 ET
+    for y, dts in _FOMC_DECISIONS.items():
+        for (mm, dd) in dts:
+            fd = date(y, mm, dd)
+            if start_cst.date() <= fd <= end_cst.date() \
+                    and not ff_has("fomc", fd) and not ff_has("federal funds", fd):
+                evs.append(_mk_cal_event(_us_et_event(y, mm, dd, 14),
+                                         "FOMC利率决议", "L3"))
+    return evs
+
+
+def fetch_ff_calendar(src_cfg, out_errors):
+    """未来30天财经日历 = FF本周精确数据(免key) + 周期性宏观数据推算 + FOMC固定表"""
+    currencies = set(src_cfg.get("currencies") or ["USD", "CNY"])
+    events, seen = [], set()
+
+    def add(e):
+        key = (e["currency"], e["title"], e["date"] + e["time"])
+        if key not in seen:
+            seen.add(key)
+            events.append(e)
+
+    ff_rows = []
+    try:
+        ff_rows = _get_json("https://nfs.faireconomy.media/ff_calendar_thisweek.json")
+    except Exception as e:
+        out_errors.append(f"ff_calendar[thisweek]: {e}")
+    for row in ff_rows:
+        cur = row.get("country") or row.get("currency") or ""
+        if cur not in currencies:
+            continue
+        dt = _parse_dt(row.get("date"))
+        if not dt:
+            continue
+        dt_cst = dt.astimezone(CST)
+        add({
+            "date": dt_cst.strftime("%Y-%m-%d"), "time": dt_cst.strftime("%H:%M"),
+            "ts": dt_cst.isoformat(), "currency": cur,
+            "title": row.get("title") or "", "impact": row.get("impact") or "",
+            "level": _grade_calendar(row.get("title") or "", row.get("impact") or ""),
+            "forecast": row.get("forecast") or "", "previous": row.get("previous") or "",
+            "approx": False,
+        })
+
+    today0 = datetime.now(CST).replace(hour=0, minute=0, second=0, microsecond=0)
+    end = today0 + timedelta(days=30)
+    for e in _recurring_macro_events(today0, end, events):
+        add(e)
+
+    events.sort(key=lambda e: e["ts"])
+    return [e for e in events
+            if today0 <= _parse_dt(e["ts"]).astimezone(CST) <= end]
+
+
+def fetch_binance_ann(src_cfg, out_errors):
+    """币安公告：list/query接口(含发布时间)优先，catalog接口与公共RSSHub兜底"""
+    urls = [
+        ("https://www.binance.com/bapi/composite/v1/public/cms/article/list/query"
+         "?type=1&pageNo=1&pageSize=20&catalogId=48", "list"),
+        ("https://www.binance.com/bapi/composite/v1/public/cms/article/catalog/list/query"
+         "?catalogId=48&pageNo=1&pageSize=20", "catalog"),
+        ("https://rsshub.ktachibana.party/binance/announcements", "rss"),
+    ]
+    for url, kind in urls:
+        try:
+            r = requests.get(url, headers=_HTTP_HEADERS, timeout=25)
+            r.raise_for_status()
+            out = []
+            if kind == "rss":
+                root = ET.fromstring(r.content)
+                for it in root.iter("item"):
+                    link = (it.findtext("link") or "").strip()
+                    title = (it.findtext("title") or "").strip()
+                    if not (link and title):
+                        continue
+                    out.append({
+                        "id": "binance:" + hashlib.md5(link.encode()).hexdigest()[:16],
+                        "source": "binance", "author": "币安公告", "text": title,
+                        "created_at": _parse_dt(it.findtext("pubDate")), "url": link,
+                    })
+            else:
+                data = r.json().get("data") or {}
+                arts = data if isinstance(data, list) else []
+                if not arts:
+                    for cat in data.get("catalogs") or []:
+                        arts.extend(cat.get("articles") or [])
+                for a in arts:
+                    aid, title = str(a.get("id") or ""), a.get("title") or ""
+                    if not (aid and title):
+                        continue
+                    out.append({
+                        "id": f"binance:{aid}", "source": "binance",
+                        "author": "币安公告", "text": title,
+                        "created_at": _parse_dt(a.get("releaseDate")),
+                        "url": f"https://www.binance.com/zh-CN/square/post/{aid}",
+                    })
+            if out:
+                return out
+        except Exception as e:
+            out_errors.append(f"binance_ann[{kind}]: {e}")
+    return []
+
+
+def fetch_edgar(src_cfg, out_errors):
+    """SEC EDGAR 白名单公司近3天新文件（8-K/财报等）"""
+    out = []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=3))
+    for name, cik in (src_cfg.get("companies") or {}).items():
+        try:
+            j = _get_json(
+                f"https://data.sec.gov/submissions/CIK{cik}.json",
+                headers={"User-Agent": "finance-monitor research example@example.com"})
+            recent = j.get("filings", {}).get("recent", {})
+            forms = recent.get("form", [])
+            for i, form in enumerate(forms):
+                try:
+                    fdate = datetime.fromisoformat(recent["filingDate"][i]).replace(
+                        tzinfo=timezone.utc)
+                except Exception:
+                    continue
+                if fdate < cutoff:
+                    continue
+                accn = recent["accessionNumber"][i].replace("-", "")
+                its = recent.get("items") or []
+                raw = its[i] if i < len(its) else ""
+                desc = "、".join(_EDGAR_ITEMS.get(x.strip(), x.strip())
+                                for x in raw.split(",") if x.strip())
+                text = f"{name} 提交SEC文件 [{form}]" + (f"（{desc}）" if desc else "")
+                out.append({
+                    "id": f"edgar:{accn}", "source": "edgar", "author": name,
+                    "text": text, "created_at": fdate,
+                    "url": f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accn}/",
+                })
+        except Exception as e:
+            out_errors.append(f"edgar[{name}]: {e}")
+    return out
+
+
+def fetch_rss_feeds(src_cfg, out_errors):
+    """通用RSS快讯（每源取最新15条；feeds 支持 url 单地址或 urls 兜底链）"""
+    out = []
+    for feed in src_cfg.get("feeds") or []:
+        name = feed.get("name") or "rss"
+        urls = feed.get("urls") or ([feed.get("url")] if feed.get("url") else [])
+        got = None
+        for url in urls:
+            try:
+                r = requests.get(url, headers=_HTTP_HEADERS, timeout=25)
+                r.raise_for_status()
+                got = r.content
+                break
+            except Exception as e:
+                out_errors.append(f"rss[{name}]: {e}")
+        if got is None:
+            continue
+        try:
+            root = ET.fromstring(got)
+            n = 0
+            for it in root.iter("item"):
+                link = (it.findtext("link") or "").strip()
+                title = html.unescape((it.findtext("title") or "").strip())
+                if not (link and title):
+                    continue
+                desc = html.unescape(re.sub(r"<[^>]+>", " ",
+                                            it.findtext("description") or ""))
+                desc = re.sub(r"\s+", " ", desc).strip()[:300]
+                out.append({
+                    "id": "rss:" + hashlib.md5(link.encode()).hexdigest()[:16],
+                    "source": "rss", "author": name,
+                    "text": title + (f" —— {desc}" if desc else ""),
+                    "created_at": _parse_dt(it.findtext("pubDate")), "url": link,
+                })
+                n += 1
+                if n >= 15:
+                    break
+        except Exception as e:
+            out_errors.append(f"rss[{name}]解析: {e}")
+    return out
+
+
+def collect_market(cfg, out_errors):
+    """行情+情绪读数快照（只写 market.json 给网站/晨会用，不推送）"""
+    snap = {"generated_at": datetime.now(CST).isoformat(),
+            "quotes": [], "fng": None, "funding": [], "polymarket": []}
+    m = _sub(cfg, "market")
+    if m.get("enabled"):
+        for name, sym in (m.get("symbols") or {}).items():
+            try:
+                j = _get_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}",
+                              params={"interval": "1d", "range": "5d"})
+                meta = j.get("chart", {}).get("result", [{}])[0].get("meta", {})
+                price, prev = meta.get("regularMarketPrice"), (
+                    meta.get("chartPreviousClose") or meta.get("previousClose"))
+                snap["quotes"].append({
+                    "name": name, "symbol": sym, "price": price, "previous": prev,
+                    "pct": round((price - prev) / prev * 100, 2)
+                    if (price and prev) else None})
+            except Exception as e:
+                out_errors.append(f"market[{name}]: {e}")
+    if _sub(cfg, "fng").get("enabled"):
+        try:
+            d = _get_json("https://api.alternative.me/fng/", params={"limit": 1})["data"][0]
+            snap["fng"] = {"value": int(d["value"]),
+                           "label": d.get("value_classification") or ""}
+        except Exception as e:
+            out_errors.append(f"fng: {e}")
+    fu = _sub(cfg, "funding")
+    if fu.get("enabled"):
+        for sym in fu.get("symbols") or ["BTCUSDT", "ETHUSDT"]:
+            rate = None
+            try:
+                lst = _get_json("https://api.bybit.com/v5/market/tickers",
+                                params={"category": "linear", "symbol": sym}
+                                ).get("result", {}).get("list", [])
+                if lst:
+                    rate = float(lst[0].get("fundingRate") or 0)
+            except Exception:
+                try:
+                    j = _get_json("https://www.okx.com/api/v5/public/funding-rate",
+                                  params={"instId": sym.replace("USDT", "-USDT-SWAP")})
+                    rate = float(j["data"][0]["fundingRate"])
+                except Exception as e:
+                    out_errors.append(f"funding[{sym}]: {e}")
+            if rate is not None:
+                snap["funding"].append({"symbol": sym, "rate": rate,
+                                        "rate_pct": round(rate * 100, 4)})
+    if _sub(cfg, "polymarket").get("enabled"):
+        try:
+            rows = _get_json("https://gamma-api.polymarket.com/markets",
+                             params={"closed": "false", "limit": 60,
+                                     "order": "volume24hr", "ascending": "false"})
+            picked = 0
+            for mk in rows if isinstance(rows, list) else []:
+                q = mk.get("question") or ""
+                if picked >= 4:
+                    break
+                low = q.lower()
+                if not any(k in low for k in ("fed", "rate cut", "rate hike",
+                                              "cpi", "interest rate")):
+                    continue
+                try:
+                    outcomes = json.loads(mk.get("outcomes") or "[]")
+                    prices = json.loads(mk.get("outcomePrices") or "[]")
+                    yes = float(prices[outcomes.index("Yes")])
+                except Exception:
+                    continue
+                snap["polymarket"].append({"question": q, "yes": round(yes * 100, 1)})
+                picked += 1
+        except Exception as e:
+            out_errors.append(f"polymarket: {e}")
+    return snap
+
+
+def run_extra_sources(cfg, state, stats, store):
+    """扩展源入库（进网站事件流）；score>=push_min_score 才推企微"""
+    scfg = load_sources_cfg()
+    srcs = scfg.get("sources") or {}
+    errors = []
+    seen_src = state.setdefault("seen_src", {})
+    known = {e.get("id") for e in store}
+    push_min = int(scfg.get("push_min_score", 8) or 0)
+    ai_budget = int(scfg.get("max_ai_per_run", 8) or 0)
+
+    # 日历（整体重建，无需去重）
+    ff = srcs.get("ff_calendar") or {}
+    if ff.get("enabled"):
+        try:
+            cal = fetch_ff_calendar(ff, errors)
+            _write_json(CALENDAR_PATH, {"generated_at": datetime.now(CST).isoformat(),
+                                        "events": cal})
+            stats["calendar"] = len(cal)
+        except Exception as e:
+            errors.append(f"ff_calendar: {e}")
+
+    # 事件类来源 -> 关键词粗筛 -> AI评级 -> 入库/推送
+    items = []
+    for fetcher, sc in ((fetch_binance_ann, srcs.get("binance_ann") or {}),
+                        (fetch_edgar, srcs.get("edgar") or {}),
+                        (fetch_rss_feeds, srcs.get("rss") or {})):
+        if sc.get("enabled"):
+            try:
+                items.extend(fetcher(sc, errors))
+            except Exception as e:
+                errors.append(f"{fetcher.__name__}: {e}")
+
+    for it in items:
+        if it["id"] in seen_src or it["id"] in known:
+            continue
+        if not keyword_filter(it["text"], cfg):
+            continue
+        ai = None
+        if cfg.get("ai_enabled") and ai_budget > 0:
+            ai = ai_evaluate(it["text"], cfg)
+            ai_budget -= 1
+        score = ai["score"] if ai and ai.get("ok") else None
+        created = (it["created_at"] or datetime.now(timezone.utc)).astimezone(CST)
+        rec = {"id": it["id"], "source": it["source"], "author": it["author"],
+               "text": it["text"], "score": score,
+               "reason": (ai or {}).get("reason", ""),
+               "translation": (ai or {}).get("translation", ""),
+               "url": it["url"], "pushed": False,
+               "created_at": created.isoformat()}
+        store.append(rec)
+        seen_src[it["id"]] = rec["created_at"]
+        stats["extra_stored"] += 1
+        if score and push_min and score >= push_min:
+            tweet = {"handle": it["author"], "text": it["text"],
+                     "created_at": created, "url": it["url"]}
+            try:
+                title, content = build_message_wecom(tweet, [it["source"]], ai,
+                                                     it["source"])
+                push(title, content, cfg.get("push_channel", "wecom"), cfg)
+                rec["pushed"] = True
+                stats["extra_pushed"] += 1
+                log(f"📤 扩展源推送 [{it['source']}] {it['text'][:40]}...")
+            except Exception as e:
+                log(f"❌ 扩展源推送失败: {e}")
+
+    # 状态修剪（只留100天）
+    cutoff = (datetime.now(CST) - timedelta(days=100)).isoformat()
+    for k in [k for k, v in seen_src.items() if v < cutoff]:
+        del seen_src[k]
+    if errors:
+        log("⚠️ 扩展源部分失败: " + " | ".join(errors[:8]))
+    return errors
+
+
+def _fmt_price(p):
+    if p is None:
+        return "-"
+    return f"{p:,.0f}" if abs(p) >= 1000 else f"{p:g}"
+
+
+def build_brief(cfg):
+    """每日晨会：今日事件 + 未来7天看点 + 隔夜行情 + 情绪读数"""
+    today = datetime.now(CST)
+    cal, mkt = [], {}
+    if os.path.exists(CALENDAR_PATH):
+        with open(CALENDAR_PATH, "r", encoding="utf-8") as f:
+            cal = json.load(f).get("events", [])
+    if os.path.exists(MARKET_PATH):
+        with open(MARKET_PATH, "r", encoding="utf-8") as f:
+            mkt = json.load(f)
+
+    lines = [f"### 🌅 每日晨会 {today:%m-%d} {['一','二','三','四','五','六','日'][today.weekday()]}"]
+    d0 = today.strftime("%Y-%m-%d")
+    d7 = (today + timedelta(days=7)).strftime("%Y-%m-%d")
+    today_ev = [e for e in cal if e["date"] == d0]
+    week_ev = [e for e in cal if d0 < e["date"] <= d7 and e["level"] in ("L2", "L3", "L4")]
+
+    lines.append("**📅 今日事件（北京时间）**")
+    if today_ev:
+        for e in today_ev[:10]:
+            fc = f" 预期{e['forecast']}" if e.get("forecast") else ""
+            pv = f" 前值{e['previous']}" if e.get("previous") else ""
+            lines.append(f"- {_LEVEL_EMOJI.get(e['level'],'⚪')} **{e['level']}** "
+                         f"{e['time']} {e['title']}({e['currency']}){fc}{pv}")
+    else:
+        lines.append("- 今日无重要日历事件")
+
+    if week_ev:
+        lines.append(f"**🔭 未来7天看点（L2+，共{len(week_ev)}件）**")
+        for e in week_ev[:8]:
+            lines.append(f"- {_LEVEL_EMOJI.get(e['level'],'⚪')} {e['level']} "
+                         f"{e['date'][5:]} {e['time']} {e['title']}({e['currency']})")
+
+    quotes = mkt.get("quotes") or []
+    if quotes:
+        qm = {q["name"]: q for q in quotes}
+        order = ["比特币", "以太坊", "纳指期货", "美债30Y", "WTI原油", "黄金"]
+        parts = []
+        for name in order:
+            q = qm.get(name)
+            if q and q.get("price") is not None:
+                pct = f"({q['pct']:+.1f}%)" if q.get("pct") is not None else ""
+                parts.append(f"{name} {_fmt_price(q['price'])}{pct}")
+        if parts:
+            lines.append("**📉 隔夜市场**\n" + " ｜ ".join(parts))
+
+    emo = []
+    if mkt.get("fng"):
+        emo.append(f"恐惧贪婪 {mkt['fng']['value']}·{mkt['fng']['label']}")
+    for f in (mkt.get("funding") or [])[:2]:
+        emo.append(f"费率{f['symbol'][:3]} {f['rate_pct']:+.4f}%")
+    for p in (mkt.get("polymarket") or [])[:2]:
+        emo.append(f"{p['question'][:30]}… Yes {p['yes']:.0f}%")
+    if emo:
+        lines.append("**🌡️ 情绪读数**\n" + " ｜ ".join(emo))
+
+    hot = [e for e in today_ev if e["level"] in ("L2", "L3", "L4")]
+    if hot:
+        lines.append(f"**⚠️ 仓位提醒**：今日有 {len(hot)} 件 L2+ 事件"
+                     "——不赌方向的仓位在事件公布前1小时清理")
+    title = f"🌅 每日晨会 {today:%m-%d}"
+    return title, _clip("\n\n".join(lines))
+
+
+def selftest_sources():
+    """扩展源连通性自检（--selftest-sources）；半数以上通过返回0"""
+    scfg = load_sources_cfg()
+    srcs = scfg.get("sources") or {}
+    errors = []
+    results = []
+
+    def check(name, fn):
+        if not (srcs.get(name) or {}).get("enabled"):
+            return
+        try:
+            n = fn()
+            results.append((name, n))
+            print(f"✅ {name}: {n} 条")
+        except Exception as e:
+            results.append((name, -1))
+            print(f"❌ {name}: {e}")
+
+    check("ff_calendar", lambda: len(fetch_ff_calendar(srcs["ff_calendar"], errors)))
+    check("binance_ann", lambda: len(fetch_binance_ann(srcs["binance_ann"], errors)))
+    check("edgar", lambda: len(fetch_edgar(srcs["edgar"], errors)))
+    check("rss", lambda: len(fetch_rss_feeds(srcs["rss"], errors)))
+
+    if any(_sub(scfg, k).get("enabled")
+           for k in ("market", "fng", "funding", "polymarket")):
+        try:
+            snap = collect_market(scfg, errors)
+            nq = len(snap["quotes"])
+            results.append(("market快照", nq))
+            print(f"✅ market快照: 行情{nq} 费率{len(snap['funding'])} "
+                  f"F&G={'✓' if snap['fng'] else '✗'} "
+                  f"Polymarket={len(snap['polymarket'])}")
+        except Exception as e:
+            results.append(("market快照", -1))
+            print(f"❌ market快照: {e}")
+
+    if errors:
+        print("失败明细: " + " | ".join(errors))
+    ok = sum(1 for _, n in results if n and n > 0)
+    print(f"\n通过 {ok}/{len(results)}")
+    return 0 if len(results) and ok * 2 >= len(results) else 1
+
+
+# ------------------------------------------------------------
 # AI 精筛（Gemini 免费额度）
 # ------------------------------------------------------------
 
@@ -578,7 +1198,7 @@ def push(title, content, channel, cfg):
 # 主流程
 # ------------------------------------------------------------
 
-def process_account(account, seen_ids, cfg, stats):
+def process_account(account, seen_ids, cfg, stats, store):
     handle = account["handle"].strip().lstrip("@")
     note = account.get("note", "")
     provider_name = cfg.get("provider", "mock")
@@ -618,6 +1238,17 @@ def process_account(account, seen_ids, cfg, stats):
             pushed += 1
             stats["pushed"] += 1
             log(f"📤 已推送 @{handle}: {tw['text'][:40]}...")
+            # 同时写入网站事件流（data/events.json）
+            created = (tw["created_at"] or datetime.now(timezone.utc)).astimezone(CST)
+            store.append({
+                "id": f"x:{tw_id}", "source": "x", "author": f"@{handle}",
+                "text": tw["text"],
+                "score": ai["score"] if ai and ai.get("ok") else None,
+                "reason": (ai or {}).get("reason", ""),
+                "translation": (ai or {}).get("translation", ""),
+                "url": tw["url"], "pushed": True,
+                "created_at": created.isoformat(),
+            })
         except Exception as e:
             log(f"❌ 推送失败 @{handle}: {e}")
 
@@ -629,25 +1260,60 @@ def main():
 
     state = load_state()
     seen_ids = state.setdefault("seen", {})
-    stats = {"pushed": 0, "filtered": 0, "kw_passed": 0, "ai_filtered": 0, "capped": 0}
+    store = load_events()
+    stats = {"pushed": 0, "filtered": 0, "kw_passed": 0, "ai_filtered": 0,
+             "capped": 0, "extra_stored": 0, "extra_pushed": 0, "calendar": 0}
     errors = []
 
     for account in accounts:
         try:
-            process_account(account, seen_ids, cfg, stats)
+            process_account(account, seen_ids, cfg, stats, store)
         except Exception as e:
             errors.append(f"@{account.get('handle')}: {e}")
             log(f"❌ @{account.get('handle')} 处理出错: {e}")
 
+    # 扩展信息源（日历/EDGAR/RSS/币安公告）+ 行情情绪快照；失败不影响X主流程
+    extra_errors = []
+    try:
+        extra_errors = run_extra_sources(cfg, state, stats, store)
+    except Exception as e:
+        log(f"⚠️ 扩展源异常(不影响X监控): {e}")
+    try:
+        mk_errors = []
+        snap = collect_market(load_sources_cfg(), mk_errors)
+        _write_json(MARKET_PATH, snap)
+        if mk_errors:
+            log("⚠️ 快照部分失败: " + " | ".join(mk_errors[:6]))
+    except Exception as e:
+        log(f"⚠️ 行情快照异常(不影响X监控): {e}")
+
+    save_events(store)
     save_state(state)
     log(
         f"完成 ✅ 推送{stats['pushed']} | 关键词命中{stats['kw_passed']} "
-        f"(AI过滤{stats['ai_filtered']}, 关键词过滤{stats['filtered']}, 截断{stats['capped']})"
+        f"(AI过滤{stats['ai_filtered']}, 关键词过滤{stats['filtered']}, 截断{stats['capped']}) "
+        f"| 扩展源入库{stats['extra_stored']}/推送{stats['extra_pushed']} "
+        f"| 日历{stats['calendar']}条"
     )
     if errors:
         print("本次出错账号:\n" + "\n".join(errors))
         sys.exit(1)  # 让 Actions 显示失败便于发现问题，但不影响其他账号已完成的推送
 
 
+def run_brief(cfg):
+    """每日晨会：读取 data/ 下的日历与快照合成一条推送"""
+    try:
+        title, content = build_brief(cfg)
+    except Exception as e:
+        title, content = "🌅 晨会生成失败", f"错误: {e}"
+    push(title, content, cfg.get("push_channel", "wecom"), cfg)
+    log(f"📤 已推送: {title}")
+
+
 if __name__ == "__main__":
-    main()
+    if "--brief" in sys.argv:
+        run_brief(load_config())
+    elif "--selftest-sources" in sys.argv:
+        sys.exit(selftest_sources())
+    else:
+        main()

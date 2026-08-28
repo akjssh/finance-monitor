@@ -26,3 +26,10 @@ jobs:
         run: |
           python -c "import monitor,json; r=monitor.ai_evaluate('BREAKING: FED CUTS RATES BY 25 BPS, SIGNALS TWO MORE CUTS THIS YEAR', monitor.load_config()); print(json.dumps(r,ensure_ascii=False)); assert r and r.get('ok'), 'AI链路故障'"
           echo "✅ AI链路正常"
+
+      - name: 测试扩展信息源连通性（日历/EDGAR/RSS/币安/行情读数）
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python monitor.py --selftest-sources
+          echo "✅ 扩展源自检通过"
