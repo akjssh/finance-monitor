@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-08-28T23:00:55.178494+08:00",
+ "generated_at": "2026-08-28T23:05:35.665657+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.499,
+   "price": 99.423,
    "previous": 99.0,
-   "pct": 0.5
+   "pct": 0.43
   },
   {
    "name": "美债30Y",
@@ -18,23 +18,23 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 83.01,
+   "price": 82.93,
    "previous": 85.01,
-   "pct": -2.35
+   "pct": -2.45
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29763.25,
+   "price": 29776.75,
    "previous": 29105.75,
-   "pct": 2.26
+   "pct": 2.31
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26694.568,
+   "price": 26692.193,
    "previous": 26180.46,
-   "pct": 1.96
+   "pct": 1.95
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79797.68,
+   "price": 79502.17,
    "previous": 78964.484,
-   "pct": 1.06
+   "pct": 0.68
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2518.04,
+   "price": 2509.24,
    "previous": 2481.831,
-   "pct": 1.46
+   "pct": 1.1
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4607.5,
+   "price": 4623.1,
    "previous": 4640.8,
-   "pct": -0.72
+   "pct": -0.38
   }
  ],
  "fng": {
@@ -77,14 +77,14 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.20823190169e-05,
-   "rate_pct": 0.0062
+   "rate": 6.10435011964e-05,
+   "rate_pct": 0.0061
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 51.5
+   "yes": 53.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
@@ -92,7 +92,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 48.0
+   "yes": 47.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
