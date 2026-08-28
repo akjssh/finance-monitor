@@ -57,9 +57,26 @@
   a{color:var(--ac);text-decoration:none}
   #err{display:none;background:#3a1f22;border:1px solid #6b2b30;color:#f3b3b3;border-radius:10px;
        padding:9px 13px;font-size:13px;margin-top:10px}
+  #gate{position:fixed;inset:0;background:var(--bg);z-index:99;display:flex;
+        flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  #gate h1{font-size:22px}
+  #gate p{color:var(--tx2);font-size:13px}
+  #gate input{background:var(--card);border:1px solid var(--line);color:var(--tx);
+    border-radius:10px;padding:10px 14px;font-size:16px;width:240px;text-align:center;outline:none}
+  #gate input:focus{border-color:var(--ac)}
+  #gate button{background:var(--ac);color:#fff;border:none;border-radius:10px;
+    padding:10px 26px;font-size:15px;cursor:pointer}
+  #gate .bad{color:var(--up);font-size:13px;min-height:18px}
 </style>
 </head>
 <body>
+<div id="gate">
+  <h1>📰 财经信息台</h1>
+  <p>请输入访问口令</p>
+  <input id="gk" type="password" placeholder="访问口令" autocomplete="off">
+  <div class="bad" id="gbad"></div>
+  <button id="gok">进入</button>
+</div>
 <div class="wrap">
   <header>
     <h1>📰 财经信息台</h1>
@@ -198,7 +215,28 @@ async function load(){
   renderCal(); renderFlt(); renderFeed();
 }
 document.getElementById('refresh').onclick=load;
-load(); setInterval(load, 60000);
+// —— 访问口令门(SHA-256 校验,通过后本机记住30分钟内的会话) ——
+const GATE_HASH='ce326520b134c5bc996e04a18fd2d121207203a69ea5fba73651a8ee9358d61a';
+async function sha256(s){
+  const b=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+async function tryGate(){
+  const v=document.getElementById('gk').value.trim();
+  if(await sha256(v)===GATE_HASH){
+    sessionStorage.setItem('gate','ok');
+    document.getElementById('gate').style.display='none';
+    load(); setInterval(load, 60000);
+  }else{
+    document.getElementById('gbad').textContent='口令不对,再试试';
+  }
+}
+document.getElementById('gok').onclick=tryGate;
+document.getElementById('gk').addEventListener('keydown',e=>{ if(e.key==='Enter') tryGate(); });
+if(sessionStorage.getItem('gate')==='ok'){
+  document.getElementById('gate').style.display='none';
+  load(); setInterval(load, 60000);
+}
 </script>
 </body>
 </html>
