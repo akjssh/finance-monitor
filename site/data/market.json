@@ -1,6 +1,13 @@
 {
- "generated_at": "2026-08-29T21:19:46.117372+08:00",
+ "generated_at": "2026-08-29T21:20:45.763674+08:00",
  "quotes": [
+  {
+   "name": "美元指数",
+   "symbol": "DX-Y.NYB",
+   "price": 99.677,
+   "previous": 99.0,
+   "pct": 0.68
+  },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
@@ -65,7 +72,7 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.26214132228e-05,
+   "rate": 4.27685853751e-05,
    "rate_pct": 0.0043
   },
   {
