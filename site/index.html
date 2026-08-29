@@ -22,9 +22,10 @@
   @keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(10deg)}}
 
   /* ============ OP 封面 ============ */
-  #intro{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;
+  #intro{position:fixed;inset:0;height:100dvh;z-index:200;display:flex;flex-direction:column;align-items:center;
     justify-content:center;text-align:center;padding:24px;overflow:hidden;transition:opacity .7s ease;
-    background:url('img/cover.jpg') center/cover no-repeat}
+    background:url('img/cover.jpg') center/cover no-repeat;overscroll-behavior:contain}
+  body.gated{overflow:hidden}
   #intro::before{content:"";position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(22,16,32,.72),rgba(22,16,32,.35) 40%,rgba(22,16,32,.88));}
   #intro.gone{opacity:0;pointer-events:none}
@@ -55,8 +56,8 @@
   .ifoot{position:absolute;bottom:15px;color:var(--tx2);font-size:11px}
 
   /* ============ 口令门 ============ */
-  #gate{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;
-    text-align:center;padding:20px;background:url('img/gate.jpg') center/cover no-repeat}
+  #gate{position:fixed;inset:0;height:100dvh;z-index:99;display:none;align-items:center;justify-content:center;
+    text-align:center;padding:20px;background:url('img/gate.jpg') center/cover no-repeat;overscroll-behavior:contain}
   #gate::before{content:"";position:absolute;inset:0;background:rgba(22,16,32,.55)}
   .gcard{position:relative;background:rgba(22,16,32,.72);backdrop-filter:blur(12px);
     border:1.5px solid rgba(246,165,192,.4);border-radius:22px;padding:30px 36px;
@@ -149,6 +150,24 @@
   footer .rock{color:var(--pink);font-weight:700}
   .totop{position:fixed;right:18px;bottom:22px;z-index:30;border-radius:50%;width:42px;height:42px;
     background:var(--panel);border:1.5px solid var(--line);color:var(--tx2);cursor:pointer}
+  /* 管理台 */
+  #admin{background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px}
+  .adm-h{font-size:14px;margin:12px 0 7px;color:var(--pink)}
+  .adm-tip{font-size:13px;color:var(--tx2);margin:8px 0;line-height:1.8}
+  .adm-tip a{color:var(--pink);font-weight:700}
+  .adm-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+  .adm-row input{flex:1;min-width:130px;background:rgba(255,255,255,.06);border:1.5px solid var(--line);
+    color:var(--tx);border-radius:9px;padding:8px 11px;font-size:14px;outline:none}
+  .adm-row input:focus{border-color:var(--pink)}
+  #accList .acc{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  #accList .acc small{color:var(--tx2)}
+  #accList .del{margin-left:auto;background:none;border:1px solid #6b2b40;color:#ff8fa3;
+    border-radius:7px;padding:1px 9px;cursor:pointer;font-size:12px}
+  textarea{width:100%;background:rgba(255,255,255,.06);border:1.5px solid var(--line);color:var(--tx);
+    border-radius:10px;padding:9px 12px;font-size:13.5px;outline:none;font-family:inherit;resize:vertical}
+  textarea:focus{border-color:var(--pink)}
+  #admMsg{font-size:13px;color:var(--down)}
+  #admMsg.bad{color:var(--up)}
 </style>
 </head>
 <body>
@@ -211,6 +230,33 @@
     <div id="feed"></div>
   </div>
 
+  <div class="sec">
+    <div class="sec-h" id="h-adm"></div>
+    <div style="margin-bottom:10px"><button class="btn" id="admToggle">⚙️ 展开监控管理台</button></div>
+    <div id="admin" style="display:none">
+      <div id="admLogin" style="display:none">
+        <p class="adm-tip">首次使用需要一张「GitHub 令牌」(相当于钥匙,只存在你自己的手机里):
+        <br>① 点下面链接 → ② Generate new token → ③ Repository access 选 <b>Only select repositories → finance-monitor</b>
+        → ④ Permissions 里 <b>Contents 设为 Read and write</b> → ⑤ 生成后复制 <b>github_pat_</b> 开头的一长串
+        <br><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">→ 点此去创建令牌 ←</a></p>
+        <div class="adm-row"><input id="patIn" type="password" placeholder="粘贴 github_pat_ 开头的令牌">
+        <button class="btn rock" id="patSave">保存令牌</button></div>
+        <div class="adm-tip" id="patMsg"></div>
+      </div>
+      <div id="admPanel" style="display:none">
+        <h4 class="adm-h">👤 X 博主名单</h4>
+        <div id="accList"></div>
+        <div class="adm-row"><input id="newHandle" placeholder="handle(不带@)"><input id="newNote" placeholder="备注(可选)"><button class="btn" id="accAdd">➕ 添加</button></div>
+        <h4 class="adm-h">🔑 关键词白名单(每行一个,命中才推送)</h4>
+        <textarea id="kwTa" rows="5"></textarea>
+        <h4 class="adm-h">🚫 黑名单(每行一个,含这些词直接忽略)</h4>
+        <textarea id="exTa" rows="3"></textarea>
+        <div class="adm-row"><button class="btn rock" id="saveCfg">💾 保存并同步到云端(约5分钟生效)</button>
+        <span id="admMsg"></span></div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <span class="rock">🎸 結束バンド経済部</span> · 今天也一起摇滚看盘<br>
     数据来自公开接口(ForexFactory / SEC EDGAR / Yahoo Finance / Bybit / Polymarket / alternative.me 等)<br>
@@ -218,6 +264,7 @@
   </footer>
 </div>
 <button class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
 <script>
 // ============ 成员(官方形象裁剪头像) ============
@@ -232,7 +279,7 @@ const MEMBERS=[
    line:"「……快讯。冷冷的,很准。」"},
 ];
 document.getElementById('stagemems').innerHTML = MEMBERS.map(m=>
-  `<div class="m"><img src="${m.big}" alt="${m.s}"><span><b>${m.s}</b>·${m.role}</span></div>`).join('');
+  `<div class="m"><img src="${m.big}" alt="${m.s}" decoding="async"><span><b>${m.s}</b>·${m.role}</span></div>`).join('');
 document.getElementById('gatemems').innerHTML = MEMBERS.map(m=>
   `<img src="${m.ava}" alt="${m.s}">`).join('');
 document.getElementById('h-emo').innerHTML =
@@ -374,6 +421,7 @@ async function tryGate(){
   if(await sha256(v)===GATE_HASH){
     localStorage.setItem('gate','ok');
     document.getElementById('gate').style.display='none';
+    document.body.classList.remove('gated');
     load(); setInterval(load, 60000);
   }else{
     document.getElementById('gbad').textContent='口令不对…再试试?';
@@ -381,18 +429,113 @@ async function tryGate(){
 }
 document.getElementById('gok').onclick=tryGate;
 document.getElementById('gk').addEventListener('keydown',e=>{ if(e.key==='Enter') tryGate(); });
+// ============ 滚动锁与预加载 ============
+document.body.classList.add('gated');
 document.getElementById('introp').onclick=()=>{
   const el=document.getElementById('intro');
   el.classList.add('gone');
   setTimeout(()=>el.style.display='none',700);
-  if(localStorage.getItem('gate')==='ok'){ load(); }  // 已验证用户:点封面直接进,刷新一次数据
+  if(document.getElementById('gate').style.display!=='none') return;  // 口令门还开着,保持锁定
+  document.body.classList.remove('gated');
+  if(localStorage.getItem('gate')==='ok'){ load(); }
 };
+// 预加载头像(小图),封面阶段就开始下载,避免移动端"点击才出现"
+MEMBERS.forEach(m=>{ const i=new Image(); i.src=m.ava; });
 if(localStorage.getItem('gate')==='ok'){
   document.getElementById('gate').style.display='none';
+  document.body.classList.remove('gated');
   load(); setInterval(load, 60000);
 }else{
   document.getElementById('gate').style.display='flex';
 }
+
+// ============ 监控管理台(GitHub API 直改 config.yaml) ============
+const REPO='akjssh/finance-monitor';
+let CFG=null, CFGSHA=null;
+const AD=id=>document.getElementById(id);
+const pat=()=>localStorage.getItem('gh_pat')||'';
+
+document.getElementById('h-adm').innerHTML =
+  `<img src="${MEMBERS[3].ava}"><div class="who"><b>⚙️ 监控管理台</b><small>「……名单和关键词,手机上就能改。」</small></div>
+   <span class="role" style="background:#3d9bc4">凉兼管</span>`;
+
+AD('admToggle').onclick=async()=>{
+  const a=AD('admin');
+  const show=a.style.display==='none';
+  a.style.display=show?'block':'none';
+  AD('admToggle').textContent=show?'⚙️ 收起管理台':'⚙️ 展开监控管理台';
+  if(show){
+    if(!pat()){ AD('admLogin').style.display='block'; AD('admPanel').style.display='none'; return; }
+    AD('admLogin').style.display='none'; AD('admPanel').style.display='block';
+    await loadCfg();
+  }
+};
+AD('patSave').onclick=()=>{
+  const t=AD('patIn').value.trim();
+  if(!t.startsWith('github_pat_')&&!t.startsWith('ghp_')){ AD('patMsg').textContent='⚠️ 令牌应以 github_pat_ 或 ghp_ 开头'; return; }
+  localStorage.setItem('gh_pat',t);
+  AD('patMsg').textContent='✅ 令牌已保存到本机';
+  AD('admLogin').style.display='none'; AD('admPanel').style.display='block';
+  loadCfg();
+};
+function admMsg(t,bad){ const m=AD('admMsg'); m.textContent=t; m.className=bad?'bad':''; }
+function renderAcc(){
+  AD('accList').innerHTML=(CFG.accounts||[]).map((a,i)=>
+    `<div class="acc">👤 <b>${esc(String(a.handle).replace(/^@/,''))}</b> <small>${esc(a.note||'')}</small>
+     <button class="del" data-i="${i}">删除</button></div>`).join('')||'<div class="adm-tip">(名单为空)</div>';
+  AD('accList').querySelectorAll('.del').forEach(b=>b.onclick=()=>{
+    CFG.accounts.splice(+b.dataset.i,1); renderAcc();
+  });
+}
+async function loadCfg(){
+  admMsg('⏳ 正在读取云端配置…');
+  try{
+    const r=await fetch(`https://api.github.com/repos/${REPO}/contents/config.yaml`,{
+      headers:{Authorization:'token '+pat(),Accept:'application/vnd.github+json'}});
+    if(r.status===401||r.status===403){
+      AD('admPanel').style.display='none'; AD('admLogin').style.display='block';
+      localStorage.removeItem('gh_pat');
+      throw new Error('令牌无效或过期,请重新粘贴');
+    }
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const j=await r.json();
+    CFGSHA=j.sha;
+    CFG=jsyaml.load(new TextDecoder().decode(
+      Uint8Array.from(atob(j.content.replace(/\n/g,'')), c=>c.charCodeAt(0))))||{};
+    CFG.accounts=CFG.accounts||[]; CFG.keywords=CFG.keywords||[]; CFG.exclude_keywords=CFG.exclude_keywords||[];
+    renderAcc();
+    AD('kwTa').value=CFG.keywords.join('\n');
+    AD('exTa').value=CFG.exclude_keywords.join('\n');
+    admMsg('✅ 已加载当前配置(博主 '+CFG.accounts.length+' / 关键词 '+CFG.keywords.length+')');
+  }catch(e){ admMsg('❌ '+e.message,true); }
+}
+AD('accAdd').onclick=()=>{
+  const h=AD('newHandle').value.trim().replace(/^@/,'');
+  if(!h){ return; }
+  if((CFG.accounts||[]).some(a=>String(a.handle).replace(/^@/,'')===h)){ admMsg('⚠️ 该博主已在名单里',true); return; }
+  CFG.accounts.push({handle:h,note:AD('newNote').value.trim()});
+  AD('newHandle').value=''; AD('newNote').value='';
+  renderAcc(); admMsg('已添加,记得点「保存并同步」');
+};
+AD('saveCfg').onclick=async()=>{
+  CFG.keywords=AD('kwTa').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  CFG.exclude_keywords=AD('exTa').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const text=jsyaml.dump(CFG,{lineWidth:-1});
+  admMsg('⏳ 正在提交到 GitHub…');
+  try{
+    const r=await fetch(`https://api.github.com/repos/${REPO}/contents/config.yaml`,{
+      method:'PUT',
+      headers:{Authorization:'token '+pat(),Accept:'application/vnd.github+json'},
+      body:JSON.stringify({
+        message:'管理页更新配置(网页端)',
+        content:btoa(unescape(encodeURIComponent(text))),
+        sha:CFGSHA})
+    });
+    if(!r.ok){ const j=await r.json().catch(()=>({}));
+      throw new Error('HTTP '+r.status+' '+(j.message||'')); }
+    admMsg('✅ 已同步!约5分钟内云端自动按新名单运行(新博主首轮只建基线不推历史)');
+  }catch(e){ admMsg('❌ 保存失败:'+e.message,true); }
+};
 </script>
 </body>
 </html>
