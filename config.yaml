@@ -1,116 +1,86 @@
-# ============================================================
-#  财经信息监控系统 - 配置文件
-#  日常修改建议用「启动管理页面.bat」，本文件由程序自动维护
-# ============================================================
-
-# ---------- 监控名单 ----------
-# handle = X 用户名（不带@），note = 备注（会显示在推送里）
 accounts:
-  - handle: "DeItaone"
-    note: "Walter Bloomberg 快讯"
-  - handle: "WatcherGuru"
-    note: "Watcher.Guru 快讯"
-  - handle: "elonmusk"
-    note: "马斯克"
-  - handle: "Jason60704294"
-    note: "十亿哥"
-  - handle: "saylor"
-    note: "Strategy公司"
-  - handle: "thankUcrypto"
-    note: "熬鹰资本"
-  - handle: "devilcatbtc"
-    note: "茂茂大魔王"
-  - handle: "cz_binance"
-    note: "币安cz"
-
-# ---------- 数据源 ----------
-# provider 可选值：
-#   mock          - 本地测试数据（不联网，用于调试流程）
-#   rsshub        - 免费！自建 RSSHub（需在 Secrets 配置 RSSHUB_BASE 和 TWITTER_AUTH_TOKEN）
-#   twitterapi_io - 按量付费接口（约$2-5/月，免费方案失效时切换到这里）
+  - handle: DeItaone
+    note: Walter Bloomberg 快讯
+  - handle: WatcherGuru
+    note: Watcher.Guru 快讯
+  - handle: elonmusk
+    note: 马斯克
+  - handle: Jason60704294
+    note: 十亿哥
+  - handle: saylor
+    note: Strategy公司
+  - handle: thankUcrypto
+    note: 熬鹰资本
+  - handle: devilcatbtc
+    note: 茂茂大魔王
+  - handle: cz_binance
+    note: 币安cz
 provider: x_graphql
-
-rsshub_base: ""          # 例: https://你的域名 ，留空则读环境变量 RSSHUB_BASE
-twitterapi_io_key: ""    # 留空则读环境变量 TWITTERAPI_IO_KEY
-
-# ---------- 推送通道 ----------
-# wecom    = 企业微信群机器人（推荐，无第三方中转）
-# pushplus = 微信公众号/PushPlus（备用）
+rsshub_base: ''
+twitterapi_io_key: ''
 push_channel: wecom
-
-wecom_webhook: ""   # 留空则读环境变量 WECOM_WEBHOOK（云端走 GitHub Secrets）
-
-# ---------- 关键词粗筛 ----------
-# 推文里【命中任意一个】才进入下一轮 AI 精筛（英文不区分大小写）
+wecom_webhook: ''
 keywords:
-  - "美联储"
-  - "Fed"
-  - "降息"
-  - "加息"
-  - "rate cut"
-  - "rate hike"
-  - "CPI"
-  - "非农"
-  - "QE"
-  - "缩表"
-  - "关税"
-  - "tariff"
-  - "制裁"
-  - "sanction"
-  - "战争"
-  - "军事"
-  - "China"
-  - "中国"
-  - "白宫"
-  - "特朗普"
-  - "Trump"
-  - "BTC"
-  - "bitcoin"
-  - "比特币"
-  - "ETH"
-  - "ethereum"
-  - "以太坊"
-  - "加密"
-  - "crypto"
-  - "稳定币"
-  - "stablecoin"
-  - "ETF"
-  - "SEC"
-  - "币安"
-  - "Binance"
-  - "股市"
-  - "stock market"
-  - "熔断"
-  - "破产"
-  - "bankruptcy"
-  - "收购"
-  - "财报"
-  - "earnings"
-  - "IPO"
-  - "退市"
-  - "市场"
-  - "Strategy"
-
-# 含以下词的直接跳过（噪音过滤）
+  - 美联储
+  - Fed
+  - 降息
+  - 加息
+  - rate cut
+  - rate hike
+  - CPI
+  - 非农
+  - QE
+  - 缩表
+  - 关税
+  - tariff
+  - 制裁
+  - sanction
+  - 战争
+  - 军事
+  - China
+  - 中国
+  - 白宫
+  - 特朗普
+  - Trump
+  - BTC
+  - bitcoin
+  - 比特币
+  - ETH
+  - ethereum
+  - 以太坊
+  - 加密
+  - crypto
+  - 稳定币
+  - stablecoin
+  - ETF
+  - SEC
+  - 币安
+  - Binance
+  - 股市
+  - stock market
+  - 熔断
+  - 破产
+  - bankruptcy
+  - 收购
+  - 财报
+  - earnings
+  - IPO
+  - 退市
+  - 市场
+  - Strategy
 exclude_keywords:
-  - "抽奖"
-  - "giveaway"
-  - "广告"
-  - "subscribe to"
-
-# ---------- AI 精筛 ----------
+  - 抽奖
+  - giveaway
+  - 广告
+  - subscribe to
 ai_enabled: true
-# openai_compat = 任意OpenAI兼容接口（OpenRouter/智谱等，密钥走 Secrets 的 AI_API_KEY）
 ai_provider: openai_compat
-ai_base_url: "https://openrouter.ai/api/v1"           # OpenRouter
-ai_model: z-ai/glm-5.2:free                          # 首选模型
-# 免费池随时可能限流：按顺序接力，前一个堵了自动换下一个
+ai_base_url: https://openrouter.ai/api/v1
+ai_model: z-ai/glm-5.2:free
 ai_models:
   - z-ai/glm-5.2:free
   - nvidia/nemotron-3-super-120b-a12b:free
   - minimax/minimax-m3:free
-gemini_model: gemini-2.5-flash   # 备选通道：Google Gemini 免费额度（需另配 GEMINI_API_KEY）
-min_score: 6                      # 影响评分 1-10，≥此值才推送；AI不可用时照推（标注未评级）
-
-# ---------- 推送 ----------
-max_push_per_run: 30              # 单次运行最多推送条数（防止刷屏/超免费额度）
+gemini_model: gemini-2.5-flash
+min_score: 6
+max_push_per_run: 30
