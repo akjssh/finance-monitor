@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T01:30:51.503037+08:00",
+ "generated_at": "2026-08-30T01:35:38.275500+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78010.85,
+   "price": 77898.57,
    "previous": 78564.98,
-   "pct": -0.71
+   "pct": -0.85
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2449.62,
+   "price": 2445.76,
    "previous": 2443.1594,
-   "pct": 0.26
+   "pct": 0.11
   },
   {
    "name": "黄金",
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 3.45793685039e-05,
-   "rate_pct": 0.0035
+   "rate": 3.32884501394e-05,
+   "rate_pct": 0.0033
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.96401365178e-05,
-   "rate_pct": 0.005
+   "rate": 4.76887061502e-05,
+   "rate_pct": 0.0048
   }
  ],
  "polymarket": [
