@@ -122,7 +122,10 @@
   .lv{flex:none;font-size:11px;font-weight:800;border-radius:7px;padding:2px 8px;color:#1c1428}
   .lv.l1{background:#9c8fb5}.lv.l2{background:var(--yellow)}
   .lv.l3{background:#ff5d6e}.lv.l4{background:#c49bff}
-  .ev .tm{flex:none;color:var(--tx2);font-size:13px;width:44px}
+  .ev .tm{flex:none;color:var(--tx2);font-size:12px;width:92px;line-height:1.4}
+  .ev .tm .d{font-weight:700;color:var(--tx)}
+  .ev .tm .d.today{color:var(--pinkdeep)}
+  .ev .tm .t{font-size:13px}
   .ev .tt{flex:1;font-size:14px}
   .ev .meta{color:var(--tx2);font-size:12px;margin-left:6px}
   .tag{display:inline-block;font-size:11px;color:var(--tx2);border:1px solid var(--line);
@@ -337,13 +340,23 @@ function calGroups(){
   });
   return g;
 }
+const WEEK=['日','一','二','三','四','五','六'];
+function dateLabel(dateStr){
+  const now=new Date(), d0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const d=new Date(dateStr+'T00:00:00+08:00');
+  const diff=Math.round((d-d0)/86400000);
+  const wd='周'+WEEK[d.getDay()];
+  if(diff===0) return '<span class="d today">今天 '+wd+'</span>';
+  if(diff===1) return '<span class="d today">明天 '+wd+'</span>';
+  const md=(d.getMonth()+1)+'-'+d.getDate();
+  return `<span class="d">${md} ${wd}</span>`;
+}
 function calItem(e){
-  const ap = e.approx?'<span class="tag">预估日期</span>':'';
+  const ap = e.approx?'<span class="tag">≈预估</span>':'';
   const fc = e.forecast?` 预期<b>${esc(e.forecast)}</b>`:'';
   const pv = e.previous?` 前值${esc(e.previous)}`:'';
-  return `<div class="ev"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span>
-    <span class="tm">${e.time||''}</span>
-    <span class="tt">${esc(e.title)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}</span></div>`;
+  return `<div class="ev"><span class="tm">${dateLabel(e.date)}<span class="t">${e.time||''}</span></span>
+    <span class="tt"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span> ${esc(e.title)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}</span></div>`;
 }
 function renderCal(){
   const el=document.getElementById('cal');
