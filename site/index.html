@@ -126,6 +126,7 @@
   .ev .tm .d{font-weight:700;color:var(--tx)}
   .ev .tm .d.today{color:var(--pinkdeep)}
   .ev .tm .t{font-size:13px}
+  .ev .tt .en{font-size:11px;color:var(--tx2);margin-top:1px}
   .ev .tt{flex:1;font-size:14px}
   .ev .meta{color:var(--tx2);font-size:12px;margin-left:6px}
   .tag{display:inline-block;font-size:11px;color:var(--tx2);border:1px solid var(--line);
@@ -355,8 +356,10 @@ function calItem(e){
   const ap = e.approx?'<span class="tag">≈预估</span>':'';
   const fc = e.forecast?` 预期<b>${esc(e.forecast)}</b>`:'';
   const pv = e.previous?` 前值${esc(e.previous)}`:'';
+  const name = e.title_zh || e.title;
+  const en = e.title_zh ? `<div class="en">${esc(e.title)}</div>` : '';
   return `<div class="ev"><span class="tm">${dateLabel(e.date)}<span class="t">${e.time||''}</span></span>
-    <span class="tt"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span> ${esc(e.title)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}</span></div>`;
+    <span class="tt"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span> ${esc(name)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}${en}</span></div>`;
 }
 function renderCal(){
   const el=document.getElementById('cal');

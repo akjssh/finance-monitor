@@ -539,6 +539,128 @@ def _recurring_macro_events(start_cst, end_cst, ff_events):
     return evs
 
 
+CAL_TRANS_PATH = os.path.join(DATA_DIR, "cal_trans.json")  # 日历标题翻译缓存
+
+
+# ForexFactory 常见事件标题中文词典(小写精确匹配;未命中的走AI翻译并缓存)
+_CAL_ZH = {
+    "cpi m/m": "CPI环比", "cpi y/y": "CPI同比",
+    "core cpi m/m": "核心CPI环比", "core cpi y/y": "核心CPI同比",
+    "non-farm employment change": "非农就业人数", "nonfarm payrolls": "非农就业",
+    "unemployment rate": "失业率", "average hourly earnings m/m": "平均时薪环比",
+    "fomc statement": "FOMC声明", "federal funds rate": "联邦基金利率",
+    "fomc economic projections": "FOMC经济预测", "fomc press conference": "FOMC新闻发布会",
+    "core pce price index m/m": "核心PCE环比", "core pce price index y/y": "核心PCE同比",
+    "pce price index m/m": "PCE环比", "pce price index y/y": "PCE同比",
+    "personal spending m/m": "个人消费支出环比", "personal income m/m": "个人收入环比",
+    "retail sales m/m": "零售销售环比", "core retail sales m/m": "核心零售销售环比",
+    "advance retail sales m/m": "零售销售环比(初值)",
+    "initial jobless claims": "初请失业金人数", "continuing jobless claims": "续请失业金人数",
+    "ism manufacturing pmi": "ISM制造业PMI", "ism services pmi": "ISM服务业PMI",
+    "manufacturing pmi": "制造业PMI", "services pmi": "服务业PMI",
+    "gdp q/q": "GDP环比(年化)", "advance gdp q/q": "GDP初值", "final gdp q/q": "GDP终值",
+    "gdp price index q/q": "GDP平减指数",
+    "crude oil inventories": "EIA原油库存", "api crude oil stock change": "API原油库存",
+    "prelim uom consumer sentiment": "密歇根消费者信心(初值)",
+    "final uom consumer sentiment": "密歇根消费者信心(终值)",
+    "revised uom consumer sentiment": "密歇根消费者信心(修正)",
+    "uom inflation expectations": "密歇根通胀预期",
+    "revised uom inflation expectations": "密歇根通胀预期(修正)",
+    "building permits": "营建许可", "housing starts": "新屋开工",
+    "new home sales": "新屋销售", "existing home sales": "成屋销售",
+    "durable goods orders": "耐用品订单", "core durable goods orders": "核心耐用品订单",
+    "adp employment change": "ADP就业人数", "jolts job openings": "JOLTS职位空缺",
+    "philly fed manufacturing index": "费城联储制造业指数",
+    "empire state manufacturing index": "纽约联储制造业指数",
+    "richmond manufacturing index": "里士满联储制造业指数",
+    "chicago pmi": "芝加哥PMI", "kansas city fed manufacturing index": "堪萨斯联储制造业指数",
+    "factory orders m/m": "工厂订单环比", "wholesale inventories m/m": "批发库存环比",
+    "business inventories m/m": "商业库存环比", "construction spending m/m": "营建支出环比",
+    "ppi m/m": "PPI环比", "core ppi m/m": "核心PPI环比",
+    "trade balance": "贸易帐", "beige book": "美联储褐皮书",
+    "federal budget balance": "联邦预算", "consumer credit": "消费信贷",
+    "mba mortgage applications": "MBA抵押贷款申请",
+    "nahb housing market index": "NAHB房产市场指数",
+    "unit labour cost q/q": "单位劳动力成本", "nonfarm productivity q/q": "非农生产率",
+    "adp non-farm employment change": "ADP非农就业",
+    "unemployment claims": "初请失业金人数",
+    "natural gas storage": "天然气库存",
+    "ism manufacturing prices": "ISM制造业物价指数",
+    "final manufacturing pmi": "制造业PMI(终值)",
+    "final services pmi": "服务业PMI(终值)",
+    "non-manufacturing pmi": "非制造业PMI",
+    "challenger job cuts y/y": "挑战者裁员人数同比",
+    "prelim benchmark payrolls revision": "非农基准修正(初值)",
+    "final benchmark payrolls revision": "非农基准修正(终值)",
+}
+
+
+def _zh_title(title, trans_cache=None):
+    """日历标题翻译:词典 → 后缀规则 → 翻译缓存;都没有返回空串"""
+    t = (title or "").strip()
+    tl = t.lower()
+    if not tl:
+        return ""
+    if tl in _CAL_ZH:
+        return _CAL_ZH[tl]
+    for suf, zh in ((" m/m", "环比"), (" y/y", "同比"), (" q/q", "环比年化")):
+        if tl.endswith(suf):
+            base = _CAL_ZH.get(tl[:-len(suf)])
+            if base:
+                return base + zh
+    if tl.startswith("fomc member"):
+        return "FOMC官员讲话"
+    if "fed chair" in tl or tl.startswith("fed chairman"):
+        return "美联储主席讲话"
+    if "treasury secretary" in tl:
+        return "美国财政部长讲话"
+    if "jackson hole" in tl:
+        return "Jackson Hole央行年会"
+    if trans_cache and tl in trans_cache:
+        return trans_cache[tl]
+    return ""
+
+
+def _ai_translate_titles(titles, cfg):
+    """用AI接力链批量翻译日历标题;返回 {英文:中文},失败返回空dict"""
+    if not titles:
+        return {}
+    key = os.environ.get("AI_API_KEY", "")
+    base = (cfg.get("ai_base_url") or "").rstrip("/")
+    if not (key and base):
+        return {}
+    prompt = ("你是财经编辑。把下面JSON数组里的宏观经济事件名称翻译成简洁的中文金融术语,"
+              "保留PMI/CPI等必要缩写。严格只输出一个JSON数组,顺序与输入一致。输入:\n"
+              + json.dumps(titles, ensure_ascii=False))
+    headers = {"Authorization": "Bearer " + key, "Content-Type": "application/json"}
+    for model in (cfg.get("ai_models") or []):
+        for _ in range(2):
+            try:
+                resp = requests.post(
+                    f"{base}/chat/completions", headers=headers,
+                    json={"model": model,
+                          "messages": [{"role": "user", "content": prompt}],
+                          "temperature": 0, "max_tokens": 2000,
+                          "reasoning": {"exclude": True}},
+                    timeout=60)
+                if resp.status_code == 429:
+                    time.sleep(8)
+                    continue
+                resp.raise_for_status()
+                text = resp.json()["choices"][0]["message"]["content"]
+                text = re.sub(r"<think>.*?</think>", "", text, flags=re.S)
+                m = re.search(r"\[[^\[\]]*\]", text, re.S)
+                if not m:
+                    break
+                zh = json.loads(m.group(0))
+                if isinstance(zh, list) and len(zh) == len(titles):
+                    return {t: str(z) for t, z in zip(titles, zh)}
+                break
+            except Exception:
+                time.sleep(3)
+    return {}
+
+
 def fetch_ff_calendar(src_cfg, out_errors):
     """未来30天财经日历 = FF本周精确数据(免key) + 周期性宏观数据推算 + FOMC固定表"""
     currencies = set(src_cfg.get("currencies") or ["USD", "CNY"])
@@ -796,6 +918,33 @@ def run_extra_sources(cfg, state, stats, store):
     if ff.get("enabled"):
         try:
             cal = fetch_ff_calendar(ff, errors)
+            # 中文标题:词典/缓存优先,未命中的批量走AI翻译并缓存
+            cache = {}
+            if os.path.exists(CAL_TRANS_PATH):
+                try:
+                    with open(CAL_TRANS_PATH, "r", encoding="utf-8") as f:
+                        cache = json.load(f)
+                except Exception:
+                    cache = {}
+            def _has_cjk(s):
+                return any('一' <= ch <= '鿿' for ch in s)
+            unknown = sorted({e["title"] for e in cal
+                              if e["title"] and not _has_cjk(e["title"])
+                              and not _zh_title(e["title"])
+                              and e["title"] not in cache})
+            if unknown and cfg.get("ai_enabled"):
+                got = _ai_translate_titles(unknown, cfg)
+                if got:
+                    cache.update(got)
+                    try:
+                        with open(CAL_TRANS_PATH, "w", encoding="utf-8") as f:
+                            json.dump(cache, f, ensure_ascii=False, indent=1)
+                    except Exception:
+                        pass
+            for e in cal:
+                zh = _zh_title(e["title"], cache)
+                if zh:
+                    e["title_zh"] = zh
             _write_json(CALENDAR_PATH, {"generated_at": datetime.now(CST).isoformat(),
                                         "events": cal})
             stats["calendar"] = len(cal)
@@ -878,13 +1027,16 @@ def build_brief(cfg):
     today_ev = [e for e in cal if e["date"] == d0]
     week_ev = [e for e in cal if d0 < e["date"] <= d7 and e["level"] in ("L2", "L3", "L4")]
 
+    def zh(e):
+        return e.get("title_zh") or e.get("title") or ""
+
     lines.append("**📅 今日事件（北京时间）**")
     if today_ev:
         for e in today_ev[:10]:
             fc = f" 预期{e['forecast']}" if e.get("forecast") else ""
             pv = f" 前值{e['previous']}" if e.get("previous") else ""
             lines.append(f"- {_LEVEL_EMOJI.get(e['level'],'⚪')} **{e['level']}** "
-                         f"{e['time']} {e['title']}({e['currency']}){fc}{pv}")
+                         f"{e['time']} {e.get('title_zh') or e['title']}({e['currency']}){fc}{pv}")
     else:
         lines.append("- 今日无重要日历事件")
 
@@ -892,7 +1044,7 @@ def build_brief(cfg):
         lines.append(f"**🔭 未来7天看点（L2+，共{len(week_ev)}件）**")
         for e in week_ev[:8]:
             lines.append(f"- {_LEVEL_EMOJI.get(e['level'],'⚪')} {e['level']} "
-                         f"{e['date'][5:]} {e['time']} {e['title']}({e['currency']})")
+                         f"{e['date'][5:]} {e['time']} {e.get('title_zh') or e['title']}({e['currency']})")
 
     quotes = mkt.get("quotes") or []
     if quotes:
