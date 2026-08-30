@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-31T05:30:49.604382+08:00",
+ "generated_at": "2026-08-31T05:35:34.492813+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78675.76,
+   "price": 78718.67,
    "previous": 79027.42,
-   "pct": -0.44
+   "pct": -0.39
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2480.26,
+   "price": 2480.49,
    "previous": 2506.261,
-   "pct": -1.04
+   "pct": -1.03
   },
   {
    "name": "黄金",
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.59667153171e-05,
-   "rate_pct": 0.0056
+   "rate": 5.54337884954e-05,
+   "rate_pct": 0.0055
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.21701975034e-05,
-   "rate_pct": 0.0082
+   "rate": 7.90529989677e-05,
+   "rate_pct": 0.0079
   }
  ],
  "polymarket": [
@@ -95,8 +95,8 @@
    "yes": 51.5
   },
   {
-   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.5
+   "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
+   "yes": 0.2
   }
  ]
 }
