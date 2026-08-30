@@ -590,6 +590,13 @@ _CAL_ZH = {
     "final services pmi": "服务业PMI(终值)",
     "non-manufacturing pmi": "非制造业PMI",
     "challenger job cuts y/y": "挑战者裁员人数同比",
+    "ratingdog manufacturing pmi": "RatingDog制造业PMI",
+    "ratingdog services pmi": "RatingDog服务业PMI",
+    "rcm/tipp economic optimism": "经济乐观指数(RCM/TIPP)",
+    "omdia total vehicle sales": "汽车总销量(Omdia)",
+    "api weekly statistical bulletin": "API周度数据报告",
+    "revised nonfarm productivity q/q": "非农生产率(修正)",
+    "revised unit labor costs q/q": "单位劳动力成本(修正)",
     "prelim benchmark payrolls revision": "非农基准修正(初值)",
     "final benchmark payrolls revision": "非农基准修正(终值)",
 }
