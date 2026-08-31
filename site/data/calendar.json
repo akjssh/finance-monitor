@@ -1,44 +1,6 @@
 {
- "generated_at": "2026-08-31T23:55:37.233730+08:00",
+ "generated_at": "2026-09-01T00:01:01.592052+08:00",
  "events": [
-  {
-   "date": "2026-08-31",
-   "time": "09:30",
-   "ts": "2026-08-31T09:30:00+08:00",
-   "currency": "CNY",
-   "title": "Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "49.5",
-   "previous": "49.2",
-   "approx": false,
-   "title_zh": "制造业PMI"
-  },
-  {
-   "date": "2026-08-31",
-   "time": "09:30",
-   "ts": "2026-08-31T09:30:00+08:00",
-   "currency": "CNY",
-   "title": "Non-Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "49.5",
-   "previous": "49.0",
-   "approx": false,
-   "title_zh": "非制造业PMI"
-  },
-  {
-   "date": "2026-08-31",
-   "time": "20:30",
-   "ts": "2026-08-31T20:30:00+08:00",
-   "currency": "USD",
-   "title": "美国PCE物价指数（预估日期）",
-   "impact": "High",
-   "level": "L2",
-   "forecast": "",
-   "previous": "",
-   "approx": true
-  },
   {
    "date": "2026-09-01",
    "time": "09:45",
@@ -439,6 +401,18 @@
    "forecast": "",
    "previous": "",
    "approx": false
+  },
+  {
+   "date": "2026-09-30",
+   "time": "20:30",
+   "ts": "2026-09-30T20:30:00+08:00",
+   "currency": "USD",
+   "title": "美国PCE物价指数（预估日期）",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": true
   }
  ]
 }
