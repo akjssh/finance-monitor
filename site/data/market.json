@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-08-31T21:40:58.187478+08:00",
+ "generated_at": "2026-08-31T21:45:43.348070+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.534,
+   "price": 99.542,
    "previous": 99.17,
-   "pct": 0.37
+   "pct": 0.38
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.244,
+   "price": 5.246,
    "previous": 5.174,
-   "pct": 1.35
+   "pct": 1.39
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 85.77,
+   "price": 86.08,
    "previous": 82.23,
-   "pct": 4.3
+   "pct": 4.68
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29477.75,
+   "price": 29434.5,
    "previous": 29289.5,
-   "pct": 0.64
+   "pct": 0.5
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26305.012,
+   "price": 26287.016,
    "previous": 25980.19,
-   "pct": 1.25
+   "pct": 1.18
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78032.91,
+   "price": 77940.55,
    "previous": 80257.54,
-   "pct": -2.77
+   "pct": -2.89
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2449.48,
+   "price": 2446.32,
    "previous": 2510.41,
-   "pct": -2.43
+   "pct": -2.55
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4495.1,
+   "price": 4490.1,
    "previous": 4598.2,
-   "pct": -2.24
+   "pct": -2.35
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.85752317241e-05,
-   "rate_pct": 0.0079
+   "rate": 7.95118021374e-05,
+   "rate_pct": 0.008
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.89120805677e-05,
-   "rate_pct": 0.0029
+   "rate": 3.09030256781e-05,
+   "rate_pct": 0.0031
   }
  ],
  "polymarket": [
@@ -88,7 +88,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 54.5
+   "yes": 53.5
   },
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
