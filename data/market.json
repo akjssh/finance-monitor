@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-01T00:15:45.741572+08:00",
+ "generated_at": "2026-09-01T00:20:41.925849+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.418,
+   "price": 99.426,
    "previous": 99.17,
-   "pct": 0.25
+   "pct": 0.26
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.262,
+   "price": 5.257,
    "previous": 5.174,
-   "pct": 1.7
+   "pct": 1.6
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 85.42,
+   "price": 85.56,
    "previous": 82.23,
-   "pct": 3.88
+   "pct": 4.05
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29372.0,
+   "price": 29390.0,
    "previous": 29289.5,
-   "pct": 0.28
+   "pct": 0.34
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26300.658,
+   "price": 26293.363,
    "previous": 25980.19,
-   "pct": 1.23
+   "pct": 1.21
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78596.95,
+   "price": 78676.98,
    "previous": 80257.54,
-   "pct": -2.07
+   "pct": -1.97
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2464.05,
+   "price": 2466.21,
    "previous": 2510.41,
-   "pct": -1.85
+   "pct": -1.76
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4482.0,
+   "price": 4482.6,
    "previous": 4598.2,
-   "pct": -2.53
+   "pct": -2.51
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.02307244662e-05,
-   "rate_pct": 0.007
+   "rate": 7.09891690729e-05,
+   "rate_pct": 0.0071
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.59882378099e-05,
-   "rate_pct": 0.0046
+   "rate": 4.67365893916e-05,
+   "rate_pct": 0.0047
   }
  ],
  "polymarket": [
@@ -92,7 +92,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 59.5
+   "yes": 60.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
