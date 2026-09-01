@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-01T23:15:38.102942+08:00",
+ "generated_at": "2026-09-01T23:20:42.416449+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.604,
+   "price": 99.597,
    "previous": 99.16,
-   "pct": 0.45
+   "pct": 0.44
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.246,
+   "price": 5.25,
    "previous": 5.186,
-   "pct": 1.16
+   "pct": 1.23
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 87.98,
+   "price": 87.93,
    "previous": 83.53,
-   "pct": 5.33
+   "pct": 5.27
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29210.0,
+   "price": 29190.25,
    "previous": 29695.75,
-   "pct": -1.64
+   "pct": -1.7
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26150.629,
+   "price": 26167.498,
    "previous": 26151.3,
-   "pct": -0.0
+   "pct": 0.06
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77827.31,
+   "price": 77813.81,
    "previous": 77830.29,
-   "pct": -0.0
+   "pct": -0.02
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2438.64,
+   "price": 2437.7,
    "previous": 2442.536,
-   "pct": -0.16
+   "pct": -0.2
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4407.2,
+   "price": 4410.0,
    "previous": 4609.7,
-   "pct": -4.39
+   "pct": -4.33
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.86001524942e-05,
-   "rate_pct": 0.0059
+   "rate": 5.80231278088e-05,
+   "rate_pct": 0.0058
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.06696436063e-05,
-   "rate_pct": 0.0071
+   "rate": 7.20506923906e-05,
+   "rate_pct": 0.0072
   }
  ],
  "polymarket": [
@@ -92,7 +92,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 57.5
+   "yes": 58.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
