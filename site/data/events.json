@@ -192,6 +192,18 @@
   "created_at": "2026-09-01T10:15:01.077000+08:00"
  },
  {
+  "id": "edgar:000119312526377583",
+  "source": "edgar",
+  "author": "StrategyMSTR",
+  "text": "StrategyMSTR 提交SEC文件 [8-K]（7.01、其他重要事件）",
+  "score": 4,
+  "reason": "Strategy（MSTR）提交常规8-K文件属于例行信息披露，未明确披露重大事件内容，对加密货币及美股市场影响有限。",
+  "translation": "Strategy（原MicroStrategy，股票代码MSTR）向美国证券交易委员会（SEC）提交了8-K表格文件，触发条款为第7.01项（其他重要事件披露）。",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526377583/",
+  "pushed": false,
+  "created_at": "2026-09-01T08:00:00+08:00"
+ },
+ {
   "id": "rss:e7a8e38ac31c46d9",
   "source": "rss",
   "author": "TheBlock",
