@@ -1223,8 +1223,11 @@ def ai_openai_compat(text, cfg):
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     prompt = PROMPT_TMPL.format(text=text[:2000])
     last_err = None
+    deadline = time.time() + 90  # 单条AI上限90s,防止免费模型限流时一条卡2分钟+
     for model in models:
         for attempt in range(2):  # 每个模型试2次，仍不行就换下一个
+            if time.time() > deadline:
+                raise RuntimeError("AI单条超时(90s),走未评级")
             try:
                 resp = requests.post(
                     f"{base}/chat/completions",
@@ -1236,7 +1239,7 @@ def ai_openai_compat(text, cfg):
                         "max_tokens": 2000,
                         "reasoning": {"exclude": True},  # 推理型：不输出思考过程，省配额
                     },
-                    timeout=60,
+                    timeout=40,
                 )
                 if resp.status_code == 429:  # 免费池限流：退避后重试一次，再不行换模型
                     time.sleep(10 * (attempt + 1))
@@ -1454,7 +1457,7 @@ def main():
     log(f"开始监控 {len(accounts)} 个账号 | provider={cfg.get('provider')}")
 
     started = time.time()
-    BUDGET_X, BUDGET_EXTRA, BUDGET_MKT = 420, 300, 60  # 秒;总预算远小于workflow超时
+    BUDGET_X, BUDGET_EXTRA, BUDGET_MKT = 600, 300, 60  # 秒;总预算远小于workflow超时
 
     state = load_state()
     seen_ids = state.setdefault("seen", {})
