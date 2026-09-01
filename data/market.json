@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-02T02:17:40.725711+08:00",
+ "generated_at": "2026-09-02T02:20:56.994443+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.685,
+   "price": 99.7,
    "previous": 99.16,
-   "pct": 0.53
+   "pct": 0.54
   },
   {
    "name": "美债30Y",
@@ -18,9 +18,9 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 89.93,
+   "price": 90.01,
    "previous": 83.53,
-   "pct": 7.66
+   "pct": 7.76
   },
   {
    "name": "纳指期货",
@@ -32,9 +32,9 @@
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26096.793,
+   "price": 26103.086,
    "previous": 26151.3,
-   "pct": -0.21
+   "pct": -0.18
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77122.62,
+   "price": 77046.01,
    "previous": 77830.29,
-   "pct": -0.91
+   "pct": -1.01
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2414.57,
+   "price": 2413.15,
    "previous": 2442.536,
-   "pct": -1.14
+   "pct": -1.2
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4387.7,
+   "price": 4383.7,
    "previous": 4609.7,
-   "pct": -4.82
+   "pct": -4.9
   }
  ],
  "fng": {
@@ -72,8 +72,8 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.1441651761e-05,
-   "rate_pct": 0.0061
+   "rate": 6.22570350914e-05,
+   "rate_pct": 0.0062
   },
   {
    "symbol": "ETHUSDT",
@@ -92,7 +92,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 1.1
+   "yes": 0.9
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
