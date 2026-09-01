@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-02T02:30:50.803309+08:00",
+ "generated_at": "2026-09-02T02:36:06.347486+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.692,
+   "price": 99.695,
    "previous": 99.16,
    "pct": 0.54
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.264,
+   "price": 5.261,
    "previous": 5.186,
-   "pct": 1.5
+   "pct": 1.45
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.0,
+   "price": 89.9,
    "previous": 83.53,
-   "pct": 7.75
+   "pct": 7.63
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29106.5,
+   "price": 29115.0,
    "previous": 29695.75,
-   "pct": -1.98
+   "pct": -1.96
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26085.459,
+   "price": 26071.428,
    "previous": 26151.3,
-   "pct": -0.25
+   "pct": -0.31
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77039.85,
+   "price": 76873.4,
    "previous": 77830.29,
-   "pct": -1.02
+   "pct": -1.23
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2414.15,
+   "price": 2407.79,
    "previous": 2442.536,
-   "pct": -1.16
+   "pct": -1.42
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4388.6,
+   "price": 4388.1,
    "previous": 4609.7,
-   "pct": -4.8
+   "pct": -4.81
   }
  ],
  "fng": {
@@ -72,8 +72,8 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.61304907269e-05,
-   "rate_pct": 0.0066
+   "rate": 6.87942286323e-05,
+   "rate_pct": 0.0069
   },
   {
    "symbol": "ETHUSDT",
@@ -91,12 +91,12 @@
    "yes": 0.1
   },
   {
-   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.9
-  },
-  {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
    "yes": 0.5
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
+   "yes": 0.9
   }
  ]
 }
