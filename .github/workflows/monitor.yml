@@ -11,7 +11,7 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20   # 监控+扩展源+AI 实测可到10分钟+;8分钟曾导致超时被杀→状态丢失→消息重复推送
     permissions:
       contents: write   # 允许工作流提交 state.json（新仓库默认只读，必须显式开）
     steps:
@@ -24,6 +24,11 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
+      - name: 配置git身份（monitor.py推送后即时存档需要）
+        run: |
+          git config user.name "monitor-bot"
+          git config user.email "action@github.com"
+
       - name: 执行监控
         env:
           WECOM_WEBHOOK: ${{ secrets.WECOM_WEBHOOK }}
@@ -35,10 +40,15 @@ jobs:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: python monitor.py
 
-      - name: 保存去重状态与数据文件
+      - name: 保存去重状态与数据文件（带重试）
         run: |
           git config user.name "monitor-bot"
           git config user.email "action@github.com"
           git add state.json data site/data
           git diff --cached --quiet || git commit -m "更新推送状态与数据"
-          git push
+          for i in 1 2 3 4; do
+            git pull --rebase -q || true
+            if git push; then echo "push成功"; break; fi
+            echo "push第${i}次失败,重试"
+            sleep 5
+          done

@@ -15,6 +15,7 @@ import json
 import os
 import re
 import secrets
+import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -61,6 +62,36 @@ def load_state():
 def save_state(state):
     with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=1)
+
+
+def git_persist_state(msg="推送后即时存档"):
+    """推送成功后立刻把 state.json 提交到 GitHub——防止运行超时被杀导致状态丢失、
+    同一条消息下一轮重复推送。静默失败(不影响主流程);workflow 末尾的保存步骤兜底。"""
+    if os.environ.get("DRY_RUN"):
+        return
+    env = {**os.environ,
+           "GIT_AUTHOR_NAME": "monitor-bot", "GIT_AUTHOR_EMAIL": "action@github.com",
+           "GIT_COMMITTER_NAME": "monitor-bot", "GIT_COMMITTER_EMAIL": "action@github.com"}
+    try:
+        subprocess.run(["git", "add", "state.json"], cwd=BASE_DIR, timeout=15, env=env,
+                       capture_output=True)
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=BASE_DIR, timeout=15,
+                          env=env).returncode == 0:
+            return  # 无变化
+        subprocess.run(["git", "commit", "-m", msg], cwd=BASE_DIR, timeout=15, env=env,
+                       capture_output=True)
+        for _ in range(3):
+            subprocess.run(["git", "pull", "--rebase", "-q"], cwd=BASE_DIR, timeout=30,
+                           env=env, capture_output=True)
+            r = subprocess.run(["git", "push"], cwd=BASE_DIR, timeout=30, env=env,
+                               capture_output=True)
+            if r.returncode == 0:
+                log("💾 状态已即时存档")
+                return
+            time.sleep(3)
+        log("⚠️ 状态即时存档未成功(末尾保存步骤兜底)")
+    except Exception as e:
+        log(f"⚠️ 即时存档异常: {e}")
 
 
 def secret(env_name, cfg_value=""):
@@ -999,6 +1030,8 @@ def run_extra_sources(cfg, state, stats, store):
                 rec["pushed"] = True
                 stats["extra_pushed"] += 1
                 log(f"📤 扩展源推送 [{it['source']}] {it['text'][:40]}...")
+                save_state(state)
+                git_persist_state()
             except Exception as e:
                 log(f"❌ 扩展源推送失败: {e}")
 
@@ -1397,6 +1430,9 @@ def process_account(account, seen_ids, cfg, stats, store):
             pushed += 1
             stats["pushed"] += 1
             log(f"📤 已推送 @{handle}: {tw['text'][:40]}...")
+            # 推送成功:立刻把去重状态持久化到GitHub(防止运行超时被杀后重复推送)
+            save_state(state)
+            git_persist_state()
             # 同时写入网站事件流（data/events.json）
             created = (tw["created_at"] or datetime.now(timezone.utc)).astimezone(CST)
             store.append({
@@ -1417,6 +1453,9 @@ def main():
     accounts = cfg.get("accounts") or []
     log(f"开始监控 {len(accounts)} 个账号 | provider={cfg.get('provider')}")
 
+    started = time.time()
+    BUDGET_X, BUDGET_EXTRA, BUDGET_MKT = 420, 300, 60  # 秒;总预算远小于workflow超时
+
     state = load_state()
     seen_ids = state.setdefault("seen", {})
     store = load_events()
@@ -1425,6 +1464,9 @@ def main():
     errors = []
 
     for account in accounts:
+        if time.time() - started > BUDGET_X:
+            log(f"⏱️ X监控超预算({BUDGET_X}s),剩余账号本轮跳过")
+            break
         try:
             process_account(account, seen_ids, cfg, stats, store)
         except Exception as e:
@@ -1433,26 +1475,33 @@ def main():
 
     # 扩展信息源（日历/EDGAR/RSS/币安公告）+ 行情情绪快照；失败不影响X主流程
     extra_errors = []
-    try:
-        extra_errors = run_extra_sources(cfg, state, stats, store)
-    except Exception as e:
-        log(f"⚠️ 扩展源异常(不影响X监控): {e}")
-    try:
-        mk_errors = []
-        snap = collect_market(load_sources_cfg(), mk_errors)
-        _write_json(MARKET_PATH, snap)
-        if mk_errors:
-            log("⚠️ 快照部分失败: " + " | ".join(mk_errors[:6]))
-    except Exception as e:
-        log(f"⚠️ 行情快照异常(不影响X监控): {e}")
+    if time.time() - started < BUDGET_EXTRA:
+        try:
+            extra_errors = run_extra_sources(cfg, state, stats, store)
+        except Exception as e:
+            log(f"⚠️ 扩展源异常(不影响X监控): {e}")
+    else:
+        log("⏱️ 已超预算,本轮跳过扩展源")
+    if time.time() - started < BUDGET_EXTRA + BUDGET_MKT:
+        try:
+            mk_errors = []
+            snap = collect_market(load_sources_cfg(), mk_errors)
+            _write_json(MARKET_PATH, snap)
+            if mk_errors:
+                log("⚠️ 快照部分失败: " + " | ".join(mk_errors[:6]))
+        except Exception as e:
+            log(f"⚠️ 行情快照异常(不影响X监控): {e}")
+    else:
+        log("⏱️ 已超预算,本轮跳过行情快照")
 
     save_events(store)
     save_state(state)
+    git_persist_state("监控数据更新")
     log(
         f"完成 ✅ 推送{stats['pushed']} | 关键词命中{stats['kw_passed']} "
         f"(AI过滤{stats['ai_filtered']}, 关键词过滤{stats['filtered']}, 截断{stats['capped']}) "
         f"| 扩展源入库{stats['extra_stored']}/推送{stats['extra_pushed']} "
-        f"| 日历{stats['calendar']}条"
+        f"| 日历{stats['calendar']}条 | 用时{time.time()-started:.0f}s"
     )
     if errors:
         print("本次出错账号:\n" + "\n".join(errors))
