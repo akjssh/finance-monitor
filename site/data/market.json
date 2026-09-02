@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-03T02:00:53.141848+08:00",
+ "generated_at": "2026-09-03T02:05:38.984639+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.568,
-   "previous": 99.43,
-   "pct": 0.14
+   "price": 99.586,
+   "previous": 99.7,
+   "pct": -0.11
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.261,
+   "price": 5.263,
    "previous": 5.191,
-   "pct": 1.35
+   "pct": 1.39
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 91.02,
+   "price": 90.98,
    "previous": 83.4,
-   "pct": 9.14
+   "pct": 9.09
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29154.75,
+   "price": 29152.5,
    "previous": 29491.75,
-   "pct": -1.14
+   "pct": -1.15
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26192.656,
+   "price": 26205.863,
    "previous": 26130.2,
-   "pct": 0.24
+   "pct": 0.29
   },
   {
    "name": "韩国KOSPI",
@@ -46,21 +46,21 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77339.23,
+   "price": 77331.64,
    "previous": 78245.81,
-   "pct": -1.16
+   "pct": -1.17
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2392.68,
+   "price": 2392.77,
    "previous": 2457.6863,
-   "pct": -2.65
+   "pct": -2.64
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4422.5,
+   "price": 4422.7,
    "previous": 4478.1,
    "pct": -1.24
   }
@@ -72,12 +72,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.01775788345e-05,
+   "rate": 4.97565127309e-05,
    "rate_pct": 0.005
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.62894271461e-05,
+   "rate": 5.56608241392e-05,
    "rate_pct": 0.0056
   }
  ],
