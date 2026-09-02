@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-02T15:45:43.029292+08:00",
+ "generated_at": "2026-09-02T15:50:43.217154+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.724,
+   "price": 99.726,
    "previous": 99.7,
-   "pct": 0.02
+   "pct": 0.03
   },
   {
    "name": "美债30Y",
@@ -18,16 +18,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.22,
+   "price": 90.07,
    "previous": 83.4,
-   "pct": 8.18
+   "pct": 8.0
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29078.0,
+   "price": 29076.5,
    "previous": 29491.75,
-   "pct": -1.4
+   "pct": -1.41
   },
   {
    "name": "纳斯达克",
@@ -46,21 +46,21 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77547.46,
+   "price": 77535.68,
    "previous": 78245.81,
-   "pct": -0.89
+   "pct": -0.91
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2421.55,
+   "price": 2420.89,
    "previous": 2457.6863,
-   "pct": -1.47
+   "pct": -1.5
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4373.4,
+   "price": 4373.5,
    "previous": 4478.1,
    "pct": -2.34
   }
@@ -72,27 +72,27 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.456669881e-05,
-   "rate_pct": 0.0075
+   "rate": 7.39857485341e-05,
+   "rate_pct": 0.0074
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.58685763679e-05,
-   "rate_pct": 0.0036
+   "rate": 3.37415182339e-05,
+   "rate_pct": 0.0034
   }
  ],
  "polymarket": [
+  {
+   "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+   "yes": 40.5
+  },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
    "yes": 0.1
   },
   {
-   "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 39.5
-  },
-  {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 60.5
+   "yes": 59.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
