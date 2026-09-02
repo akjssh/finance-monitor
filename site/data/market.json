@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-02T08:55:34.487200+08:00",
+ "generated_at": "2026-09-02T09:00:52.504107+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.694,
+   "price": 99.723,
    "previous": 99.16,
-   "pct": 0.54
+   "pct": 0.57
   },
   {
    "name": "美债30Y",
@@ -18,16 +18,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 91.55,
+   "price": 91.72,
    "previous": 83.53,
-   "pct": 9.6
+   "pct": 9.8
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29144.0,
+   "price": 29125.5,
    "previous": 29695.75,
-   "pct": -1.86
+   "pct": -1.92
   },
   {
    "name": "纳斯达克",
@@ -39,30 +39,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6676.11,
+   "price": 6684.46,
    "previous": 6808.21,
-   "pct": -1.94
+   "pct": -1.82
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77141.06,
+   "price": 77181.78,
    "previous": 78245.81,
-   "pct": -1.41
+   "pct": -1.36
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2407.14,
+   "price": 2409.11,
    "previous": 2457.6863,
-   "pct": -2.06
+   "pct": -1.98
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4376.1,
+   "price": 4368.1,
    "previous": 4609.7,
-   "pct": -5.07
+   "pct": -5.24
   }
  ],
  "fng": {
@@ -72,19 +72,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 9.46408516662e-05,
-   "rate_pct": 0.0095
+   "rate": 9.57618008407e-05,
+   "rate_pct": 0.0096
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 9.90210782862e-05,
-   "rate_pct": 0.0099
+   "rate": 0.0001,
+   "rate_pct": 0.01
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 39.5
+   "yes": 40.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
@@ -96,7 +96,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 58.5
+   "yes": 57.5
   }
  ]
 }
