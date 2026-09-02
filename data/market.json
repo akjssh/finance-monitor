@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-02T13:10:34.098166+08:00",
+ "generated_at": "2026-09-02T13:15:43.045434+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.786,
-   "previous": 99.43,
-   "pct": 0.36
+   "price": 99.807,
+   "previous": 99.7,
+   "pct": 0.11
   },
   {
    "name": "美债30Y",
@@ -18,16 +18,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.55,
+   "price": 90.72,
    "previous": 83.4,
-   "pct": 8.57
+   "pct": 8.78
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29057.75,
+   "price": 29044.0,
    "previous": 29491.75,
-   "pct": -1.47
+   "pct": -1.52
   },
   {
    "name": "纳斯达克",
@@ -39,30 +39,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6571.43,
+   "price": 6575.58,
    "previous": 6808.21,
-   "pct": -3.48
+   "pct": -3.42
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77454.99,
+   "price": 77616.9,
    "previous": 78245.81,
-   "pct": -1.01
+   "pct": -0.8
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2410.03,
+   "price": 2415.4,
    "previous": 2457.6863,
-   "pct": -1.94
+   "pct": -1.72
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4354.3,
+   "price": 4351.1,
    "previous": 4478.1,
-   "pct": -2.76
+   "pct": -2.84
   }
  ],
  "fng": {
@@ -72,7 +72,7 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.98815046295e-05,
+   "rate": 8.95376394274e-05,
    "rate_pct": 0.009
   },
   {
@@ -84,7 +84,7 @@
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 39.5
+   "yes": 38.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
@@ -92,7 +92,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 60.5
+   "yes": 58.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
