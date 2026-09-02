@@ -1,58 +1,6 @@
 {
- "generated_at": "2026-09-02T23:55:31.006796+08:00",
+ "generated_at": "2026-09-03T00:00:53.619325+08:00",
  "events": [
-  {
-   "date": "2026-09-02",
-   "time": "04:30",
-   "ts": "2026-09-02T04:30:00+08:00",
-   "currency": "USD",
-   "title": "API Weekly Statistical Bulletin",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "API周度数据报告"
-  },
-  {
-   "date": "2026-09-02",
-   "time": "20:15",
-   "ts": "2026-09-02T20:15:00+08:00",
-   "currency": "USD",
-   "title": "ADP Non-Farm Employment Change",
-   "impact": "Medium",
-   "level": "L2",
-   "forecast": "47K",
-   "previous": "44K",
-   "approx": false,
-   "title_zh": "ADP非农就业"
-  },
-  {
-   "date": "2026-09-02",
-   "time": "22:00",
-   "ts": "2026-09-02T22:00:00+08:00",
-   "currency": "USD",
-   "title": "Factory Orders m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "0.7%",
-   "previous": "-0.3%",
-   "approx": false,
-   "title_zh": "工厂订单环比"
-  },
-  {
-   "date": "2026-09-02",
-   "time": "22:30",
-   "ts": "2026-09-02T22:30:00+08:00",
-   "currency": "USD",
-   "title": "Crude Oil Inventories",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "-0.4M",
-   "previous": "0.1M",
-   "approx": false,
-   "title_zh": "EIA原油库存"
-  },
   {
    "date": "2026-09-03",
    "time": "02:00",
@@ -296,6 +244,18 @@
    "forecast": "",
    "previous": "",
    "approx": true
+  },
+  {
+   "date": "2026-10-02",
+   "time": "20:30",
+   "ts": "2026-10-02T20:30:00+08:00",
+   "currency": "USD",
+   "title": "美国非农就业报告",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": false
   }
  ]
 }
