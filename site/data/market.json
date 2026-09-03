@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-04T00:46:21.015677+08:00",
+ "generated_at": "2026-09-04T00:50:48.614687+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.88,
+   "price": 98.872,
    "previous": 99.43,
-   "pct": -0.55
+   "pct": -0.56
   },
   {
    "name": "美债30Y",
@@ -18,23 +18,23 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 91.63,
+   "price": 91.53,
    "previous": 85.76,
-   "pct": 6.84
+   "pct": 6.73
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29488.0,
+   "price": 29520.25,
    "previous": 29513.0,
-   "pct": -0.08
+   "pct": 0.02
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26586.08,
+   "price": 26584.75,
    "previous": 26541.35,
-   "pct": 0.17
+   "pct": 0.16
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80850.36,
+   "price": 80995.89,
    "previous": 77667.57,
-   "pct": 4.1
+   "pct": 4.29
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2491.42,
+   "price": 2494.27,
    "previous": 2417.9387,
-   "pct": 3.04
+   "pct": 3.16
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4538.6,
+   "price": 4537.6,
    "previous": 4431.1,
-   "pct": 2.43
+   "pct": 2.4
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.97878400692e-05,
+   "rate": 4.97658752439e-05,
    "rate_pct": 0.005
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.67152698277e-05,
-   "rate_pct": 0.0067
+   "rate": 6.80418761299e-05,
+   "rate_pct": 0.0068
   }
  ],
  "polymarket": [
@@ -91,12 +91,12 @@
    "yes": 41.5
   },
   {
-   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.5
-  },
-  {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
    "yes": 0.4
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
+   "yes": 0.5
   }
  ]
 }
