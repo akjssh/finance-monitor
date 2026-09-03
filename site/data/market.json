@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-04T05:25:30.523374+08:00",
+ "generated_at": "2026-09-04T05:30:45.516946+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.986,
+   "price": 98.988,
    "previous": 99.43,
-   "pct": -0.45
+   "pct": -0.44
   },
   {
    "name": "美债30Y",
@@ -72,8 +72,8 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 3.20320681203e-05,
-   "rate_pct": 0.0032
+   "rate": 3.25428630213e-05,
+   "rate_pct": 0.0033
   },
   {
    "symbol": "ETHUSDT",
@@ -84,7 +84,7 @@
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 56.5
+   "yes": 57.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
