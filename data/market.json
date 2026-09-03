@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-03T22:05:36.414523+08:00",
+ "generated_at": "2026-09-03T22:10:42.413418+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.014,
+   "price": 99.001,
    "previous": 99.43,
-   "pct": -0.42
+   "pct": -0.43
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.237,
-   "previous": 5.249,
-   "pct": -0.23
+   "price": 5.2349997,
+   "previous": 5.206,
+   "pct": 0.56
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 91.98,
+   "price": 91.77,
    "previous": 85.76,
-   "pct": 7.25
+   "pct": 7.01
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29352.5,
+   "price": 29315.0,
    "previous": 29513.0,
-   "pct": -0.54
+   "pct": -0.67
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26388.182,
+   "price": 26382.973,
    "previous": 26541.35,
-   "pct": -0.58
+   "pct": -0.6
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78844.51,
+   "price": 78846.88,
    "previous": 77667.57,
    "pct": 1.52
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2430.53,
+   "price": 2432.44,
    "previous": 2417.9387,
-   "pct": 0.52
+   "pct": 0.6
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4511.8,
+   "price": 4514.4,
    "previous": 4431.1,
-   "pct": 1.82
+   "pct": 1.88
   }
  ],
  "fng": {
@@ -72,23 +72,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 3.11607995669e-05,
-   "rate_pct": 0.0031
+   "rate": 2.84810173035e-05,
+   "rate_pct": 0.0028
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.08031653224e-05,
-   "rate_pct": 0.0021
+   "rate": 1.91702286914e-05,
+   "rate_pct": 0.0019
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 60.5
+   "yes": 58.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 39.5
+   "yes": 41.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
