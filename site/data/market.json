@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-04T20:30:42.208780+08:00",
+ "generated_at": "2026-09-04T20:37:39.285284+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.05,
+   "price": 99.038,
    "previous": 99.43,
-   "pct": -0.38
+   "pct": -0.39
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.243,
+   "price": 5.233,
    "previous": 5.249,
-   "pct": -0.11
+   "pct": -0.3
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.44,
+   "price": 90.37,
    "previous": 85.76,
-   "pct": 5.46
+   "pct": 5.38
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29657.25,
+   "price": 29666.25,
    "previous": 29513.0,
-   "pct": 0.49
+   "pct": 0.52
   },
   {
    "name": "纳斯达克",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80369.96,
+   "price": 79480.0,
    "previous": 78548.63,
-   "pct": 2.32
+   "pct": 1.19
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2487.25,
+   "price": 2444.83,
    "previous": 2466.8203,
-   "pct": 0.83
+   "pct": -0.89
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4512.1,
+   "price": 4516.8,
    "previous": 4431.1,
-   "pct": 1.83
+   "pct": 1.93
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.12582711315e-05,
-   "rate_pct": 0.0041
+   "rate": 3.6821581297e-05,
+   "rate_pct": 0.0037
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.80475227745e-05,
-   "rate_pct": 0.0068
+   "rate": 6.3554114473e-05,
+   "rate_pct": 0.0064
   }
  ],
  "polymarket": [
@@ -88,7 +88,7 @@
   },
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 59.5
+   "yes": 45.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
@@ -96,7 +96,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 40.5
+   "yes": 51.0
   }
  ]
 }
