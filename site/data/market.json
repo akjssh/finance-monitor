@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-04T22:35:38.495254+08:00",
+ "generated_at": "2026-09-04T22:41:56.289086+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.127,
+   "price": 99.128,
    "previous": 99.43,
    "pct": -0.3
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.232,
+   "price": 5.224,
    "previous": 5.249,
-   "pct": -0.32
+   "pct": -0.48
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 89.65,
+   "price": 89.86,
    "previous": 85.76,
-   "pct": 4.54
+   "pct": 4.78
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29596.75,
+   "price": 29560.75,
    "previous": 29513.0,
-   "pct": 0.28
+   "pct": 0.16
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26533.719,
+   "price": 26536.945,
    "previous": 26402.42,
-   "pct": 0.5
+   "pct": 0.51
   },
   {
    "name": "韩国KOSPI",
@@ -46,21 +46,21 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79431.37,
+   "price": 79196.98,
    "previous": 78548.63,
-   "pct": 1.12
+   "pct": 0.83
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2457.72,
+   "price": 2447.95,
    "previous": 2466.8203,
-   "pct": -0.37
+   "pct": -0.76
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4483.2,
+   "price": 4483.3,
    "previous": 4431.1,
    "pct": 1.18
   }
@@ -72,19 +72,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.32692873979e-05,
-   "rate_pct": 0.0043
+   "rate": 4.43078505041e-05,
+   "rate_pct": 0.0044
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.40000010354e-05,
-   "rate_pct": 0.0044
+   "rate": 4.28434316032e-05,
+   "rate_pct": 0.0043
   }
  ],
  "polymarket": [
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 0.6
+   "yes": 0.5
   },
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
@@ -96,7 +96,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 51.5
+   "yes": 51.0
   }
  ]
 }
