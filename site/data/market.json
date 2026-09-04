@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-04T21:36:16.994329+08:00",
+ "generated_at": "2026-09-04T21:41:13.422101+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.121,
+   "price": 99.068,
    "previous": 99.43,
-   "pct": -0.31
+   "pct": -0.36
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.239,
+   "price": 5.245,
    "previous": 5.249,
-   "pct": -0.19
+   "pct": -0.08
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.22,
+   "price": 89.98,
    "previous": 85.76,
-   "pct": 5.2
+   "pct": 4.92
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29582.5,
+   "price": 29567.75,
    "previous": 29513.0,
-   "pct": 0.24
+   "pct": 0.19
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26609.758,
+   "price": 26597.023,
    "previous": 26402.42,
-   "pct": 0.79
+   "pct": 0.74
   },
   {
    "name": "韩国KOSPI",
@@ -46,23 +46,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79148.4,
+   "price": 79338.52,
    "previous": 78548.63,
-   "pct": 0.76
+   "pct": 1.01
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2440.23,
+   "price": 2445.85,
    "previous": 2466.8203,
-   "pct": -1.08
+   "pct": -0.85
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4452.4,
+   "price": 4463.6,
    "previous": 4431.1,
-   "pct": 0.48
+   "pct": 0.73
   }
  ],
  "fng": {
@@ -72,13 +72,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 3.81956631402e-05,
-   "rate_pct": 0.0038
+   "rate": 3.9439668358e-05,
+   "rate_pct": 0.0039
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.40639003151e-05,
-   "rate_pct": 0.0054
+   "rate": 5.47510163054e-05,
+   "rate_pct": 0.0055
   }
  ],
  "polymarket": [
@@ -88,7 +88,7 @@
   },
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 49.5
+   "yes": 50.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
