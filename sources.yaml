@@ -27,6 +27,14 @@ sources:
       "StrategyMSTR": "0001050446"
       "英伟达NVDA": "0001045810"
       "特斯拉TSLA": "0001318605"
+      "闪迪SNDK": "0002023554"
+      "西数WDC": "0000106040"
+      "希捷STX": "0001137789"
+      "台积电TSM": "0001046179"
+      "微软MSFT": "0000789019"
+      "Meta": "0001326801"
+      "谷歌GOOGL": "0001652044"
+      "亚马逊AMZN": "0001018724"
 
   # 中文/英文快讯 RSS（urls 按顺序兜底：前面失效自动换下一个）
   rss:
@@ -45,6 +53,19 @@ sources:
       - name: "律动BlockBeats"
         urls:
           - "https://rsshub.ktachibana.party/theblockbeats/news"
+      - name: "华尔街见闻快讯"
+        urls:
+          - "https://rsshub.ktachibana.party/wallstreetcn/live"
+          - "https://rsshub.app/wallstreetcn/live"
+      - name: "美联储新闻"
+        urls:
+          - "https://www.federalreserve.gov/feeds/press_all.xml"
+      - name: "三星新闻室"
+        urls:
+          - "https://news.samsung.com/global/feed"
+      - name: "TruthSocial特朗普"
+        urls:
+          - "https://truthsocial.com/@realDonaldTrump.rss"
 
   # 定价与情绪读数（只进网站 market.json 快照，不推送）
   market:
@@ -52,6 +73,10 @@ sources:
     symbols:                      # 显示名: Yahoo代码
       "美元指数": "DX-Y.NYB"
       "美债30Y": "^TYX"
+      "美债10Y": "^TNX"
+      "美债5Y": "^FVX"
+      "美债13周": "^IRX"
+      "联邦基金期货": "ZQ=F"
       "WTI原油": "CL=F"
       "纳指期货": "NQ=F"
       "纳斯达克": "^IXIC"
@@ -59,6 +84,13 @@ sources:
       "比特币": "BTC-USD"
       "以太坊": "ETH-USD"
       "黄金": "GC=F"
+      "美光MU": "MU"
+      "闪迪SNDK": "SNDK"
+      "西数WDC": "WDC"
+      "希捷STX": "STX"
+      "SK海力士": "000660.KS"
+      "三星电子": "005930.KS"
+      "费城半导体": "^SOX"
 
   # 资金费率（Bybit公共接口；失败自动换OKX）
   funding:
