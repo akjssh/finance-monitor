@@ -57,6 +57,10 @@ sources:
         urls:
           - "https://rsshub.ktachibana.party/wallstreetcn/live"
           - "https://rsshub.app/wallstreetcn/live"
+      - name: "金十快讯"
+        urls:
+          - "https://rsshub.ktachibana.party/jin10"
+          - "https://rsshub.app/jin10"
       - name: "美联储新闻"
         urls:
           - "https://www.federalreserve.gov/feeds/press_all.xml"
@@ -64,6 +68,8 @@ sources:
         urls:
           - "https://news.samsung.com/global/feed"
       - name: "TruthSocial特朗普"
+        # 2026-09-05实测:直连RSS与RSSHub社区路由均不通,保留作探测;特朗普帖文由
+        # DeItaone/WatcherGuru搬运+金十中文秒级推送覆盖
         urls:
           - "https://truthsocial.com/@realDonaldTrump.rss"
 
