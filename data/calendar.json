@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T23:20:41.518227+08:00",
+ "generated_at": "2026-09-05T23:25:35.339902+08:00",
  "events": [
   {
    "date": "2026-09-10",
@@ -21,6 +21,31 @@
    "title": "FOMC利率决议",
    "impact": "High",
    "level": "L3",
+   "forecast": "",
+   "previous": "",
+   "approx": false
+  },
+  {
+   "date": "2026-09-19",
+   "time": "04:00",
+   "ts": "2026-09-19T04:00:00+08:00",
+   "currency": "USD",
+   "title": "标普指数季度调仓·生效日",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "note": "收盘竞价按新权重买卖；新纳入股常在生效日兑现回落(sell the news)"
+  },
+  {
+   "date": "2026-09-19",
+   "time": "05:00",
+   "ts": "2026-09-19T05:00:00+08:00",
+   "currency": "USD",
+   "title": "富时罗素季度审议·生效日",
+   "impact": "High",
+   "level": "L2",
    "forecast": "",
    "previous": "",
    "approx": false
