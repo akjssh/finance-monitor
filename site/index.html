@@ -358,8 +358,9 @@ function calItem(e){
   const pv = e.previous?` 前值${esc(e.previous)}`:'';
   const name = e.title_zh || e.title;
   const en = e.title_zh ? `<div class="en">${esc(e.title)}</div>` : '';
+  const nt = e.note ? `<div class="en">💡 ${esc(e.note)}</div>` : '';
   return `<div class="ev"><span class="tm">${dateLabel(e.date)}<span class="t">${e.time||''}</span></span>
-    <span class="tt"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span> ${esc(name)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}${en}</span></div>`;
+    <span class="tt"><span class="lv ${LVE[e.level]||'l1'}">${e.level}</span> ${esc(name)}<span class="meta">(${esc(e.currency)})</span>${fc}${pv}${ap}${en}${nt}</span></div>`;
 }
 function renderCal(){
   const el=document.getElementById('cal');

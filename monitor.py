@@ -503,9 +503,9 @@ def _us_et_event(year, month, day, hour_et, minute_et=0):
     return datetime(year, month, day, hour_et, minute_et, tzinfo=et).astimezone(timezone.utc)
 
 
-def _mk_cal_event(dt_utc, title, level, forecast="", previous="", approx=False):
+def _mk_cal_event(dt_utc, title, level, forecast="", previous="", approx=False, note=""):
     dt_cst = dt_utc.astimezone(CST)
-    return {
+    ev = {
         "date": dt_cst.strftime("%Y-%m-%d"), "time": dt_cst.strftime("%H:%M"),
         "ts": dt_cst.isoformat(), "currency": "USD",
         "title": title + ("（预估日期）" if approx else ""),
@@ -513,6 +513,9 @@ def _mk_cal_event(dt_utc, title, level, forecast="", previous="", approx=False):
         "level": level, "forecast": forecast, "previous": previous,
         "approx": approx,
     }
+    if note:
+        ev["note"] = note
+    return ev
 
 
 def _recurring_macro_events(start_cst, end_cst, ff_events):
@@ -567,6 +570,99 @@ def _recurring_macro_events(start_cst, end_cst, ff_events):
                     and not ff_has("fomc", fd) and not ff_has("federal funds", fd):
                 evs.append(_mk_cal_event(_us_et_event(y, mm, dd, 14),
                                          "FOMC利率决议", "L3"))
+    return evs
+
+
+# ============================================================
+# 指数调仓日历层：标普/富时罗素/MSCI/纳斯达克100 的固定调仓节奏。
+# 日期由指数公司方法学固定；成分股名单只在公告日才公布，
+# 日历层负责「公告日提醒去官方查名单 + 生效日提醒被动盘收盘调仓」。
+# ============================================================
+
+def _third_friday(y, m):
+    d = date(y, m, 1)
+    return d + timedelta(days=(4 - d.weekday()) % 7 + 14)
+
+
+def _bus_days_before(y, m, d0, n):
+    """从当月 d0 日（含）往前数 n 个工作日"""
+    d = date(y, m, d0)
+    left = n
+    while left > 0:
+        d -= timedelta(days=1)
+        if d.weekday() < 5:
+            left -= 1
+    return d
+
+
+def _index_rebalance_events(start_cst, end_cst):
+    evs = []
+    months = set()
+    d = start_cst.date()
+    while d <= end_cst.date():
+        months.add((d.year, d.month))
+        d += timedelta(days=1)
+
+    for (y, m) in sorted(months):
+        if m in (3, 6, 9, 12):
+            # 标普季度调仓：公告≈当月第一个周五（惯例，公布成分股进出），
+            # 生效=第三个周五收盘后（方法学固定，被动基金收盘竞价调权重）
+            first = date(y, m, 1)
+            ann = first + timedelta(days=(4 - first.weekday()) % 7)
+            eff = _third_friday(y, m)
+            if start_cst.date() <= ann <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, ann.month, ann.day, 16, 15),
+                    "标普指数季度调仓·公告日", "L2", approx=True,
+                    note="名单在spglobal.com/spdji公告；纳入=公告到生效有被动买盘(利好开始型)，剔除相反"))
+            if start_cst.date() <= eff <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, eff.month, eff.day, 16, 0),
+                    "标普指数季度调仓·生效日", "L2",
+                    note="收盘竞价按新权重买卖；新纳入股常在生效日兑现回落(sell the news)"))
+            # 富时罗素季度审议：生效=第三个周五收盘后，公告≈提前两周
+            ftse_ann = eff - timedelta(days=14)
+            while ftse_ann.weekday() >= 5:
+                ftse_ann += timedelta(days=1)
+            if start_cst.date() <= ftse_ann <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, ftse_ann.month, ftse_ann.day, 16, 15),
+                    "富时罗素季度审议·公告日", "L2", approx=True))
+            if start_cst.date() <= eff <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, eff.month, eff.day, 17, 0),
+                    "富时罗素季度审议·生效日", "L2"))
+        if m in (2, 5, 8, 11):
+            # MSCI季度审议：生效=当月最后一个工作日收盘（亚洲市场权重变化影响KOSPI资金流），
+            # 公告≈生效前两周半
+            last = (date(y, m + 1, 1) if m < 12 else date(y + 1, 1, 1)) - timedelta(days=1)
+            while last.weekday() >= 5:
+                last -= timedelta(days=1)
+            ann = _bus_days_before(y, last.month, last.day, 13)
+            if start_cst.date() <= ann <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, ann.month, ann.day, 18, 0),
+                    "MSCI季度审议·公告日", "L2", approx=True,
+                    note="名单见msci.com；海力士/三星等亚洲权重变化影响KOSPI资金流"))
+            if start_cst.date() <= last <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, last.month, last.day, 16, 0),
+                    "MSCI季度审议·生效日", "L2",
+                    note="按各市场收盘生效；韩国收盘=北京时间15:30前后"))
+        if m == 12:
+            # 纳斯达克100年度重组：生效=第三个周五收盘后，公告≈提前一周
+            eff = _third_friday(y, m)
+            ann = eff - timedelta(days=9)
+            while ann.weekday() >= 5:
+                ann += timedelta(days=1)
+            if start_cst.date() <= ann <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, ann.month, ann.day, 18, 0),
+                    "纳斯达克100年度重组·公告日", "L2", approx=True))
+            if start_cst.date() <= eff <= end_cst.date():
+                evs.append(_mk_cal_event(
+                    _us_et_event(y, eff.month, eff.day, 16, 0),
+                    "纳斯达克100年度重组·生效日", "L2"))
     return evs
 
 
@@ -735,6 +831,8 @@ def fetch_ff_calendar(src_cfg, out_errors):
     today0 = datetime.now(CST).replace(hour=0, minute=0, second=0, microsecond=0)
     end = today0 + timedelta(days=30)
     for e in _recurring_macro_events(today0, end, events):
+        add(e)
+    for e in _index_rebalance_events(today0, end):
         add(e)
 
     events.sort(key=lambda e: e["ts"])
