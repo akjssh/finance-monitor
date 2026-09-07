@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-08T02:01:44.997193+08:00",
+ "generated_at": "2026-09-08T02:07:09.226280+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.908,
+   "price": 98.905,
    "previous": 99.67,
-   "pct": -0.76
+   "pct": -0.77
   },
   {
    "name": "美债30Y",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79184.71,
+   "price": 79185.9,
    "previous": 81271.74,
    "pct": -2.57
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2496.0,
+   "price": 2496.32,
    "previous": 2508.0208,
-   "pct": -0.48
+   "pct": -0.47
   },
   {
    "name": "黄金",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.83020624536e-05,
-   "rate_pct": 0.0048
+   "rate": 4.74554412068e-05,
+   "rate_pct": 0.0047
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.48193969407e-05,
-   "rate_pct": 0.0065
+   "rate": 6.56285381752e-05,
+   "rate_pct": 0.0066
   }
  ],
  "polymarket": [
@@ -169,7 +169,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 50.5
+   "yes": 51.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
