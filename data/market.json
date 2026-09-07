@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-07T11:51:15.399028+08:00",
+ "generated_at": "2026-09-07T11:55:47.084996+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -67,23 +67,23 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6912.75,
+   "price": 6912.8,
    "previous": 6820.02,
    "pct": 1.36
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79633.8,
+   "price": 79623.44,
    "previous": 81271.74,
-   "pct": -2.02
+   "pct": -2.03
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2498.46,
+   "price": 2499.18,
    "previous": 2508.0208,
-   "pct": -0.38
+   "pct": -0.35
   },
   {
    "name": "黄金",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.27490165407e-05,
-   "rate_pct": 0.0023
+   "rate": 2.5517667458e-05,
+   "rate_pct": 0.0026
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.44835270954e-05,
-   "rate_pct": 0.0054
+   "rate": 5.46210094363e-05,
+   "rate_pct": 0.0055
   }
  ],
  "polymarket": [
