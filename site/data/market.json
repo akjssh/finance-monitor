@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-07T23:15:42.335073+08:00",
+ "generated_at": "2026-09-07T23:20:46.246223+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.868,
+   "price": 98.881,
    "previous": 99.67,
-   "pct": -0.8
+   "pct": -0.79
   },
   {
    "name": "美债30Y",
@@ -44,13 +44,6 @@
    "pct": -0.08
   },
   {
-   "name": "WTI原油",
-   "symbol": "CL=F",
-   "price": 91.48,
-   "previous": 90.22,
-   "pct": 1.4
-  },
-  {
    "name": "纳指期货",
    "symbol": "NQ=F",
    "price": 29565.25,
@@ -74,16 +67,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79046.46,
+   "price": 79076.48,
    "previous": 81271.74,
-   "pct": -2.74
+   "pct": -2.7
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2483.28,
+   "price": 2486.63,
    "previous": 2508.0208,
-   "pct": -0.99
+   "pct": -0.85
   },
   {
    "name": "黄金",
@@ -149,12 +142,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.45582497945e-05,
+   "rate": 2.47009739568e-05,
    "rate_pct": 0.0025
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.84445093161e-05,
+   "rate": 3.83386010068e-05,
    "rate_pct": 0.0038
   }
  ],
@@ -173,7 +166,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 49.5
+   "yes": 50.5
   }
  ]
 }
