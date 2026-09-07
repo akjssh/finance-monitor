@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T05:40:44.925177+08:00",
+ "generated_at": "2026-09-08T05:46:19.247188+08:00",
  "events": [
   {
    "date": "2026-09-08",
@@ -9,7 +9,7 @@
    "title": "Trade Balance",
    "impact": "Low",
    "level": "L1",
-   "forecast": "795B",
+   "forecast": "805B",
    "previous": "767B",
    "approx": false,
    "title_zh": "贸易帐"
@@ -22,7 +22,7 @@
    "title": "USD-Denominated Trade Balance",
    "impact": "Low",
    "level": "L1",
-   "forecast": "120.1B",
+   "forecast": "118.6B",
    "previous": "112.5B",
    "approx": false
   },
@@ -314,18 +314,6 @@
    "level": "L1",
    "forecast": "",
    "previous": "4.3%",
-   "approx": false
-  },
-  {
-   "date": "2026-09-11",
-   "time": "23:00",
-   "ts": "2026-09-11T23:00:00+08:00",
-   "currency": "USD",
-   "title": "Fed Monetary Policy Report",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
    "approx": false
   },
   {
