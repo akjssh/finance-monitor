@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-09T03:57:06.811796+08:00",
+ "generated_at": "2026-09-09T04:02:23.586033+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.843,
+   "price": 98.859,
    "previous": 99.56,
-   "pct": -0.72
+   "pct": -0.7
   },
   {
    "name": "美债30Y",
@@ -46,23 +46,23 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 93.35,
+   "price": 93.7,
    "previous": 91.01,
-   "pct": 2.57
+   "pct": 2.96
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29535.5,
+   "price": 29523.75,
    "previous": 29186.25,
-   "pct": 1.2
+   "pct": 1.16
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26407.1,
+   "price": 26421.412,
    "previous": 26370.89,
-   "pct": 0.14
+   "pct": 0.19
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78357.05,
+   "price": 78461.41,
    "previous": 79671.97,
-   "pct": -1.65
+   "pct": -1.52
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2478.94,
+   "price": 2483.24,
    "previous": 2456.078,
-   "pct": 0.93
+   "pct": 1.11
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4410.4,
+   "price": 4407.8,
    "previous": 4366.3,
-   "pct": 1.01
+   "pct": 0.95
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 1000.388,
+   "price": 1000.26,
    "previous": 958.73,
-   "pct": 4.35
+   "pct": 4.33
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1740.82,
+   "price": 1737.99,
    "previous": 1566.7,
-   "pct": 11.11
+   "pct": 10.93
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 478.175,
+   "price": 477.3,
    "previous": 450.55,
-   "pct": 6.13
+   "pct": 5.94
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 903.93,
+   "price": 904.38,
    "previous": 828.38,
-   "pct": 9.12
+   "pct": 9.17
   },
   {
    "name": "SK海力士",
@@ -137,9 +137,9 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 11884.27,
+   "price": 11887.869,
    "previous": 11535.05,
-   "pct": 3.03
+   "pct": 3.06
   }
  ],
  "fng": {
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.91469327512e-05,
+   "rate": 2.90390932518e-05,
    "rate_pct": 0.0029
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.66628453858e-05,
-   "rate_pct": 0.0037
+   "rate": 3.63167136666e-05,
+   "rate_pct": 0.0036
   }
  ],
  "polymarket": [
