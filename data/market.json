@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-08T18:15:44.524798+08:00",
+ "generated_at": "2026-09-08T18:23:45.195795+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.962,
+   "price": 98.948,
    "previous": 99.56,
-   "pct": -0.6
+   "pct": -0.61
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 93.99,
+   "price": 94.07,
    "previous": 91.01,
-   "pct": 3.27
+   "pct": 3.36
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29585.25,
+   "price": 29576.0,
    "previous": 29186.25,
-   "pct": 1.37
+   "pct": 1.34
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78719.66,
+   "price": 78872.6,
    "previous": 79671.97,
-   "pct": -1.2
+   "pct": -1.0
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2489.1,
+   "price": 2494.13,
    "previous": 2456.078,
-   "pct": 1.34
+   "pct": 1.55
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4441.6,
+   "price": 4438.8,
    "previous": 4366.3,
-   "pct": 1.72
+   "pct": 1.66
   },
   {
    "name": "美光MU",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.48556775134e-05,
-   "rate_pct": 0.0065
+   "rate": 6.2499912219e-05,
+   "rate_pct": 0.0062
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.14635686446e-05,
-   "rate_pct": 0.0041
+   "rate": 4.00333492767e-05,
+   "rate_pct": 0.004
   }
  ],
  "polymarket": [
