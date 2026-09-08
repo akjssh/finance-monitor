@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-08T12:25:59.500453+08:00",
+ "generated_at": "2026-09-08T12:31:11.700438+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.827,
+   "price": 98.838,
    "previous": 99.56,
-   "pct": -0.74
+   "pct": -0.73
   },
   {
    "name": "美债30Y",
@@ -53,9 +53,9 @@
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29738.75,
+   "price": 29743.25,
    "previous": 29186.25,
-   "pct": 1.89
+   "pct": 1.91
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7168.14,
+   "price": 7158.79,
    "previous": 6835.8,
-   "pct": 4.86
+   "pct": 4.72
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78790.8,
+   "price": 78784.17,
    "previous": 79671.97,
    "pct": -1.11
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2482.13,
+   "price": 2481.51,
    "previous": 2456.078,
-   "pct": 1.06
+   "pct": 1.04
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4484.8,
+   "price": 4483.6,
    "previous": 4366.3,
-   "pct": 2.71
+   "pct": 2.69
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1887000.0,
+   "price": 1883000.0,
    "previous": 1693000.0,
-   "pct": 11.46
+   "pct": 11.22
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 278500.0,
+   "price": 278250.0,
    "previous": 261000.0,
-   "pct": 6.7
+   "pct": 6.61
   },
   {
    "name": "费城半导体",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.56524844793e-05,
-   "rate_pct": 0.0026
+   "rate": 2.65547850708e-05,
+   "rate_pct": 0.0027
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.5816573387e-05,
+   "rate": 4.5737236447e-05,
    "rate_pct": 0.0046
   }
  ],
@@ -172,8 +172,8 @@
    "yes": 51.5
   },
   {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.1
+   "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
+   "yes": 0.5
   }
  ]
 }
