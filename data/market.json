@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-08T14:05:38.061072+08:00",
+ "generated_at": "2026-09-08T14:11:31.797554+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.8,
+   "price": 98.764,
    "previous": 99.56,
-   "pct": -0.76
+   "pct": -0.8
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 93.71,
+   "price": 93.73,
    "previous": 91.01,
-   "pct": 2.97
+   "pct": 2.99
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29618.5,
+   "price": 29608.5,
    "previous": 29186.25,
-   "pct": 1.48
+   "pct": 1.45
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7038.65,
+   "price": 7022.06,
    "previous": 6835.8,
-   "pct": 2.97
+   "pct": 2.72
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78476.87,
+   "price": 78486.65,
    "previous": 79671.97,
-   "pct": -1.5
+   "pct": -1.49
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2470.29,
+   "price": 2471.64,
    "previous": 2456.078,
-   "pct": 0.58
+   "pct": 0.63
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4463.8,
+   "price": 4462.0,
    "previous": 4366.3,
-   "pct": 2.23
+   "pct": 2.19
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1832000.0,
+   "price": 1822000.0,
    "previous": 1693000.0,
-   "pct": 8.21
+   "pct": 7.62
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 273250.0,
+   "price": 272250.0,
    "previous": 261000.0,
-   "pct": 4.69
+   "pct": 4.31
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.14196092908e-05,
-   "rate_pct": 0.0041
+   "rate": 4.18189768859e-05,
+   "rate_pct": 0.0042
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.12113793293e-05,
-   "rate_pct": 0.0071
+   "rate": 7.17569988497e-05,
+   "rate_pct": 0.0072
   }
  ],
  "polymarket": [
