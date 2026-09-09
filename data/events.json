@@ -1728,6 +1728,18 @@
   "created_at": "2026-09-09T08:00:00+08:00"
  },
  {
+  "id": "edgar:000119312526385961",
+  "source": "edgar",
+  "author": "希捷STX",
+  "text": "希捷STX 提交SEC文件 [8-K]（3.02、7.01、其他重要事件、9.01）",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1137789/000119312526385961/",
+  "pushed": false,
+  "created_at": "2026-09-09T08:00:00+08:00"
+ },
+ {
   "id": "rss:685dc2e9f6b69cdd",
   "source": "rss",
   "author": "金十快讯",
@@ -9586,17 +9598,5 @@
   "url": "https://x.com/DeItaone/status/2094402012582392010",
   "pushed": true,
   "created_at": "2026-08-31T20:28:46+08:00"
- },
- {
-  "id": "rss:fb3c347ce7425d21",
-  "source": "rss",
-  "author": "CoinDesk",
-  "text": "Strategy returns to bitcoin buys, adding $370 million worth last week —— It's the first week of bitcoin purchases for the Michael Saylor-led company in about two months.",
-  "score": 8,
-  "reason": "MicroStrategy 重新大额买入比特币，提振市场对加密资产的信心。",
-  "translation": "Strategy 重新开始买入比特币，上周增持价值3.7亿美元——这是迈克尔·塞勒领导的公司大约两个月以来首周进行比特币买入。",
-  "url": "https://www.coindesk.com/markets/2026/08/31/strategy-returns-to-bitcoin-buys-adding-usd370-million-worth-last-week",
-  "pushed": true,
-  "created_at": "2026-08-31T20:12:05.168825+08:00"
  }
 ]
