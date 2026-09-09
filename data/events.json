@@ -1,5 +1,17 @@
 [
  {
+  "id": "rss:2b825bcc970e1dc0",
+  "source": "rss",
+  "author": "华尔街见闻快讯",
+  "text": "加拿大Enbridge将按25.5亿美元现金收购Tallgrass原油业务。 —— 加拿大Enbridge将按25.5亿美元现金收购Tallgrass原油业务。",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://wallstreetcn.com/livenews/3162791",
+  "pushed": false,
+  "created_at": "2026-09-10T04:22:59.308459+08:00"
+ },
+ {
   "id": "rss:763dbfbaed095177",
   "source": "rss",
   "author": "华尔街见闻快讯",
@@ -2576,6 +2588,18 @@
   "reason": "",
   "translation": "",
   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000192109426001004/",
+  "pushed": false,
+  "created_at": "2026-09-09T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000110465926106322",
+  "source": "edgar",
+  "author": "亚马逊AMZN",
+  "text": "亚马逊AMZN 提交SEC文件 [FWP]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926106322/",
   "pushed": false,
   "created_at": "2026-09-09T08:00:00+08:00"
  },
@@ -9574,29 +9598,5 @@
   "url": "https://www.theblock.co/news/business/2026-09-02-japan-listed-remixpoint-sells-all-eth-sol-xrp-and-doge-holdings-in-shift-to-bitcoin-only-crypto-strategy-413333",
   "pushed": true,
   "created_at": "2026-09-02T19:36:07.080989+08:00"
- },
- {
-  "id": "rss:9405c87ef49a3cb9",
-  "source": "rss",
-  "author": "CoinDesk",
-  "text": "A Fed rate increase would be a mistake, some observers say as bitcoin, gold, stocks fall —— Your day-ahead look for Sept. 2, 2026",
-  "score": 8,
-  "reason": "该发言暗示美联储加息可能是错误的，反映市场对利率敏感，可能影响美股、A股和加密货币。",
-  "translation": "一些观察者表示，美联储加息将是一个错误，因为比特币、黄金和股票正在下跌 —— 你对2026年9月2日的提前展望",
-  "url": "https://www.coindesk.com/daybook-us/2026/09/02/a-fed-rate-increase-would-be-a-mistake-some-observers-say-as-bitcoin-gold-stocks-fall",
-  "pushed": true,
-  "created_at": "2026-09-02T19:17:22.962549+08:00"
- },
- {
-  "id": "rss:e7fc0a8422a0b2b3",
-  "source": "rss",
-  "author": "CoinDesk",
-  "text": "Lawsuit challenges Tether for allegedly freezing $42.4 million USDT before U.S. warrant —— The plaintiffs allege that Tether acted in response to an informal U.S. law-enforcement request more than three months before a seizure warrant was issued.",
-  "score": 8,
-  "reason": "涉及主要稳定币被指冻结资产，可能引发市场对USDT信任担忧，影响加密货币流动性",
-  "translation": "诉讼指控Tether在美国发出扣押令之前， allegedly 冻结了4240万美元USDT——原告称Tether是在扣押令发出前超过三个月，响应美国执法部门的非正式请求而采取行动。",
-  "url": "https://www.coindesk.com/business/2026/09/02/tether-sued-over-usd42-4-million-usdt-freeze-allegedly-made-months-before-u-s-warrant",
-  "pushed": true,
-  "created_at": "2026-09-02T19:06:16.637855+08:00"
  }
 ]
