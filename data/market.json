@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-09T13:01:03.539984+08:00",
+ "generated_at": "2026-09-09T13:05:50.088015+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.761,
+   "price": 98.757,
    "previous": 99.0,
-   "pct": -0.24
+   "pct": -0.25
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 94.07,
+   "price": 94.02,
    "previous": 91.3,
-   "pct": 3.03
+   "pct": 2.98
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29605.25,
+   "price": 29613.75,
    "previous": 29524.75,
-   "pct": 0.27
+   "pct": 0.3
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7060.41,
+   "price": 7064.8,
    "previous": 6562.72,
-   "pct": 7.58
+   "pct": 7.65
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 79106.75,
+   "price": 79110.13,
    "previous": 79823.87,
-   "pct": -0.9
+   "pct": -0.89
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2506.32,
+   "price": 2503.78,
    "previous": 2480.7356,
-   "pct": 1.03
+   "pct": 0.93
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4421.3,
+   "price": 4424.3,
    "previous": 4491.7,
-   "pct": -1.57
+   "pct": -1.5
   },
   {
    "name": "美光MU",
@@ -123,9 +123,9 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1859000.0,
+   "price": 1865000.0,
    "previous": 1613000.0,
-   "pct": 15.25
+   "pct": 15.62
   },
   {
    "name": "三星电子",
@@ -149,19 +149,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 3.90133328257e-05,
-   "rate_pct": 0.0039
+   "rate": 3.97529667592e-05,
+   "rate_pct": 0.004
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.8329648581e-05,
-   "rate_pct": 0.0078
+   "rate": 7.86831224441e-05,
+   "rate_pct": 0.0079
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 45.5
+   "yes": 46.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
