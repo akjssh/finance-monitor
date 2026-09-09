@@ -1,5 +1,17 @@
 [
  {
+  "id": "rss:a8d7c7accc0e7985",
+  "source": "rss",
+  "author": "CoinDesk",
+  "text": "Bitcoin climbs as oil tops $100, equities drop after Iran strikes —— Bitcoin advanced to as high as $79,700 while Brent crude topped $100 and European shares fell, leaving crypto tracking gold rather than equities.",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.coindesk.com/markets/2026/09/09/bitcoin-climbs-as-oil-tops-usd100-equities-drop-after-iran-strikes",
+  "pushed": false,
+  "created_at": "2026-09-09T18:52:26.915609+08:00"
+ },
+ {
   "id": "rss:e42dfc5e40928d48",
   "source": "rss",
   "author": "华尔街见闻快讯",
@@ -1412,6 +1424,18 @@
   "reason": "",
   "translation": "",
   "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000623/",
+  "pushed": false,
+  "created_at": "2026-09-09T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000110465926106115",
+  "source": "edgar",
+  "author": "亚马逊AMZN",
+  "text": "亚马逊AMZN 提交SEC文件 [424B5]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926106115/",
   "pushed": false,
   "created_at": "2026-09-09T08:00:00+08:00"
  },
@@ -9574,29 +9598,5 @@
   "url": "https://www.theblock.co/news/defi/2026-08-30-crypto-com-linked-cronos-network-halts-after-tectonic-exploit-estimated-at-75-million-413069",
   "pushed": true,
   "created_at": "2026-08-31T02:41:20.456429+08:00"
- },
- {
-  "id": "rss:6ad251ffaa7163de",
-  "source": "rss",
-  "author": "TheBlock",
-  "text": "Chainalysis accuses ICE of unfairly steering $95 million blockchain contract to TRM Labs —— The lawsuit asks a federal court to block the $95 million TRM contract and require ICE to conduct a full and open competition.",
-  "score": 5,
-  "reason": "该诉讼涉及政府区块链合同的公平性，可能影响行业预期但对整体市场影响有限。",
-  "translation": "Chainalysis 指责 ICE 不公平地将价值 9500 万美元的区块链合同导向 TRM Labs —— 该诉讼要求联邦法院阻止该 9500 万美元的 TRM 合同，并要求 ICE 进行完整且公开的竞争。",
-  "url": "https://www.theblock.co/news/business/2026-08-30-chainalysis-accuses-ice-of-unfairly-steering-95-million-blockchain-contract-to-trm-labs-413066",
-  "pushed": false,
-  "created_at": "2026-08-31T01:56:33.644332+08:00"
- },
- {
-  "id": "rss:840b9d3af59b5d5e",
-  "source": "rss",
-  "author": "CoinDesk",
-  "text": "Michael Saylor hints at first bitcoin purchase in two months as Bitcoin nears $79,000 —— Bitcoin rebounds from Friday’s low as Strategy’s valuation expands and bitcoin dominance climbs above 60%.",
-  "score": 8,
-  "reason": "迈克尔·塞勒暗示两月内首次购买比特币，提振市场信心，比特币价格反弹及主导地位上升对美股和加密市场产生显著正面影响。",
-  "translation": "迈克尔·塞勒暗示在两个月内进行首次比特币购买，因为比特币价格接近79,000美元——比特币从周五的低点反弹，Strategy的估值扩大，比特币主导地位升至60%以上。",
-  "url": "https://www.coindesk.com/markets/2026/08/30/bitcoin-nears-usd79-000-as-michael-saylor-hints-at-first-bitcoin-purchase-in-two-months",
-  "pushed": true,
-  "created_at": "2026-08-30T23:41:24.279146+08:00"
  }
 ]
