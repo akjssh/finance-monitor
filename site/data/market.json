@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-10T13:01:45.275558+08:00",
+ "generated_at": "2026-09-10T13:05:42.163678+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.745,
+   "price": 98.758,
    "previous": 99.16,
-   "pct": -0.42
+   "pct": -0.41
   },
   {
    "name": "美债30Y",
@@ -46,14 +46,14 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 96.12,
+   "price": 96.15,
    "previous": 91.48,
-   "pct": 5.07
+   "pct": 5.1
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29454.25,
+   "price": 29451.5,
    "previous": 29565.25,
    "pct": -0.38
   },
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7029.92,
+   "price": 7023.94,
    "previous": 6579.48,
-   "pct": 6.85
+   "pct": 6.76
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78363.24,
+   "price": 78271.72,
    "previous": 80350.05,
-   "pct": -2.47
+   "pct": -2.59
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2478.3,
+   "price": 2474.19,
    "previous": 2514.5488,
-   "pct": -1.44
+   "pct": -1.61
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4453.6,
+   "price": 4449.9,
    "previous": 4429.8,
-   "pct": 0.54
+   "pct": 0.45
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1857000.0,
+   "price": 1854500.0,
    "previous": 1596000.0,
-   "pct": 16.35
+   "pct": 16.2
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 268750.0,
+   "price": 268500.0,
    "previous": 250000.0,
-   "pct": 7.5
+   "pct": 7.4
   },
   {
    "name": "费城半导体",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.16165123582e-05,
+   "rate": 8.17651417058e-05,
    "rate_pct": 0.0082
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.24293219756e-05,
+   "rate": 3.2353222566e-05,
    "rate_pct": 0.0032
   }
  ],
@@ -173,7 +173,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 53.5
+   "yes": 54.5
   }
  ]
 }
