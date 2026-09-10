@@ -2916,6 +2916,18 @@
   "created_at": "2026-09-10T08:00:00+08:00"
  },
  {
+  "id": "edgar:000078901926000188",
+  "source": "edgar",
+  "author": "微软MSFT",
+  "text": "微软MSFT 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000188/",
+  "pushed": false,
+  "created_at": "2026-09-10T08:00:00+08:00"
+ },
+ {
   "id": "rss:3978cd2afabf1589",
   "source": "rss",
   "author": "华尔街见闻快讯",
@@ -9586,17 +9598,5 @@
   "url": "https://wallstreetcn.com/livenews/3161424",
   "pushed": false,
   "created_at": "2026-09-07T23:11:27.575070+08:00"
- },
- {
-  "id": "rss:5a251f07d2d5051c",
-  "source": "rss",
-  "author": "华尔街见闻快讯",
-  "text": "长鑫LPDDR6率先实现旗舰手机端首发量产 —— 长鑫存储自主研发的LPDDR6芯片已实现量产商用，首发搭载于小米18 Fold 折叠旗舰手机，这是全球范围内LPDDR6产品首次在旗舰手机端落地商用。此次长鑫量产的LPDDR6单颗粒容量为16Gb，封装芯片容量达16GB，遵循JEDEC LPDDR6标准，采用1295 Ball FBGA全新封装。该芯片最高传输速率可达12800Mbps，与速率10667Mbps的LPDDR5X相比，带宽提升60%*。该产品的功耗相比上一代的LPDDR5X降低了20%*，能够有效延长移动设备的续航。（长鑫存储微信公号）",
-  "score": 5,
-  "reason": "长鑫存储LPDDR6量产对国产存储芯片及小米产业链有一定利好,但属企业层面技术进展,对整体金融市场影响有限。",
-  "translation": "长鑫存储自主研发的LPDDR6芯片已实现量产商用,首发搭载于小米18 Fold折叠旗舰手机,是全球范围内LPDDR6产品首次在旗舰手机端落地商用。该LPDDR6单颗粒容量16Gb,封装容量达16GB,遵循JEDEC LPDDR6标准,采用1295 Ball FBGA全新封装,最高传输速率12800Mbps,相比LPDDR5X带宽提升60%,功耗降低20%。",
-  "url": "https://wallstreetcn.com/livenews/3161411",
-  "pushed": false,
-  "created_at": "2026-09-07T22:41:24.650372+08:00"
  }
 ]
