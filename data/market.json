@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-10T14:04:36.791534+08:00",
+ "generated_at": "2026-09-10T14:06:21.860323+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 98.741,
+   "price": 98.739,
    "previous": 99.16,
    "pct": -0.42
   },
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 95.68,
+   "price": 95.7,
    "previous": 91.48,
-   "pct": 4.59
+   "pct": 4.61
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29476.25,
+   "price": 29467.75,
    "previous": 29565.25,
-   "pct": -0.3
+   "pct": -0.33
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7062.12,
+   "price": 7059.1,
    "previous": 6579.48,
-   "pct": 7.34
+   "pct": 7.29
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78417.61,
+   "price": 78398.52,
    "previous": 80350.05,
-   "pct": -2.41
+   "pct": -2.43
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2479.19,
+   "price": 2477.9,
    "previous": 2514.5488,
-   "pct": -1.41
+   "pct": -1.46
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4471.0,
+   "price": 4469.7,
    "previous": 4429.8,
-   "pct": 0.93
+   "pct": 0.9
   },
   {
    "name": "美光MU",
@@ -130,9 +130,9 @@
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 269500.0,
+   "price": 270000.0,
    "previous": 250000.0,
-   "pct": 7.8
+   "pct": 8.0
   },
   {
    "name": "费城半导体",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.41251442775e-05,
+   "rate": 8.38696855612e-05,
    "rate_pct": 0.0084
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.24051120907e-05,
+   "rate": 3.21536369489e-05,
    "rate_pct": 0.0032
   }
  ],
@@ -165,7 +165,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.7
+   "yes": 0.8
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
