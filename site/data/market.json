@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-11T07:58:16.653668+08:00",
+ "generated_at": "2026-09-11T08:01:04.016968+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.094,
+   "price": 99.092,
    "previous": 99.16,
    "pct": -0.07
   },
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 104.3,
+   "price": 104.22,
    "previous": 91.48,
-   "pct": 14.01
+   "pct": 13.93
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29100.25,
+   "price": 29093.5,
    "previous": 29565.25,
-   "pct": -1.57
+   "pct": -1.6
   },
   {
    "name": "纳斯达克",
@@ -68,27 +68,27 @@
    "name": "韩国KOSPI",
    "symbol": "^KS11",
    "price": 7033.92,
-   "previous": 6579.48,
-   "pct": 6.91
+   "previous": 6687.21,
+   "pct": 5.18
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76562.57,
-   "previous": 80350.05,
-   "pct": -4.71
+   "price": 76615.41,
+   "previous": 79115.85,
+   "pct": -3.16
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2436.78,
-   "previous": 2514.5488,
-   "pct": -3.09
+   "price": 2439.57,
+   "previous": 2490.958,
+   "pct": -2.06
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4355.4,
+   "price": 4355.2,
    "previous": 4429.8,
    "pct": -1.68
   },
@@ -124,15 +124,15 @@
    "name": "SK海力士",
    "symbol": "000660.KS",
    "price": 1853000.0,
-   "previous": 1596000.0,
-   "pct": 16.1
+   "previous": 1647000.0,
+   "pct": 12.51
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
    "price": 269000.0,
-   "previous": 250000.0,
-   "pct": 7.6
+   "previous": 255500.0,
+   "pct": 5.28
   },
   {
    "name": "费城半导体",
@@ -143,19 +143,19 @@
   }
  ],
  "fng": {
-  "value": 69,
+  "value": 56,
   "label": "Greed"
  },
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.76622359745e-05,
+   "rate": 8.76393985818e-05,
    "rate_pct": 0.0088
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.95501035417e-05,
-   "rate_pct": 0.003
+   "rate": 3.09451289492e-05,
+   "rate_pct": 0.0031
   }
  ],
  "polymarket": [
