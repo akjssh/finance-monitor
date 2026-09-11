@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-12T04:40:48.424510+08:00",
+ "generated_at": "2026-09-12T04:45:45.865018+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.129,
+   "price": 99.146,
    "previous": 98.84,
-   "pct": 0.29
+   "pct": 0.31
   },
   {
    "name": "美债30Y",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.14,
+   "price": 96.145,
    "previous": 96.302,
-   "pct": -0.17
+   "pct": -0.16
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 100.29,
+   "price": 100.25,
    "previous": 93.03,
-   "pct": 7.8
+   "pct": 7.76
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29385.75,
+   "price": 29391.0,
    "previous": 29538.75,
-   "pct": -0.52
+   "pct": -0.5
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77420.57,
+   "price": 77396.2,
    "previous": 79115.85,
-   "pct": -2.14
+   "pct": -2.17
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2538.58,
+   "price": 2537.41,
    "previous": 2490.958,
-   "pct": 1.91
+   "pct": 1.86
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4390.7,
+   "price": 4390.3,
    "previous": 4393.9,
-   "pct": -0.07
+   "pct": -0.08
   },
   {
    "name": "美光MU",
@@ -149,23 +149,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.29222122019e-05,
+   "rate": 4.27648317263e-05,
    "rate_pct": 0.0043
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.4712296082e-06,
-   "rate_pct": 0.0005
+   "rate": 4.4708355406e-06,
+   "rate_pct": 0.0004
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 18.5
+   "yes": 17.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 80.5
+   "yes": 81.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
