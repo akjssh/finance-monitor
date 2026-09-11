@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-11T14:01:51.103257+08:00",
+ "generated_at": "2026-09-11T14:05:55.448081+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.033,
+   "price": 99.041,
    "previous": 98.84,
    "pct": 0.2
   },
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 101.02,
+   "price": 101.11,
    "previous": 93.03,
-   "pct": 8.59
+   "pct": 8.69
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29198.75,
+   "price": 29230.5,
    "previous": 29538.75,
-   "pct": -1.15
+   "pct": -1.04
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6894.06,
+   "price": 6889.25,
    "previous": 6687.21,
-   "pct": 3.09
+   "pct": 3.02
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77221.95,
+   "price": 77228.23,
    "previous": 79115.85,
    "pct": -2.39
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2467.36,
+   "price": 2466.27,
    "previous": 2490.958,
-   "pct": -0.95
+   "pct": -0.99
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4386.0,
+   "price": 4390.8,
    "previous": 4393.9,
-   "pct": -0.18
+   "pct": -0.07
   },
   {
    "name": "美光MU",
@@ -123,9 +123,9 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1804000.0,
+   "price": 1803000.0,
    "previous": 1647000.0,
-   "pct": 9.53
+   "pct": 9.47
   },
   {
    "name": "三星电子",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.48554156708e-05,
+   "rate": 7.51534274694e-05,
    "rate_pct": 0.0075
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.50307644356e-05,
+   "rate": 3.46071720467e-05,
    "rate_pct": 0.0035
   }
  ],
@@ -173,7 +173,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.9
+   "yes": 1.1
   }
  ]
 }
