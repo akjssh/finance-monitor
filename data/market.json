@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-11T22:45:43.327499+08:00",
+ "generated_at": "2026-09-11T22:52:25.106247+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.033,
+   "price": 99.046,
    "previous": 98.84,
-   "pct": 0.2
+   "pct": 0.21
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.326,
+   "price": 5.325,
    "previous": 5.246,
-   "pct": 1.52
+   "pct": 1.51
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.936,
+   "price": 4.932,
    "previous": 4.784,
-   "pct": 3.18
+   "pct": 3.09
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.75,
+   "price": 4.744,
    "previous": 4.55,
-   "pct": 4.4
+   "pct": 4.26
   },
   {
    "name": "美债13周",
@@ -46,23 +46,23 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 99.74,
+   "price": 99.55,
    "previous": 93.03,
-   "pct": 7.21
+   "pct": 7.01
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29398.25,
+   "price": 29395.75,
    "previous": 29538.75,
    "pct": -0.48
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26336.205,
+   "price": 26346.148,
    "previous": 26584.06,
-   "pct": -0.93
+   "pct": -0.89
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78651.86,
+   "price": 78764.47,
    "previous": 79115.85,
-   "pct": -0.59
+   "pct": -0.44
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2608.04,
+   "price": 2602.25,
    "previous": 2490.958,
-   "pct": 4.7
+   "pct": 4.47
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4413.5,
+   "price": 4410.8,
    "previous": 4393.9,
-   "pct": 0.45
+   "pct": 0.38
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 975.9,
+   "price": 973.91,
    "previous": 958.16,
-   "pct": 1.85
+   "pct": 1.64
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1631.06,
+   "price": 1629.91,
    "previous": 1554.99,
-   "pct": 4.89
+   "pct": 4.82
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 450.41,
+   "price": 446.4,
    "previous": 441.57,
-   "pct": 2.0
+   "pct": 1.09
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 828.24,
+   "price": 822.245,
    "previous": 798.61,
-   "pct": 3.71
+   "pct": 2.96
   },
   {
    "name": "SK海力士",
@@ -137,9 +137,9 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 11801.473,
+   "price": 11816.865,
    "previous": 11352.13,
-   "pct": 3.96
+   "pct": 4.09
   }
  ],
  "fng": {
@@ -149,8 +149,8 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.6484511842e-05,
-   "rate_pct": 0.0046
+   "rate": 4.72906512638e-05,
+   "rate_pct": 0.0047
   },
   {
    "symbol": "ETHUSDT",
@@ -165,7 +165,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 79.5
+   "yes": 78.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
@@ -173,7 +173,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.9
+   "yes": 1.1
   }
  ]
 }
