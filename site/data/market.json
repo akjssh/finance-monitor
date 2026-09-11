@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-11T20:25:44.843231+08:00",
+ "generated_at": "2026-09-11T20:34:36.636557+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.158,
+   "price": 99.15,
    "previous": 98.84,
-   "pct": 0.32
+   "pct": 0.31
   },
   {
    "name": "美债30Y",
@@ -25,7 +25,7 @@
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.733,
+   "price": 4.7330003,
    "previous": 4.55,
    "pct": 4.02
   },
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 99.5,
+   "price": 99.16,
    "previous": 93.03,
-   "pct": 6.95
+   "pct": 6.59
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29325.75,
+   "price": 29328.75,
    "previous": 29538.75,
-   "pct": -0.72
+   "pct": -0.71
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76969.8,
+   "price": 77205.0,
    "previous": 79115.85,
-   "pct": -2.71
+   "pct": -2.42
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2455.59,
+   "price": 2471.61,
    "previous": 2490.958,
-   "pct": -1.42
+   "pct": -0.78
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4371.6,
+   "price": 4372.5,
    "previous": 4393.9,
-   "pct": -0.51
+   "pct": -0.49
   },
   {
    "name": "美光MU",
@@ -149,23 +149,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.823e-05,
-   "rate_pct": 0.0028
+   "rate": 2.53532982978e-05,
+   "rate_pct": 0.0025
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.14e-06,
-   "rate_pct": 0.0006
+   "rate": 6.87296058243e-05,
+   "rate_pct": 0.0069
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
-   "yes": 40.5
+   "yes": 41.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 58.5
+   "yes": 59.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
