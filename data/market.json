@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-11T12:25:37.539874+08:00",
+ "generated_at": "2026-09-11T12:31:10.828135+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.104,
+   "price": 99.093,
    "previous": 98.84,
-   "pct": 0.27
+   "pct": 0.26
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.48,
+   "price": 102.44,
    "previous": 93.03,
-   "pct": 10.16
+   "pct": 10.12
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29088.0,
+   "price": 29093.5,
    "previous": 29538.75,
-   "pct": -1.53
+   "pct": -1.51
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6857.33,
+   "price": 6860.03,
    "previous": 6687.21,
-   "pct": 2.54
+   "pct": 2.58
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77065.91,
+   "price": 77152.66,
    "previous": 79115.85,
-   "pct": -2.59
+   "pct": -2.48
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2456.74,
+   "price": 2462.11,
    "previous": 2490.958,
-   "pct": -1.37
+   "pct": -1.16
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4361.7,
+   "price": 4364.2,
    "previous": 4393.9,
-   "pct": -0.73
+   "pct": -0.68
   },
   {
    "name": "美光MU",
@@ -130,9 +130,9 @@
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 258000.0,
+   "price": 257750.0,
    "previous": 255500.0,
-   "pct": 0.98
+   "pct": 0.88
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 9.13293041277e-05,
-   "rate_pct": 0.0091
+   "rate": 9.01933208862e-05,
+   "rate_pct": 0.009
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.16519884383e-05,
-   "rate_pct": 0.0042
+   "rate": 4.26472317218e-05,
+   "rate_pct": 0.0043
   }
  ],
  "polymarket": [
@@ -173,7 +173,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.8
+   "yes": 0.9
   }
  ]
 }
