@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-14T21:10:53.393109+08:00",
+ "generated_at": "2026-09-14T21:16:29.342189+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.667,
+   "price": 99.683,
    "previous": 98.77,
-   "pct": 0.91
+   "pct": 0.92
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.363,
+   "price": 5.361,
    "previous": 5.264,
-   "pct": 1.88
+   "pct": 1.84
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.985,
+   "price": 4.983,
    "previous": 4.806,
-   "pct": 3.72
+   "pct": 3.68
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.809,
+   "price": 4.806,
    "previous": 4.573,
-   "pct": 5.16
+   "pct": 5.1
   },
   {
    "name": "美债13周",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.14,
+   "price": 96.135,
    "previous": 96.3,
    "pct": -0.17
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 104.21,
+   "price": 104.1,
    "previous": 96.05,
-   "pct": 8.5
+   "pct": 8.38
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 28863.25,
+   "price": 28839.0,
    "previous": 29448.75,
-   "pct": -1.99
+   "pct": -2.07
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77615.56,
+   "price": 77720.1,
    "previous": 76568.125,
-   "pct": 1.37
+   "pct": 1.5
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2495.48,
+   "price": 2500.12,
    "previous": 2437.0986,
-   "pct": 2.4
+   "pct": 2.59
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4310.2,
+   "price": 4308.9,
    "previous": 4416.0,
-   "pct": -2.4
+   "pct": -2.43
   },
   {
    "name": "美光MU",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.12294321473e-05,
-   "rate_pct": 0.0051
+   "rate": 5.34889955072e-05,
+   "rate_pct": 0.0053
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.46701663226e-05,
-   "rate_pct": 0.0065
+   "rate": 6.70368497973e-05,
+   "rate_pct": 0.0067
   }
  ],
  "polymarket": [
@@ -165,7 +165,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-   "yes": 80.5
+   "yes": 81.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
@@ -173,7 +173,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.8
+   "yes": 0.7
   }
  ]
 }
