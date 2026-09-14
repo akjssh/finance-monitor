@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-14T10:55:35.280644+08:00",
+ "generated_at": "2026-09-14T11:01:19.131831+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.23,
+   "price": 99.231,
    "previous": 98.84,
-   "pct": 0.39
+   "pct": 0.4
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.66,
+   "price": 102.8,
    "previous": 93.03,
-   "pct": 10.35
+   "pct": 10.5
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29052.0,
+   "price": 29064.5,
    "previous": 29538.75,
-   "pct": -1.65
+   "pct": -1.61
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6762.88,
+   "price": 6750.56,
    "previous": 6995.39,
-   "pct": -3.32
+   "pct": -3.5
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77622.54,
+   "price": 77580.65,
    "previous": 76568.125,
-   "pct": 1.38
+   "pct": 1.32
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2510.62,
+   "price": 2510.78,
    "previous": 2437.0986,
    "pct": 3.02
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4387.5,
+   "price": 4383.6,
    "previous": 4393.9,
-   "pct": -0.15
+   "pct": -0.23
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1732000.0,
+   "price": 1727000.0,
    "previous": 1783000.0,
-   "pct": -2.86
+   "pct": -3.14
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 253500.0,
+   "price": 253000.0,
    "previous": 270000.0,
-   "pct": -6.11
+   "pct": -6.3
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.20303792517e-05,
-   "rate_pct": 0.0052
+   "rate": 5.33531698528e-05,
+   "rate_pct": 0.0053
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.70294466138e-05,
-   "rate_pct": 0.0057
+   "rate": 5.58643088813e-05,
+   "rate_pct": 0.0056
   }
  ],
  "polymarket": [
