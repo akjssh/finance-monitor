@@ -1,5 +1,17 @@
 [
  {
+  "id": "rss:a3bcda515d148d89",
+  "source": "rss",
+  "author": "CoinDesk",
+  "text": "Even if Clarity fails, Wall Street’s crypto push is unlikely to stop —— The Clarity Act could give banks, brokers and asset managers a clearer rulebook, but financial firms have already moved far enough into digital assets that failure may slow adoption rather than stop it.",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.coindesk.com/policy/2026/09/14/even-if-clarity-fails-wall-street-s-crypto-push-is-unlikely-to-stop",
+  "pushed": false,
+  "created_at": "2026-09-15T07:46:21.457760+08:00"
+ },
+ {
   "id": "rss:3dcb4179831cce3f",
   "source": "rss",
   "author": "华尔街见闻快讯",
@@ -9586,17 +9598,5 @@
   "url": "https://xnews.jin10.com/details/229748",
   "pushed": false,
   "created_at": "2026-09-10T14:12:18.261484+08:00"
- },
- {
-  "id": "rss:8df086774ce7161d",
-  "source": "rss",
-  "author": "华尔街见闻快讯",
-  "text": "DeepSeek V4.1 Flash模型正式发布：对HBM的需求减少到1/4，对SSD的需求减少到1/8 —— 9月10日，DeepSeek正式发布DeepSeek V4.1 Flash模型。这是公司全新模型结构系列中的最小尺寸的模型，具备原生多模态视觉理解能力。据介绍，新一代模型大幅减少了KV Cache缓存的大小，与上一代模型相比，对HBM的需求减少到1/4，对SSD的需求减少到1/8。在Agent使用场景中，缓存命中的费用往往占比较高，对KV Cache的压缩大幅降低了Agent类任务的使用成本。",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://wallstreetcn.com/livenews/3163013",
-  "pushed": false,
-  "created_at": "2026-09-10T14:11:35.837455+08:00"
  }
 ]
