@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-14T13:10:57.086824+08:00",
+ "generated_at": "2026-09-14T13:15:44.830471+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.345,
+   "price": 99.346,
    "previous": 98.77,
    "pct": 0.58
   },
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.14,
+   "price": 96.145,
    "previous": 96.3,
-   "pct": -0.17
+   "pct": -0.16
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.71,
+   "price": 102.64,
    "previous": 96.05,
-   "pct": 6.93
+   "pct": 6.86
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29017.0,
+   "price": 29021.0,
    "previous": 29448.75,
-   "pct": -1.47
+   "pct": -1.45
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6722.73,
+   "price": 6713.46,
    "previous": 6995.39,
-   "pct": -3.9
+   "pct": -4.03
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77528.71,
+   "price": 77606.51,
    "previous": 76568.125,
-   "pct": 1.25
+   "pct": 1.36
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2510.45,
+   "price": 2513.64,
    "previous": 2437.0986,
-   "pct": 3.01
+   "pct": 3.14
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4369.8,
+   "price": 4372.0,
    "previous": 4416.0,
-   "pct": -1.05
+   "pct": -1.0
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1712000.0,
+   "price": 1708000.0,
    "previous": 1783000.0,
-   "pct": -3.98
+   "pct": -4.21
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 250750.0,
+   "price": 250500.0,
    "previous": 270000.0,
-   "pct": -7.13
+   "pct": -7.22
   },
   {
    "name": "费城半导体",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.92427715223e-05,
-   "rate_pct": 0.0059
+   "rate": 5.99925968789e-05,
+   "rate_pct": 0.006
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.06797517762e-05,
+   "rate": 5.069937642e-05,
    "rate_pct": 0.0051
   }
  ],
