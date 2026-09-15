@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-15T09:55:36.956646+08:00",
+ "generated_at": "2026-09-15T10:01:04.323585+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.597,
+   "price": 99.587,
    "previous": 98.77,
-   "pct": 0.84
+   "pct": 0.83
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.78,
+   "price": 102.72,
    "previous": 96.05,
-   "pct": 7.01
+   "pct": 6.94
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29439.25,
+   "price": 29445.25,
    "previous": 29448.75,
-   "pct": -0.03
+   "pct": -0.01
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6683.52,
+   "price": 6663.88,
    "previous": 6954.52,
-   "pct": -3.9
+   "pct": -4.18
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77956.61,
+   "price": 77890.0,
    "previous": 77173.8,
-   "pct": 1.01
+   "pct": 0.93
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2517.13,
+   "price": 2515.69,
    "previous": 2514.734,
-   "pct": 0.1
+   "pct": 0.04
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4337.9,
+   "price": 4337.3,
    "previous": 4416.0,
-   "pct": -1.77
+   "pct": -1.78
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1714000.0,
+   "price": 1706000.0,
    "previous": 1793000.0,
-   "pct": -4.41
+   "pct": -4.85
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 250000.0,
+   "price": 249750.0,
    "previous": 269500.0,
-   "pct": -7.24
+   "pct": -7.33
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.8165344442e-05,
+   "rate": 5.80946242076e-05,
    "rate_pct": 0.0058
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.61901020201e-05,
-   "rate_pct": 0.0046
+   "rate": 4.45236617762e-05,
+   "rate_pct": 0.0045
   }
  ],
  "polymarket": [
