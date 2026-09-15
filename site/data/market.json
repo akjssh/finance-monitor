@@ -1,61 +1,61 @@
 {
- "generated_at": "2026-09-15T20:31:37.148779+08:00",
+ "generated_at": "2026-09-15T20:36:01.694080+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.631,
+   "price": 99.619,
    "previous": 99.09,
-   "pct": 0.55
+   "pct": 0.53
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.329,
+   "price": 5.379,
    "previous": 5.286,
-   "pct": 0.81
+   "pct": 1.76
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.961,
+   "price": 5.012,
    "previous": 4.837,
-   "pct": 2.56
+   "pct": 3.62
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.79,
+   "price": 4.835,
    "previous": 4.614,
-   "pct": 3.81
+   "pct": 4.79
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 3.935,
+   "price": 3.953,
    "previous": 3.805,
-   "pct": 3.42
+   "pct": 3.89
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.02,
+   "price": 96.025,
    "previous": 96.287,
-   "pct": -0.28
+   "pct": -0.27
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 103.03,
+   "price": 102.88,
    "previous": 102.48,
-   "pct": 0.54
+   "pct": 0.39
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29424.5,
+   "price": 29415.0,
    "previous": 29135.25,
-   "pct": 0.99
+   "pct": 0.96
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76910.61,
+   "price": 76895.55,
    "previous": 77173.8,
-   "pct": -0.34
+   "pct": -0.36
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2478.06,
+   "price": 2476.12,
    "previous": 2514.734,
-   "pct": -1.46
+   "pct": -1.54
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4313.8,
+   "price": 4314.1,
    "previous": 4407.3,
-   "pct": -2.12
+   "pct": -2.11
   },
   {
    "name": "美光MU",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.09456703504e-05,
+   "rate": 8.09553789144e-05,
    "rate_pct": 0.0081
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.06428291697e-05,
+   "rate": 1.07059363219e-05,
    "rate_pct": 0.0011
   }
  ],
