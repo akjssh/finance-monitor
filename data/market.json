@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-15T20:41:24.795883+08:00",
+ "generated_at": "2026-09-15T20:46:30.878581+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.596,
+   "price": 99.575,
    "previous": 99.09,
-   "pct": 0.51
+   "pct": 0.49
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.383,
+   "price": 5.372,
    "previous": 5.286,
-   "pct": 1.84
+   "pct": 1.63
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.012,
+   "price": 5.002,
    "previous": 4.837,
-   "pct": 3.62
+   "pct": 3.41
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.835,
+   "price": 4.826,
    "previous": 4.614,
-   "pct": 4.79
+   "pct": 4.59
   },
   {
    "name": "美债13周",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.02,
+   "price": 96.025,
    "previous": 96.287,
-   "pct": -0.28
+   "pct": -0.27
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 103.01,
+   "price": 102.86,
    "previous": 102.48,
-   "pct": 0.52
+   "pct": 0.37
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29418.25,
+   "price": 29428.75,
    "previous": 29135.25,
-   "pct": 0.97
+   "pct": 1.01
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76901.1,
+   "price": 76875.63,
    "previous": 77173.8,
-   "pct": -0.35
+   "pct": -0.39
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2475.76,
+   "price": 2474.92,
    "previous": 2514.734,
-   "pct": -1.55
+   "pct": -1.58
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4316.5,
+   "price": 4322.4,
    "previous": 4407.3,
-   "pct": -2.06
+   "pct": -1.93
   },
   {
    "name": "美光MU",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.1897720357e-05,
+   "rate": 8.15109678879e-05,
    "rate_pct": 0.0082
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.2098119566e-05,
+   "rate": 1.15970264098e-05,
    "rate_pct": 0.0012
   }
  ],
