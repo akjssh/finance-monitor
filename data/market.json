@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-15T11:16:01.911052+08:00",
+ "generated_at": "2026-09-15T11:20:47.925197+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.585,
+   "price": 99.581,
    "previous": 98.77,
-   "pct": 0.83
+   "pct": 0.82
   },
   {
    "name": "美债30Y",
@@ -53,9 +53,9 @@
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29457.5,
+   "price": 29449.75,
    "previous": 29448.75,
-   "pct": 0.03
+   "pct": 0.0
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6714.58,
+   "price": 6699.39,
    "previous": 6954.52,
-   "pct": -3.45
+   "pct": -3.67
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77699.24,
+   "price": 77771.35,
    "previous": 77173.8,
-   "pct": 0.68
+   "pct": 0.77
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2497.37,
+   "price": 2501.19,
    "previous": 2514.734,
-   "pct": -0.69
+   "pct": -0.54
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4352.9,
+   "price": 4353.3,
    "previous": 4416.0,
-   "pct": -1.43
+   "pct": -1.42
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1728000.0,
+   "price": 1722000.0,
    "previous": 1793000.0,
-   "pct": -3.63
+   "pct": -3.96
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 252000.0,
+   "price": 251000.0,
    "previous": 269500.0,
-   "pct": -6.49
+   "pct": -6.86
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.0401323474e-05,
-   "rate_pct": 0.006
+   "rate": 6.07399487618e-05,
+   "rate_pct": 0.0061
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.10436007759e-05,
-   "rate_pct": 0.0031
+   "rate": 3.02039424297e-05,
+   "rate_pct": 0.003
   }
  ],
  "polymarket": [
@@ -169,7 +169,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
-   "yes": 0.9
+   "yes": 1.1
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
