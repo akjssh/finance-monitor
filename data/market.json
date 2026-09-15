@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-15T12:15:55.474353+08:00",
+ "generated_at": "2026-09-15T12:20:45.673200+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.602,
+   "price": 99.598,
    "previous": 99.09,
-   "pct": 0.52
+   "pct": 0.51
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.92,
+   "price": 102.9,
    "previous": 102.48,
-   "pct": 0.43
+   "pct": 0.41
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29416.25,
+   "price": 29423.25,
    "previous": 29135.25,
-   "pct": 0.96
+   "pct": 0.99
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6673.71,
+   "price": 6664.75,
    "previous": 6954.52,
-   "pct": -4.04
+   "pct": -4.17
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77643.49,
+   "price": 77648.41,
    "previous": 77173.8,
    "pct": 0.61
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2498.84,
+   "price": 2499.46,
    "previous": 2514.734,
-   "pct": -0.63
+   "pct": -0.61
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4344.5,
+   "price": 4347.4,
    "previous": 4364.5,
-   "pct": -0.46
+   "pct": -0.39
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1711000.0,
+   "price": 1705000.0,
    "previous": 1793000.0,
-   "pct": -4.57
+   "pct": -4.91
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 250250.0,
+   "price": 249250.0,
    "previous": 269500.0,
-   "pct": -7.14
+   "pct": -7.51
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.28296414279e-05,
-   "rate_pct": 0.0063
+   "rate": 6.54775480464e-05,
+   "rate_pct": 0.0065
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.7315221895e-05,
-   "rate_pct": 0.0017
+   "rate": 1.64855524502e-05,
+   "rate_pct": 0.0016
   }
  ],
  "polymarket": [
