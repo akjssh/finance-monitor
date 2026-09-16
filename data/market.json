@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-16T23:58:57.939298+08:00",
+ "generated_at": "2026-09-17T00:04:24.464534+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.683,
+   "price": 99.688,
    "previous": 99.12,
    "pct": 0.57
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.34,
+   "price": 5.337,
    "previous": 5.361,
-   "pct": -0.39
+   "pct": -0.45
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.959,
+   "price": 4.955,
    "previous": 4.944,
-   "pct": 0.3
+   "pct": 0.22
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.7790003,
+   "price": 4.775,
    "previous": 4.733,
-   "pct": 0.97
+   "pct": 0.89
   },
   {
    "name": "美债13周",
@@ -46,23 +46,23 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 101.72,
+   "price": 102.05,
    "previous": 100.05,
-   "pct": 1.67
+   "pct": 2.0
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29534.25,
+   "price": 29513.0,
    "previous": 29387.0,
-   "pct": 0.5
+   "pct": 0.43
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26191.824,
+   "price": 26169.424,
    "previous": 26253.34,
-   "pct": -0.23
+   "pct": -0.32
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 75760.16,
+   "price": 75753.59,
    "previous": 77270.47,
-   "pct": -1.95
+   "pct": -1.96
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2392.44,
+   "price": 2393.92,
    "previous": 2525.9446,
-   "pct": -5.29
+   "pct": -5.23
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4396.3,
+   "price": 4393.6,
    "previous": 4408.9,
-   "pct": -0.29
+   "pct": -0.35
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 928.165,
+   "price": 927.5,
    "previous": 1027.77,
-   "pct": -9.69
+   "pct": -9.76
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1529.325,
+   "price": 1530.64,
    "previous": 1764.17,
-   "pct": -13.31
+   "pct": -13.24
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 425.18,
+   "price": 425.15,
    "previous": 482.28,
-   "pct": -11.84
+   "pct": -11.85
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 788.21,
+   "price": 787.792,
    "previous": 885.92,
-   "pct": -11.03
+   "pct": -11.08
   },
   {
    "name": "SK海力士",
@@ -137,9 +137,9 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 11380.116,
+   "price": 11365.438,
    "previous": 11931.32,
-   "pct": -4.62
+   "pct": -4.74
   }
  ],
  "fng": {
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.01306107152e-05,
+   "rate": 4.00810502275e-05,
    "rate_pct": 0.004
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.29223388136e-05,
-   "rate_pct": 0.0023
+   "rate": 2.37003457611e-05,
+   "rate_pct": 0.0024
   }
  ],
  "polymarket": [
