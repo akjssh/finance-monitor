@@ -18,6 +18,7 @@ HANDLE = "thankUcrypto"
 SINCE = datetime(2025, 1, 1, tzinfo=timezone.utc)
 STATE_PATH = os.path.join("data", "aoying_history_state.json")
 OUT_PATH = os.path.join("data", "aoying_history_tweets.json")
+DEBUG_PATH = os.path.join("data", "aoying_debug_response.json")
 SOFT_STOP_SEC = 22 * 60
 PAGE_SLEEP = 1.0
 START = time.time()
@@ -63,38 +64,86 @@ def get_uid(h, qids):
 
 
 def extract(payload):
-    """UserTweets 响应 -> (tweets, bottom_cursor)"""
+    """UserTweets 响应 -> (tweets, bottom_cursor)
+    健壮提取：遍历所有 instruction 类型，尝试多种 entry/tweet 结构。
+    """
     tweets, cursor = [], None
     data = payload.get("data", {}).get("user", {}).get("result", {})
-    instrs = (data.get("timeline_v2") or data.get("timeline") or {}).get("timeline", {}).get("instructions", [])
+
+    # 尝试 timeline_v2 -> timeline -> instructions 和 timeline -> instructions
+    timeline_obj = data.get("timeline_v2") or data.get("timeline") or {}
+    instrs = timeline_obj.get("timeline", {}).get("instructions", [])
+    # 也尝试直接在 data 下找 instructions
+    if not instrs:
+        instrs = timeline_obj.get("instructions", [])
+
     for ins in instrs:
-        if ins.get("type") not in ("TimelineAddEntries", "TimelineAddToModule"):
-            continue
-        for entry in ins.get("entries") or []:
+        ins_type = ins.get("type", "")
+        # 处理多种 instruction 类型
+        entries = ins.get("entries") or []
+        if not entries and ins.get("entry"):
+            entries = [ins["entry"]]
+
+        for entry in entries:
             eid = str(entry.get("entryId", ""))
-            if eid.startswith("cursor-bottom"):
-                cursor = entry.get("content", {}).get("value")
+
+            # cursor-bottom / cursor-top / cursor-showmore
+            if "cursor-" in eid or "cursor" in eid:
+                content = entry.get("content", {})
+                # cursor value 可能在 content.value 或 content.itemContent.value
+                c = content.get("value")
+                if not c:
+                    ic = content.get("itemContent") or {}
+                    c = ic.get("value") or ic.get("cursorValue")
+                if c:
+                    cursor = c
                 continue
+
             content = entry.get("content", {})
             items = []
-            if eid.startswith("tweet-") and content.get("itemContent"):
-                items = [content]
+
+            # 标准 tweet entry
+            if eid.startswith("tweet-"):
+                ic = content.get("itemContent")
+                if ic:
+                    items = [{"itemContent": ic}]
+                else:
+                    # 有时 tweet 内容直接在 content 里
+                    items = [content]
+
+            # conversation entry（含多个 tweet）
             elif eid.startswith("profile-conversation-") or content.get("items"):
-                items = content.get("items") or []
+                for it in (content.get("items") or []):
+                    ic = it.get("itemContent")
+                    if ic:
+                        items.append({"itemContent": ic})
+
+            # 其他可能包含 tweet 的 entry
+            elif content.get("itemContent"):
+                items = [{"itemContent": content["itemContent"]}]
+
             for it in items:
                 ic = it.get("itemContent") or {}
-                if ic.get("entryType") != "TimelineTimelineItem":
-                    continue
+                # 不限制 entryType，尝试所有可能的 tweet 结构
                 tw = ic.get("tweet_results", {}).get("result", {})
+                if not tw:
+                    # 也尝试 ic.tweet 直接
+                    tw = ic.get("tweet") or {}
+                if not tw:
+                    continue
+
                 if tw.get("__typename") == "TweetWithVisibilityResults":
                     tw = tw.get("tweet") or {}
+
                 leg = tw.get("legacy") or {}
-                tid = leg.get("id_str")
+                tid = leg.get("id_str") or tw.get("rest_id")
                 if not tid:
                     continue
+
+                created = parse_created(leg.get("created_at", ""))
                 tweets.append({
                     "id": tid,
-                    "created_at": parse_created(leg.get("created_at", "")),
+                    "created_at": created,
                     "text": leg.get("full_text", ""),
                     "likes": leg.get("favorite_count", 0),
                     "rts": leg.get("retweet_count", 0),
@@ -102,6 +151,7 @@ def extract(payload):
                     "is_retweet": leg.get("full_text", "").startswith("RT @"),
                     "url": f"https://x.com/{HANDLE}/status/{tid}",
                 })
+
     return tweets, cursor
 
 
@@ -120,12 +170,14 @@ def main():
         return
 
     qids = monitor._x_query_ids()
+    print(f"queryIds: {qids}", flush=True)
     h = monitor._x_headers(auth)
     uid = get_uid(h, qids)
     print("userId:", uid, flush=True)
 
     cursor = st["cursor"]
     pages = 0
+    debug_saved = False
     while time.time() - START < SOFT_STOP_SEC:
         for attempt in range(10):
             variables = {"userId": uid, "count": 20, "includePromotedContent": False,
@@ -146,7 +198,7 @@ def main():
             break
 
         if r.status_code != 200:
-            print(f"page {pages+1}: HTTP {r.status_code} {r.text[:200]}", flush=True)
+            print(f"page {pages+1}: HTTP {r.status_code} {r.text[:300]}", flush=True)
             if r.status_code in (401, 403, 404):
                 save_state(st)
                 export(st)
@@ -157,12 +209,53 @@ def main():
         try:
             payload = r.json()
         except Exception:
-            print(f"page {pages+1}: 非JSON", flush=True)
+            print(f"page {pages+1}: 非JSON, body[:300]={r.text[:300]}", flush=True)
             time.sleep(5)
             continue
 
+        # 第一页保存原始响应用于调试
+        if not debug_saved:
+            try:
+                with open(DEBUG_PATH, "w", encoding="utf-8") as f:
+                    json.dump(payload, f, ensure_ascii=False, indent=1)
+                print(f"已保存调试响应到 {DEBUG_PATH}", flush=True)
+            except Exception as e:
+                print(f"保存调试响应失败: {e}", flush=True)
+            debug_saved = True
+
         tweets, cursor = extract(payload)
         pages += 1
+
+        # 调试：第一页打印响应结构概要
+        if pages == 1:
+            try:
+                data = payload.get("data", {}).get("user", {}).get("result", {})
+                tl = data.get("timeline_v2") or data.get("timeline") or {}
+                instrs = tl.get("timeline", {}).get("instructions", [])
+                if not instrs:
+                    instrs = tl.get("instructions", [])
+                print(f"DEBUG: data keys={list(payload.get('data',{}).keys())}", flush=True)
+                print(f"DEBUG: user.result keys={list(data.keys())}", flush=True)
+                print(f"DEBUG: timeline keys={list(tl.keys())}", flush=True)
+                print(f"DEBUG: instructions count={len(instrs)}", flush=True)
+                for i, ins in enumerate(instrs):
+                    entries = ins.get("entries") or []
+                    print(f"DEBUG: instr[{i}] type={ins.get('type')} entries={len(entries)}", flush=True)
+                    for j, e in enumerate(entries[:3]):
+                        eid = e.get("entryId", "")
+                        ct = e.get("content", {})
+                        print(f"DEBUG:   entry[{j}] id={eid} content keys={list(ct.keys())}", flush=True)
+                        ic = ct.get("itemContent") or {}
+                        if ic:
+                            print(f"DEBUG:     itemContent keys={list(ic.keys())}", flush=True)
+                            tr = ic.get("tweet_results", {}).get("result", {})
+                            if tr:
+                                print(f"DEBUG:     tweet_results.result keys={list(tr.keys())}", flush=True)
+                                print(f"DEBUG:     __typename={tr.get('__typename')}", flush=True)
+                print(f"DEBUG: extract returned tweets={len(tweets)} cursor={'有' if cursor else '无'}", flush=True)
+            except Exception as e:
+                print(f"DEBUG打印异常: {e}", flush=True)
+
         new = 0
         for t in tweets:
             if t["id"] in seen:
