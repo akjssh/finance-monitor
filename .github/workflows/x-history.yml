@@ -1,0 +1,37 @@
+name: X历史推文抓取
+on:
+  workflow_dispatch: {}   # 仅手动触发
+
+jobs:
+  fetch-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 抓取2025年以来推文
+        env:
+          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
+        run: python x_fetch_history.py
+
+      - name: 提交结果（带重试）
+        run: |
+          git config user.name "monitor-bot"
+          git config user.email "action@github.com"
+          git add data/aoying_history_tweets.json
+          git diff --cached --quiet || git commit -m "抓取X历史推文"
+          for i in 1 2 3 4; do
+            git pull --rebase -q || true
+            if git push; then echo "push成功"; break; fi
+            echo "push第${i}次失败,重试"
+            sleep 5
+          done
