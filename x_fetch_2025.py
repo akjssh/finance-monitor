@@ -181,7 +181,8 @@ def main():
             r = monitor._x_get(
                 f"https://x.com/i/api/graphql/{SEARCH_QID}/SearchTimeline",
                 h, {"variables": json.dumps(variables),
-                    "features": json.dumps(SEARCH_FEATURES)})
+                    "features": json.dumps(SEARCH_FEATURES),
+                    "fieldToggles": json.dumps({"withArticleRichContentState": False})})
             if r.status_code == 429:
                 print(f"page {pages+1} attempt {attempt}: 429, sleep 30s", flush=True)
                 time.sleep(30)
@@ -192,8 +193,12 @@ def main():
             break
 
         if r.status_code != 200:
-            print(f"page {pages+1}: HTTP {r.status_code} {r.text[:300]}", flush=True)
-            if r.status_code in (401, 403, 404):
+            print(f"page {pages+1}: HTTP {r.status_code} body={r.text[:400]}", flush=True)
+            print(f"  url={r.url}", flush=True)
+            if r.status_code == 404:
+                time.sleep(5)
+                continue
+            if r.status_code in (401, 403):
                 save_state(st)
                 sys.exit(1)
             time.sleep(10)
