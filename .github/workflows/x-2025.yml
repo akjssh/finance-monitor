@@ -17,7 +17,9 @@ jobs:
           python-version: "3.12"
 
       - name: 安装依赖
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install twscrape
 
       - name: 抓取2025推文（单轮18分钟软停，exit 42=需续跑）
         env:
