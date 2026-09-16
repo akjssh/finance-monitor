@@ -1,13 +1,14 @@
 name: X历史推文抓取
 on:
-  workflow_dispatch: {}   # 仅手动触发
+  workflow_dispatch: {}   # 手动触发；未完成时由本workflow自动续触发
 
 jobs:
   fetch-history:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 40
     permissions:
       contents: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
 
@@ -18,20 +19,38 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
-      - name: 抓取2025年以来推文
+      - name: 抓取推文（单轮22分钟软停，exit 42=需续跑）
         env:
           TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
-        run: python x_fetch_history.py
+        run: |
+          set +e
+          python x_fetch_history.py
+          code=$?
+          echo "EXIT_CODE=$code" >> $GITHUB_ENV
+          exit 0
 
-      - name: 提交结果（带重试）
+      - name: 提交状态与数据（带重试）
+        if: always()
         run: |
           git config user.name "monitor-bot"
           git config user.email "action@github.com"
-          git add data/aoying_history_tweets.json
-          git diff --cached --quiet || git commit -m "抓取X历史推文"
+          git add data/aoying_history_state.json data/aoying_history_tweets.json
+          git diff --cached --quiet || git commit -m "抓取X历史推文(续跑)"
           for i in 1 2 3 4; do
             git pull --rebase -q || true
             if git push; then echo "push成功"; break; fi
             echo "push第${i}次失败,重试"
             sleep 5
           done
+
+      - name: 未完成则自动续跑
+        if: env.EXIT_CODE == '42'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/x-history.yml/dispatches \
+            -d '{"ref":"main"}'
+          echo "已触发下一轮"
