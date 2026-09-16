@@ -88,11 +88,16 @@ def main():
         print("TWITTER_AUTH_TOKEN 未配置")
         sys.exit(1)
 
-    qids = monitor._x_query_ids()
-    qid = qids.get("SearchTimeline")
+    qid = None
+    try:
+        import requests as _rq
+        rr = _rq.get("https://cdn.jsdelivr.net/gh/fa0311/TwitterInternalAPIDocument@master/docs/json/API.json", timeout=15)
+        qid = rr.json().get("graphql", {}).get("SearchTimeline", {}).get("queryId")
+    except Exception as e:
+        print("动态获取queryId失败:", e, flush=True)
     if not qid:
-        print("未获取到 SearchTimeline queryId")
-        sys.exit(1)
+        qid = "KPSo2_UWdOMpPJwjhfT1Qg"  # 兜底指纹
+        print("使用兜底queryId:", qid, flush=True)
     print("SearchTimeline queryId:", qid, flush=True)
 
     h = monitor._x_headers(auth)
