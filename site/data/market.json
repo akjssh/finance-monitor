@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-16T12:51:48.975440+08:00",
+ "generated_at": "2026-09-16T12:55:36.009969+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 99.624,
+   "price": 99.633,
    "previous": 99.12,
-   "pct": 0.51
+   "pct": 0.52
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 104.58,
+   "price": 104.7,
    "previous": 100.05,
-   "pct": 4.53
+   "pct": 4.65
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29312.5,
+   "price": 29307.75,
    "previous": 29387.0,
-   "pct": -0.25
+   "pct": -0.27
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6694.28,
+   "price": 6686.48,
    "previous": 7051.64,
-   "pct": -5.07
+   "pct": -5.18
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 75786.82,
+   "price": 75764.97,
    "previous": 77270.47,
-   "pct": -1.92
+   "pct": -1.95
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2402.51,
+   "price": 2401.82,
    "previous": 2525.9446,
-   "pct": -4.89
+   "pct": -4.91
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4366.2,
+   "price": 4363.6,
    "previous": 4408.9,
-   "pct": -0.97
+   "pct": -1.03
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1741000.0,
+   "price": 1739500.0,
    "previous": 1856000.0,
-   "pct": -6.2
+   "pct": -6.28
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 252750.0,
+   "price": 252250.0,
    "previous": 269500.0,
-   "pct": -6.22
+   "pct": -6.4
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.13499523545e-05,
+   "rate": 5.10608750456e-05,
    "rate_pct": 0.0051
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.64644167471e-05,
-   "rate_pct": 0.0026
+   "rate": 2.51330583273e-05,
+   "rate_pct": 0.0025
   }
  ],
  "polymarket": [
