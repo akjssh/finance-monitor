@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-17T10:35:33.563615+08:00",
+ "generated_at": "2026-09-17T10:40:44.337076+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.334,
+   "price": 100.338,
    "previous": 99.12,
-   "pct": 1.22
+   "pct": 1.23
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.18,
+   "price": 102.14,
    "previous": 100.05,
-   "pct": 2.13
+   "pct": 2.09
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29423.5,
+   "price": 29424.75,
    "previous": 29387.0,
-   "pct": 0.12
+   "pct": 0.13
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6721.07,
+   "price": 6725.37,
    "previous": 7033.92,
-   "pct": -4.45
+   "pct": -4.39
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76189.66,
+   "price": 76322.69,
    "previous": 76838.16,
-   "pct": -0.84
+   "pct": -0.67
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2422.57,
+   "price": 2427.15,
    "previous": 2477.0208,
-   "pct": -2.2
+   "pct": -2.01
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4329.1,
+   "price": 4328.5,
    "previous": 4408.9,
-   "pct": -1.81
+   "pct": -1.82
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1743000.0,
+   "price": 1745000.0,
    "previous": 1853000.0,
-   "pct": -5.94
+   "pct": -5.83
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 252500.0,
+   "price": 253000.0,
    "previous": 269000.0,
-   "pct": -6.13
+   "pct": -5.95
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.97207605375e-05,
-   "rate_pct": 0.007
+   "rate": 7.09029081406e-05,
+   "rate_pct": 0.0071
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 5.03787971442e-05,
-   "rate_pct": 0.005
+   "rate": 5.12347963783e-05,
+   "rate_pct": 0.0051
   }
  ],
  "polymarket": [
