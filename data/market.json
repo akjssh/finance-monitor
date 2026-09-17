@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-17T09:51:56.868769+08:00",
+ "generated_at": "2026-09-17T09:55:36.386619+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.341,
+   "price": 100.346,
    "previous": 99.12,
-   "pct": 1.23
+   "pct": 1.24
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.29,
+   "price": 102.2,
    "previous": 100.05,
-   "pct": 2.24
+   "pct": 2.15
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29431.25,
+   "price": 29443.75,
    "previous": 29387.0,
-   "pct": 0.15
+   "pct": 0.19
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6749.91,
+   "price": 6761.62,
    "previous": 7033.92,
-   "pct": -4.04
+   "pct": -3.87
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76459.75,
+   "price": 76304.82,
    "previous": 76838.16,
-   "pct": -0.49
+   "pct": -0.69
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2432.84,
+   "price": 2427.68,
    "previous": 2477.0208,
-   "pct": -1.78
+   "pct": -1.99
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4348.6,
+   "price": 4347.8,
    "previous": 4408.9,
-   "pct": -1.37
+   "pct": -1.39
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1752000.0,
+   "price": 1757000.0,
    "previous": 1853000.0,
-   "pct": -5.45
+   "pct": -5.18
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 254500.0,
+   "price": 254250.0,
    "previous": 269000.0,
-   "pct": -5.39
+   "pct": -5.48
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.72157180805e-05,
+   "rate": 6.72943407559e-05,
    "rate_pct": 0.0067
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.9458006322e-05,
-   "rate_pct": 0.0049
+   "rate": 4.96170138847e-05,
+   "rate_pct": 0.005
   }
  ],
  "polymarket": [
