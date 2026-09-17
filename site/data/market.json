@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-17T21:06:39.654038+08:00",
+ "generated_at": "2026-09-17T21:17:01.134786+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.101,
+   "price": 100.095,
    "previous": 99.46,
    "pct": 0.64
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.314,
+   "price": 5.309,
    "previous": 5.354,
-   "pct": -0.75
+   "pct": -0.84
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.959,
+   "price": 4.951,
    "previous": 4.975,
-   "pct": -0.32
+   "pct": -0.48
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.805,
+   "price": 4.797,
    "previous": 4.791,
-   "pct": 0.29
+   "pct": 0.13
   },
   {
    "name": "美债13周",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 95.995,
+   "price": 95.99,
    "previous": 96.26,
    "pct": -0.28
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 99.88,
+   "price": 99.95,
    "previous": 101.39,
-   "pct": -1.49
+   "pct": -1.42
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29717.75,
+   "price": 29726.25,
    "previous": 29152.25,
-   "pct": 1.94
+   "pct": 1.97
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76720.64,
+   "price": 76641.51,
    "previous": 76838.16,
-   "pct": -0.15
+   "pct": -0.26
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2458.38,
+   "price": 2456.65,
    "previous": 2477.0208,
-   "pct": -0.75
+   "pct": -0.82
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4412.4,
+   "price": 4408.1,
    "previous": 4351.9,
-   "pct": 1.39
+   "pct": 1.29
   },
   {
    "name": "美光MU",
@@ -149,12 +149,12 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.97890962178e-05,
-   "rate_pct": 0.006
+   "rate": 5.67953453031e-05,
+   "rate_pct": 0.0057
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.12887752696e-05,
+   "rate": 7.06323101926e-05,
    "rate_pct": 0.0071
   }
  ],
