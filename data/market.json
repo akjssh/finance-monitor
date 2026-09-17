@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-17T09:36:12.048058+08:00",
+ "generated_at": "2026-09-17T09:43:34.834985+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.3,
+   "price": 100.289,
    "previous": 99.12,
-   "pct": 1.19
+   "pct": 1.18
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.08,
+   "price": 102.18,
    "previous": 100.05,
-   "pct": 2.03
+   "pct": 2.13
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29451.0,
+   "price": 29456.25,
    "previous": 29387.0,
-   "pct": 0.22
+   "pct": 0.24
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6762.35,
+   "price": 6767.55,
    "previous": 7033.92,
-   "pct": -3.86
+   "pct": -3.79
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76544.23,
+   "price": 76533.59,
    "previous": 76838.16,
-   "pct": -0.38
+   "pct": -0.4
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2433.0,
+   "price": 2432.85,
    "previous": 2477.0208,
    "pct": -1.78
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4349.4,
+   "price": 4350.3,
    "previous": 4408.9,
-   "pct": -1.35
+   "pct": -1.33
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1761000.0,
+   "price": 1758000.0,
    "previous": 1853000.0,
-   "pct": -4.96
+   "pct": -5.13
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 255000.0,
+   "price": 255500.0,
    "previous": 269000.0,
-   "pct": -5.2
+   "pct": -5.02
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.06579795229e-05,
-   "rate_pct": 0.0071
+   "rate": 6.91167853228e-05,
+   "rate_pct": 0.0069
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.71800691319e-05,
-   "rate_pct": 0.0047
+   "rate": 4.8215901602e-05,
+   "rate_pct": 0.0048
   }
  ],
  "polymarket": [
