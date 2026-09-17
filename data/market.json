@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-17T11:25:34.954415+08:00",
+ "generated_at": "2026-09-17T11:31:55.198046+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.32,
+   "price": 100.329,
    "previous": 99.12,
-   "pct": 1.21
+   "pct": 1.22
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.32,
+   "price": 102.35,
    "previous": 100.05,
-   "pct": 2.27
+   "pct": 2.3
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29441.75,
+   "price": 29437.75,
    "previous": 29387.0,
-   "pct": 0.19
+   "pct": 0.17
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6730.77,
+   "price": 6725.5,
    "previous": 7033.92,
-   "pct": -4.31
+   "pct": -4.38
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 76419.2,
+   "price": 76380.81,
    "previous": 76838.16,
-   "pct": -0.55
+   "pct": -0.6
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2433.53,
+   "price": 2432.58,
    "previous": 2477.0208,
-   "pct": -1.76
+   "pct": -1.79
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4323.6,
+   "price": 4322.6,
    "previous": 4408.9,
-   "pct": -1.93
+   "pct": -1.96
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1745000.0,
+   "price": 1744000.0,
    "previous": 1853000.0,
-   "pct": -5.83
+   "pct": -5.88
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 253750.0,
+   "price": 253000.0,
    "previous": 269000.0,
-   "pct": -5.67
+   "pct": -5.95
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.33581318191e-05,
+   "rate": 7.31273723754e-05,
    "rate_pct": 0.0073
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.65428517489e-05,
-   "rate_pct": 0.0047
+   "rate": 4.57088572339e-05,
+   "rate_pct": 0.0046
   }
  ],
  "polymarket": [
