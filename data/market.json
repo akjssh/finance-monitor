@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-09-18T21:15:40.995125+08:00",
+ "generated_at": "2026-09-18T21:22:20.605682+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.45,
+   "price": 100.469,
    "previous": 99.46,
-   "pct": 1.0
+   "pct": 1.01
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.316,
+   "price": 5.311,
    "previous": 5.329,
-   "pct": -0.24
+   "pct": -0.34
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.982,
+   "price": 4.98,
    "previous": 4.961,
-   "pct": 0.42
+   "pct": 0.38
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.842,
+   "price": 4.84,
    "previous": 4.79,
-   "pct": 1.09
+   "pct": 1.04
   },
   {
    "name": "美债13周",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 97.32,
+   "price": 97.46,
    "previous": 101.39,
-   "pct": -4.01
+   "pct": -3.88
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29771.5,
+   "price": 29785.25,
    "previous": 29152.25,
-   "pct": 2.12
+   "pct": 2.17
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77963.42,
+   "price": 78085.79,
    "previous": 78163.38,
-   "pct": -0.26
+   "pct": -0.1
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2496.65,
+   "price": 2504.88,
    "previous": 2514.407,
-   "pct": -0.71
+   "pct": -0.38
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4411.2,
+   "price": 4411.5,
    "previous": 4351.9,
-   "pct": 1.36
+   "pct": 1.37
   },
   {
    "name": "美光MU",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.48810915071e-05,
+   "rate": 6.49808856915e-05,
    "rate_pct": 0.0065
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.4076782728e-05,
-   "rate_pct": 0.0084
+   "rate": 8.47385684048e-05,
+   "rate_pct": 0.0085
   }
  ],
  "polymarket": [
@@ -165,7 +165,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 1.1
+   "yes": 0.9
   },
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
