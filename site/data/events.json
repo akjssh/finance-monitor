@@ -2496,6 +2496,66 @@
   "created_at": "2026-09-18T08:01:57.998403+08:00"
  },
  {
+  "id": "edgar:000128385426000010",
+  "source": "edgar",
+  "author": "英伟达NVDA",
+  "text": "英伟达NVDA 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000128385426000010/",
+  "pushed": false,
+  "created_at": "2026-09-18T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000169684126000012",
+  "source": "edgar",
+  "author": "英伟达NVDA",
+  "text": "英伟达NVDA 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000169684126000012/",
+  "pushed": false,
+  "created_at": "2026-09-18T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000158867026000014",
+  "source": "edgar",
+  "author": "英伟达NVDA",
+  "text": "英伟达NVDA 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000158867026000014/",
+  "pushed": false,
+  "created_at": "2026-09-18T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000124382126000007",
+  "source": "edgar",
+  "author": "英伟达NVDA",
+  "text": "英伟达NVDA 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000124382126000007/",
+  "pushed": false,
+  "created_at": "2026-09-18T08:00:00+08:00"
+ },
+ {
+  "id": "edgar:000119764926000012",
+  "source": "edgar",
+  "author": "英伟达NVDA",
+  "text": "英伟达NVDA 提交SEC文件 [4]",
+  "score": null,
+  "reason": "",
+  "translation": "",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000119764926000012/",
+  "pushed": false,
+  "created_at": "2026-09-18T08:00:00+08:00"
+ },
+ {
   "id": "rss:836ef15c7e62fddb",
   "source": "rss",
   "author": "金十快讯",
@@ -9538,65 +9598,5 @@
   "url": "https://xnews.jin10.com/details/230072",
   "pushed": false,
   "created_at": "2026-09-15T21:38:05.292430+08:00"
- },
- {
-  "id": "rss:cb9a64e56b8d6521",
-  "source": "rss",
-  "author": "华尔街见闻快讯",
-  "text": "美股盘初微跌：道指跌0.2%，光通信股普涨 —— 道指跌0.2%，标普500指数跌0.1%，纳指跌0.15%。费城半导体指数涨近1%。 存储芯片股多数上涨，SK海力士涨约2%，美光科技涨约1%，闪迪涨约1%。 光通信股普涨，迈威尔科技涨约2%，康宁涨约2%，Coherent涨约4%，Credo涨约2%，Lumentum涨约2%。",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://wallstreetcn.com/livenews/3165576",
-  "pushed": false,
-  "created_at": "2026-09-15T21:36:58.599440+08:00"
- },
- {
-  "id": "rss:43a6c1a339043082",
-  "source": "rss",
-  "author": "金十快讯",
-  "text": "地缘冲突推高能源价格，交易员激进押注欧洲与英国央行将开启新一轮密集加息。然而，这与官员们的谨慎基调完全脱节，巨大的预期差正将债券与外汇市场推向风暴边缘... —— 地缘冲突推高能源价格，交易员激进押注欧洲与英国央行将开启新一轮密集加息。然而，这与官员们的谨慎基调完全脱节，巨大的预期差正将债券与外汇市场推向风暴边缘。点击查看",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://xnews.jin10.com/details/230172",
-  "pushed": false,
-  "created_at": "2026-09-15T21:26:18.662512+08:00"
- },
- {
-  "id": "rss:e4224811edcae459",
-  "source": "rss",
-  "author": "华尔街见闻快讯",
-  "text": "Altera秘密提交IPO申请。（彭博） —— Altera秘密提交IPO申请。（彭博）",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://wallstreetcn.com/livenews/3165571",
-  "pushed": false,
-  "created_at": "2026-09-15T21:25:12.054816+08:00"
- },
- {
-  "id": "rss:dcba89b31c64005c",
-  "source": "rss",
-  "author": "华尔街见闻快讯",
-  "text": "凯雷集团Jason Thomas：美联储面临“巨大压力”，需加息25个基点。 美联储必须认真对待价格稳定问题。 AI放缓“可能性大于不大”。 —— 凯雷集团Jason Thomas：美联储面临“巨大压力”，需加息25个基点。 美联储必须认真对待价格稳定问题。 AI放缓“可能性大于不大”。",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://wallstreetcn.com/livenews/3165572",
-  "pushed": false,
-  "created_at": "2026-09-15T21:24:05.160033+08:00"
- },
- {
-  "id": "rss:de9a066d2f087055",
-  "source": "rss",
-  "author": "金十快讯",
-  "text": "美联储正迎来政策框架的结构性拐点！本周四的利率决议可能不仅标志着市场降息幻想的彻底破灭，更是新任主席沃什建立政策信誉的关键之战。点击查看... —— 美联储正迎来政策框架的结构性拐点！本周四的利率决议可能不仅标志着市场降息幻想的彻底破灭，更是新任主席沃什建立政策信誉的关键之战。点击查看...",
-  "score": null,
-  "reason": "",
-  "translation": "",
-  "url": "https://xnews.jin10.com/details/230170",
-  "pushed": false,
-  "created_at": "2026-09-15T21:09:04.122993+08:00"
  }
 ]
