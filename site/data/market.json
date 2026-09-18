@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-18T17:02:07.568678+08:00",
+ "generated_at": "2026-09-18T17:05:38.118122+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.382,
+   "price": 100.37,
    "previous": 99.46,
-   "pct": 0.93
+   "pct": 0.91
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 95.64,
+   "price": 95.55,
    "previous": 101.39,
-   "pct": -5.67
+   "pct": -5.76
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29910.5,
+   "price": 29898.75,
    "previous": 29152.25,
-   "pct": 2.6
+   "pct": 2.56
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 78232.84,
+   "price": 78256.42,
    "previous": 78163.38,
-   "pct": 0.09
+   "pct": 0.12
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2504.03,
+   "price": 2505.75,
    "previous": 2514.407,
-   "pct": -0.41
+   "pct": -0.34
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4427.8,
+   "price": 4432.1,
    "previous": 4351.9,
-   "pct": 1.74
+   "pct": 1.84
   },
   {
    "name": "美光MU",
@@ -149,19 +149,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.18342976139e-05,
-   "rate_pct": 0.0072
+   "rate": 7.29451829719e-05,
+   "rate_pct": 0.0073
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 9.28032924581e-05,
-   "rate_pct": 0.0093
+   "rate": 9.36177854825e-05,
+   "rate_pct": 0.0094
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 48.5
+   "yes": 47.5
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
@@ -169,7 +169,7 @@
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 50.5
+   "yes": 51.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
