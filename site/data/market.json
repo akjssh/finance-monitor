@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21T02:25:40.227795+08:00",
+ "generated_at": "2026-09-21T02:30:59.552479+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81196.42,
+   "price": 81279.99,
    "previous": 76150.32,
-   "pct": 6.63
+   "pct": 6.74
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2633.67,
+   "price": 2638.48,
    "previous": 2416.1199,
-   "pct": 9.0
+   "pct": 9.2
   },
   {
    "name": "黄金",
@@ -149,19 +149,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.02461124394e-05,
-   "rate_pct": 0.008
+   "rate": 8.11293887876e-05,
+   "rate_pct": 0.0081
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.084576048e-06,
-   "rate_pct": 0.0008
+   "rate": 6.9698430782e-06,
+   "rate_pct": 0.0007
   }
  ],
  "polymarket": [
   {
    "question": "Will the Communist Party of the Russian Federation (KPRF) gain the most seats in the next Russian parliamentary election?",
-   "yes": 0.6
+   "yes": 0.5
   }
  ]
 }
