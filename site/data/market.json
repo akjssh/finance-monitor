@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20T13:45:43.900966+08:00",
+ "generated_at": "2026-09-20T13:51:54.321134+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80465.19,
+   "price": 80476.43,
    "previous": 76150.32,
-   "pct": 5.67
+   "pct": 5.68
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2574.54,
+   "price": 2577.66,
    "previous": 2416.1199,
-   "pct": 6.56
+   "pct": 6.69
   },
   {
    "name": "黄金",
@@ -154,14 +154,14 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.13950427163e-05,
-   "rate_pct": 0.0081
+   "rate": 8.27826725382e-05,
+   "rate_pct": 0.0083
   }
  ],
  "polymarket": [
   {
    "question": "Will the Communist Party of the Russian Federation (KPRF) gain the most seats in the next Russian parliamentary election?",
-   "yes": 0.5
+   "yes": 0.6
   }
  ]
 }
