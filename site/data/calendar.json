@@ -1,6 +1,30 @@
 {
- "generated_at": "2026-09-20T09:40:33.145809+08:00",
+ "generated_at": "2026-09-20T09:46:06.937365+08:00",
  "events": [
+  {
+   "date": "2026-09-20",
+   "time": "09:00",
+   "ts": "2026-09-20T09:00:00+08:00",
+   "currency": "CNY",
+   "title": "1-y Loan Prime Rate",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "3.00%",
+   "previous": "3.00%",
+   "approx": false
+  },
+  {
+   "date": "2026-09-20",
+   "time": "09:00",
+   "ts": "2026-09-20T09:00:00+08:00",
+   "currency": "CNY",
+   "title": "5-y Loan Prime Rate",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "3.50%",
+   "previous": "3.50%",
+   "approx": false
+  },
   {
    "date": "2026-09-30",
    "time": "20:30",
