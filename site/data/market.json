@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-21T12:15:41.360898+08:00",
+ "generated_at": "2026-09-21T12:20:45.764080+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.312,
+   "price": 100.309,
    "previous": 100.31,
-   "pct": 0.0
+   "pct": -0.0
   },
   {
    "name": "美债30Y",
@@ -46,14 +46,14 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 94.14,
+   "price": 94.03,
    "previous": 102.43,
-   "pct": -8.09
+   "pct": -8.2
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30081.0,
+   "price": 30081.25,
    "previous": 28963.5,
    "pct": 3.86
   },
@@ -67,28 +67,28 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7018.82,
+   "price": 7019.27,
    "previous": 6684.37,
-   "pct": 5.0
+   "pct": 5.01
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81266.1,
+   "price": 81249.99,
    "previous": 76403.77,
-   "pct": 6.36
+   "pct": 6.34
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2658.8,
+   "price": 2656.88,
    "previous": 2447.1067,
-   "pct": 8.65
+   "pct": 8.57
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4395.7,
+   "price": 4396.0,
    "previous": 4387.5,
    "pct": 0.19
   },
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1876500.0,
+   "price": 1877000.0,
    "previous": 1697000.0,
-   "pct": 10.58
+   "pct": 10.61
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 274000.0,
+   "price": 273750.0,
    "previous": 249000.0,
-   "pct": 10.04
+   "pct": 9.94
   },
   {
    "name": "费城半导体",
@@ -154,7 +154,7 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.89246562248e-05,
+   "rate": 7.85685065604e-05,
    "rate_pct": 0.0079
   }
  ],
@@ -170,6 +170,10 @@
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
    "yes": 44.5
+  },
+  {
+   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 54.5
   }
  ]
 }
