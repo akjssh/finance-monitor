@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-21T08:21:39.358745+08:00",
+ "generated_at": "2026-09-21T08:25:39.584693+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.278,
+   "price": 100.268,
    "previous": 99.65,
-   "pct": 0.63
+   "pct": 0.62
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 95.8,
+   "price": 95.76,
    "previous": 105.83,
-   "pct": -9.48
+   "pct": -9.52
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30039.5,
+   "price": 30044.5,
    "previous": 28955.0,
-   "pct": 3.75
+   "pct": 3.76
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6953.05,
+   "price": 6994.21,
    "previous": 6684.37,
-   "pct": 4.02
+   "pct": 4.64
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81805.16,
+   "price": 81739.77,
    "previous": 76403.77,
-   "pct": 7.07
+   "pct": 6.98
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2692.4,
+   "price": 2686.07,
    "previous": 2447.1067,
-   "pct": 10.02
+   "pct": 9.77
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4404.0,
+   "price": 4401.8,
    "previous": 4332.8,
-   "pct": 1.64
+   "pct": 1.59
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1873000.0,
+   "price": 1880000.0,
    "previous": 1697000.0,
-   "pct": 10.37
+   "pct": 10.78
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 265500.0,
+   "price": 269500.0,
    "previous": 249000.0,
-   "pct": 6.63
+   "pct": 8.23
   },
   {
    "name": "费城半导体",
@@ -149,19 +149,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 9.30620654827e-05,
-   "rate_pct": 0.0093
+   "rate": 9.46493294777e-05,
+   "rate_pct": 0.0095
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.91792939984e-05,
-   "rate_pct": 0.0039
+   "rate": 4.29085843998e-05,
+   "rate_pct": 0.0043
   }
  ],
  "polymarket": [
   {
    "question": "Will the Communist Party of the Russian Federation (KPRF) gain the most seats in the next Russian parliamentary election?",
    "yes": 0.1
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
