@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22T03:40:43.579429+08:00",
+ "generated_at": "2026-09-22T03:45:37.553575+08:00",
  "events": [
   {
    "date": "2026-09-22",
@@ -21,7 +21,7 @@
    "title": "Richmond Manufacturing Index",
    "impact": "Low",
    "level": "L1",
-   "forecast": "5",
+   "forecast": "2",
    "previous": "4",
    "approx": false,
    "title_zh": "里士满联储制造业指数"
@@ -86,7 +86,7 @@
    "title": "Flash Manufacturing PMI",
    "impact": "Low",
    "level": "L1",
-   "forecast": "53.4",
+   "forecast": "53.6",
    "previous": "53.2",
    "approx": false
   },
@@ -98,7 +98,7 @@
    "title": "Flash Services PMI",
    "impact": "Low",
    "level": "L1",
-   "forecast": "56.0",
+   "forecast": "55.8",
    "previous": "56.8",
    "approx": false
   },
@@ -123,7 +123,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "-0.6M",
    "previous": "-0.6M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -165,6 +165,19 @@
    "forecast": "-259B",
    "previous": "-227B",
    "approx": false
+  },
+  {
+   "date": "2026-09-24",
+   "time": "20:30",
+   "ts": "2026-09-24T20:30:00+08:00",
+   "currency": "USD",
+   "title": "FOMC Member Barkin Speaks",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "title_zh": "FOMC官员讲话"
   },
   {
    "date": "2026-09-24",
