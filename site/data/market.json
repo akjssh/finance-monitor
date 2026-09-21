@@ -1,26 +1,12 @@
 {
- "generated_at": "2026-09-21T19:05:38.192678+08:00",
+ "generated_at": "2026-09-21T19:11:49.361717+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.298,
+   "price": 100.309,
    "previous": 100.31,
-   "pct": -0.01
-  },
-  {
-   "name": "美债30Y",
-   "symbol": "^TYX",
-   "price": 5.331,
-   "previous": 5.329,
-   "pct": 0.04
-  },
-  {
-   "name": "美债10Y",
-   "symbol": "^TNX",
-   "price": 4.998,
-   "previous": 4.961,
-   "pct": 0.75
+   "pct": -0.0
   },
   {
    "name": "美债5Y",
@@ -46,16 +32,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 92.99,
+   "price": 93.46,
    "previous": 102.43,
-   "pct": -9.22
+   "pct": -8.76
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30251.0,
+   "price": 30247.5,
    "previous": 28963.5,
-   "pct": 4.45
+   "pct": 4.43
   },
   {
    "name": "纳斯达克",
@@ -74,23 +60,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 84525.99,
+   "price": 84577.87,
    "previous": 76403.77,
-   "pct": 10.63
+   "pct": 10.7
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2719.02,
+   "price": 2720.31,
    "previous": 2447.1067,
-   "pct": 11.11
+   "pct": 11.16
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4384.8,
+   "price": 4381.1,
    "previous": 4387.5,
-   "pct": -0.06
+   "pct": -0.15
   },
   {
    "name": "美光MU",
@@ -154,11 +140,15 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.88897788133e-05,
-   "rate_pct": 0.0089
+   "rate": 8.62028326717e-05,
+   "rate_pct": 0.0086
   }
  ],
  "polymarket": [
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.5
+  },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.4
@@ -170,10 +160,6 @@
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
    "yes": 46.5
-  },
-  {
-   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 0.5
   }
  ]
 }
