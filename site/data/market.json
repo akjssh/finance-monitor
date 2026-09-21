@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22T06:24:21.734324+08:00",
+ "generated_at": "2026-09-22T06:25:40.219853+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,14 +46,14 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 91.84,
+   "price": 91.81,
    "previous": 102.43,
-   "pct": -10.34
+   "pct": -10.37
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30803.5,
+   "price": 30804.0,
    "previous": 28963.5,
    "pct": 6.35
   },
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 86560.0,
+   "price": 86510.21,
    "previous": 76403.77,
-   "pct": 13.29
+   "pct": 13.23
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2778.13,
+   "price": 2777.63,
    "previous": 2447.1067,
-   "pct": 13.53
+   "pct": 13.51
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4386.9,
+   "price": 4387.7,
    "previous": 4387.5,
-   "pct": -0.01
+   "pct": 0.0
   },
   {
    "name": "美光MU",
@@ -154,7 +154,7 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.02261830903e-05,
+   "rate": 2.01719800207e-05,
    "rate_pct": 0.002
   }
  ],
@@ -164,12 +164,12 @@
    "yes": 52.5
   },
   {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 46.5
-  },
-  {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
    "yes": 0.5
+  },
+  {
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 46.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
