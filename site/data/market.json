@@ -1,61 +1,61 @@
 {
- "generated_at": "2026-09-22T20:32:04.299214+08:00",
+ "generated_at": "2026-09-22T20:36:55.571456+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.393,
+   "price": 100.381,
    "previous": 100.22,
-   "pct": 0.17
+   "pct": 0.16
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.296,
+   "price": 5.266,
    "previous": 5.349,
-   "pct": -0.99
+   "pct": -1.55
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.9630003,
+   "price": 4.931,
    "previous": 5.006,
-   "pct": -0.86
+   "pct": -1.5
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.834,
+   "price": 4.8,
    "previous": 4.859,
-   "pct": -0.51
+   "pct": -1.21
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 3.9819999,
+   "price": 4.005,
    "previous": 3.97,
-   "pct": 0.3
+   "pct": 0.88
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 95.98,
+   "price": 95.985,
    "previous": 96.253,
    "pct": -0.28
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.53,
+   "price": 90.34,
    "previous": 101.91,
-   "pct": -11.17
+   "pct": -11.35
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30772.0,
+   "price": 30774.25,
    "previous": 29446.75,
-   "pct": 4.5
+   "pct": 4.51
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 86149.26,
+   "price": 86059.16,
    "previous": 80901.46,
-   "pct": 6.49
+   "pct": 6.38
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2750.99,
+   "price": 2749.18,
    "previous": 2611.3472,
-   "pct": 5.35
+   "pct": 5.28
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4372.8,
+   "price": 4370.5,
    "previous": 4399.7,
-   "pct": -0.61
+   "pct": -0.66
   },
   {
    "name": "美光MU",
@@ -154,8 +154,8 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.1990272272e-05,
-   "rate_pct": 0.0082
+   "rate": 8.07566205942e-05,
+   "rate_pct": 0.0081
   }
  ],
  "polymarket": [
