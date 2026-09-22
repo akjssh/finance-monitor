@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-22T09:20:41.406281+08:00",
+ "generated_at": "2026-09-22T09:27:46.545246+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.398,
+   "price": 100.411,
    "previous": 100.31,
-   "pct": 0.09
+   "pct": 0.1
   },
   {
    "name": "美债30Y",
@@ -53,9 +53,9 @@
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30886.25,
+   "price": 30876.25,
    "previous": 28963.5,
-   "pct": 6.64
+   "pct": 6.6
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7139.47,
+   "price": 7140.99,
    "previous": 6627.26,
-   "pct": 7.73
+   "pct": 7.75
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 85624.15,
+   "price": 85643.02,
    "previous": 80901.46,
-   "pct": 5.84
+   "pct": 5.86
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2744.42,
+   "price": 2748.78,
    "previous": 2611.3472,
-   "pct": 5.1
+   "pct": 5.26
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4396.4,
+   "price": 4388.4,
    "previous": 4387.5,
-   "pct": 0.2
+   "pct": 0.02
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1922000.0,
+   "price": 1923500.0,
    "previous": 1690000.0,
-   "pct": 13.73
+   "pct": 13.82
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 280500.0,
+   "price": 280000.0,
    "previous": 248500.0,
-   "pct": 12.88
+   "pct": 12.68
   },
   {
    "name": "费城半导体",
@@ -154,8 +154,8 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 3.96569426852e-05,
-   "rate_pct": 0.004
+   "rate": 4.24156963323e-05,
+   "rate_pct": 0.0042
   }
  ],
  "polymarket": [
@@ -170,6 +170,10 @@
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
    "yes": 46.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.2
   }
  ]
 }
