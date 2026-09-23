@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-23T13:06:27.040946+08:00",
+ "generated_at": "2026-09-23T13:10:49.905511+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.715,
+   "price": 100.72,
    "previous": 100.22,
-   "pct": 0.49
+   "pct": 0.5
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 88.74,
+   "price": 88.91,
    "previous": 100.3,
-   "pct": -11.53
+   "pct": -11.36
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 31040.75,
+   "price": 31034.75,
    "previous": 29613.68,
-   "pct": 4.82
+   "pct": 4.8
   },
   {
    "name": "纳斯达克",
@@ -67,28 +67,28 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7047.07,
+   "price": 7054.9,
    "previous": 6717.97,
-   "pct": 4.9
+   "pct": 5.02
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 86910.0,
+   "price": 86959.65,
    "previous": 81233.68,
-   "pct": 6.99
+   "pct": 7.05
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2769.27,
+   "price": 2771.47,
    "previous": 2631.963,
-   "pct": 5.22
+   "pct": 5.3
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4381.3,
+   "price": 4381.2,
    "previous": 4424.9,
    "pct": -0.99
   },
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1850000.0,
+   "price": 1852500.0,
    "previous": 1759000.0,
-   "pct": 5.17
+   "pct": 5.32
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 283500.0,
+   "price": 284000.0,
    "previous": 253500.0,
-   "pct": 11.83
+   "pct": 12.03
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 1.80685094933e-05,
-   "rate_pct": 0.0018
+   "rate": 1.88962031917e-05,
+   "rate_pct": 0.0019
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.38704631964e-05,
-   "rate_pct": 0.0044
+   "rate": 4.51203237193e-05,
+   "rate_pct": 0.0045
   }
  ],
  "polymarket": [
