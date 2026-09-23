@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23T09:40:38.388785+08:00",
+ "generated_at": "2026-09-23T09:46:44.676861+08:00",
  "events": [
   {
    "date": "2026-09-23",
@@ -72,10 +72,23 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-0.6M",
+   "forecast": "-0.7M",
    "previous": "-0.6M",
    "approx": false,
    "title_zh": "EIA原油库存"
+  },
+  {
+   "date": "2026-09-24",
+   "time": "00:00",
+   "ts": "2026-09-24T00:00:00+08:00",
+   "currency": "USD",
+   "title": "FOMC Member Goolsbee Speaks",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "title_zh": "FOMC官员讲话"
   },
   {
    "date": "2026-09-24",
@@ -187,7 +200,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "52B",
+   "forecast": "50B",
    "previous": "44B",
    "approx": false,
    "title_zh": "天然气库存"
@@ -242,6 +255,19 @@
    "previous": "1.1%",
    "approx": false,
    "title_zh": "耐用品订单环比"
+  },
+  {
+   "date": "2026-09-25",
+   "time": "21:20",
+   "ts": "2026-09-25T21:20:00+08:00",
+   "currency": "USD",
+   "title": "FOMC Member Schmid Speaks",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "title_zh": "FOMC官员讲话"
   },
   {
    "date": "2026-09-25",
