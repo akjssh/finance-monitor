@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-23T10:30:53.521496+08:00",
+ "generated_at": "2026-09-23T10:35:35.897978+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 100.668,
+   "price": 100.66,
    "previous": 100.22,
-   "pct": 0.45
+   "pct": 0.44
   },
   {
    "name": "美债30Y",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 89.82,
+   "price": 89.81,
    "previous": 101.91,
-   "pct": -11.86
+   "pct": -11.87
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 31009.25,
+   "price": 31012.25,
    "previous": 29446.75,
-   "pct": 5.31
+   "pct": 5.32
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 7021.59,
+   "price": 7027.06,
    "previous": 6717.97,
-   "pct": 4.52
+   "pct": 4.6
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 86568.78,
+   "price": 86526.51,
    "previous": 81233.68,
-   "pct": 6.57
+   "pct": 6.52
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2758.98,
+   "price": 2757.79,
    "previous": 2631.963,
-   "pct": 4.83
+   "pct": 4.78
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4372.0,
+   "price": 4375.7,
    "previous": 4399.7,
-   "pct": -0.63
+   "pct": -0.55
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1838000.0,
+   "price": 1842000.0,
    "previous": 1759000.0,
-   "pct": 4.49
+   "pct": 4.72
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 281750.0,
+   "price": 282000.0,
    "previous": 253500.0,
-   "pct": 11.14
+   "pct": 11.24
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.13530823255e-05,
+   "rate": 2.08039394528e-05,
    "rate_pct": 0.0021
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.62765166024e-05,
-   "rate_pct": 0.0086
+   "rate": 8.42587519607e-05,
+   "rate_pct": 0.0084
   }
  ],
  "polymarket": [
