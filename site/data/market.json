@@ -1,6 +1,147 @@
 {
- "generated_at": "2026-09-25T01:36:47.020797+08:00",
- "quotes": [],
+ "generated_at": "2026-09-25T01:40:48.808981+08:00",
+ "quotes": [
+  {
+   "name": "美元指数",
+   "symbol": "DX-Y.NYB",
+   "price": 101.283,
+   "previous": 100.43,
+   "pct": 0.85
+  },
+  {
+   "name": "美债30Y",
+   "symbol": "^TYX",
+   "price": 5.443,
+   "previous": 5.331,
+   "pct": 2.1
+  },
+  {
+   "name": "美债10Y",
+   "symbol": "^TNX",
+   "price": 5.152,
+   "previous": 4.998,
+   "pct": 3.08
+  },
+  {
+   "name": "美债5Y",
+   "symbol": "^FVX",
+   "price": 5.027,
+   "previous": 4.856,
+   "pct": 3.52
+  },
+  {
+   "name": "美债13周",
+   "symbol": "^IRX",
+   "price": 4.06,
+   "previous": 3.978,
+   "pct": 2.06
+  },
+  {
+   "name": "联邦基金期货",
+   "symbol": "ZQ=F",
+   "price": 95.95,
+   "previous": 96.253,
+   "pct": -0.31
+  },
+  {
+   "name": "WTI原油",
+   "symbol": "CL=F",
+   "price": 94.73,
+   "previous": 95.78,
+   "pct": -1.1
+  },
+  {
+   "name": "纳指期货",
+   "symbol": "NQ=F",
+   "price": 30752.0,
+   "previous": 30784.75,
+   "pct": -0.11
+  },
+  {
+   "name": "纳斯达克",
+   "symbol": "^IXIC",
+   "price": 26890.016,
+   "previous": 26418.3,
+   "pct": 1.79
+  },
+  {
+   "name": "韩国KOSPI",
+   "symbol": "^KS11",
+   "price": 7080.92,
+   "previous": 6717.97,
+   "pct": 5.4
+  },
+  {
+   "name": "比特币",
+   "symbol": "BTC-USD",
+   "price": 84212.39,
+   "previous": 81142.61,
+   "pct": 3.78
+  },
+  {
+   "name": "以太坊",
+   "symbol": "ETH-USD",
+   "price": 2675.23,
+   "previous": 2642.9976,
+   "pct": 1.22
+  },
+  {
+   "name": "黄金",
+   "symbol": "GC=F",
+   "price": 4298.6,
+   "previous": 4383.9,
+   "pct": -1.95
+  },
+  {
+   "name": "美光MU",
+   "symbol": "MU",
+   "price": 1072.44,
+   "previous": 977.5,
+   "pct": 9.71
+  },
+  {
+   "name": "闪迪SNDK",
+   "symbol": "SNDK",
+   "price": 1761.512,
+   "previous": 1614.39,
+   "pct": 9.11
+  },
+  {
+   "name": "西数WDC",
+   "symbol": "WDC",
+   "price": 458.585,
+   "previous": 423.87,
+   "pct": 8.19
+  },
+  {
+   "name": "希捷STX",
+   "symbol": "STX",
+   "price": 910.055,
+   "previous": 803.13,
+   "pct": 13.31
+  },
+  {
+   "name": "SK海力士",
+   "symbol": "000660.KS",
+   "price": 1862000.0,
+   "previous": 1759000.0,
+   "pct": 5.86
+  },
+  {
+   "name": "三星电子",
+   "symbol": "005930.KS",
+   "price": 285500.0,
+   "previous": 253500.0,
+   "pct": 12.62
+  },
+  {
+   "name": "费城半导体",
+   "symbol": "^SOX",
+   "price": 12457.847,
+   "previous": 11599.49,
+   "pct": 7.4
+  }
+ ],
  "fng": {
   "value": 71,
   "label": "Greed"
@@ -8,23 +149,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 1.49452483894e-05,
-   "rate_pct": 0.0015
+   "rate": 1.6596611592e-05,
+   "rate_pct": 0.0017
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.22927069347e-05,
+   "rate": 4.20313305866e-05,
    "rate_pct": 0.0042
   }
  ],
  "polymarket": [
   {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 0.2
-  },
-  {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
    "yes": 64.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.2
   },
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
