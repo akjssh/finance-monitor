@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25T06:52:58.744278+08:00",
+ "generated_at": "2026-09-25T06:56:44.008973+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 94.48,
+   "price": 94.44,
    "previous": 95.78,
-   "pct": -1.36
+   "pct": -1.4
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30733.25,
+   "price": 30726.75,
    "previous": 30784.75,
-   "pct": -0.17
+   "pct": -0.19
   },
   {
    "name": "纳斯达克",
@@ -74,21 +74,21 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 84221.58,
+   "price": 84220.44,
    "previous": 81142.61,
    "pct": 3.79
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2683.86,
+   "price": 2683.57,
    "previous": 2642.9976,
-   "pct": 1.55
+   "pct": 1.54
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4306.6,
+   "price": 4306.7,
    "previous": 4383.9,
    "pct": -1.76
   },
@@ -149,20 +149,16 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": -1.1094521044e-06,
+   "rate": -1.1380640796e-06,
    "rate_pct": -0.0001
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -2.39891252347e-05,
-   "rate_pct": -0.0024
+   "rate": -2.48014206223e-05,
+   "rate_pct": -0.0025
   }
  ],
  "polymarket": [
-  {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 0.2
-  },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
    "yes": 66.5
@@ -170,6 +166,10 @@
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
    "yes": 32.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.2
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
