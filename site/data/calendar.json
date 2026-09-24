@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25T06:41:48.771240+08:00",
+ "generated_at": "2026-09-25T06:45:37.234360+08:00",
  "events": [
   {
    "date": "2026-09-25",
@@ -8,6 +8,18 @@
    "currency": "CNY",
    "title": "Bank Holiday",
    "impact": "Holiday",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false
+  },
+  {
+   "date": "2026-09-25",
+   "time": "07:55",
+   "ts": "2026-09-25T07:55:00+08:00",
+   "currency": "USD",
+   "title": "President Trump Speaks",
+   "impact": "Medium",
    "level": "L1",
    "forecast": "",
    "previous": "",
