@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-25T16:40:43.364247+08:00",
+ "generated_at": "2026-09-25T16:45:46.516301+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 101.134,
+   "price": 101.137,
    "previous": 100.43,
    "pct": 0.7
   },
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 93.26,
+   "price": 93.07,
    "previous": 95.78,
-   "pct": -2.63
+   "pct": -2.83
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30925.25,
+   "price": 30931.25,
    "previous": 30784.75,
-   "pct": 0.46
+   "pct": 0.48
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 84330.22,
+   "price": 84287.13,
    "previous": 86602.914,
-   "pct": -2.62
+   "pct": -2.67
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2686.73,
+   "price": 2685.84,
    "previous": 2776.4683,
-   "pct": -3.23
+   "pct": -3.26
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4319.4,
+   "price": 4323.9,
    "previous": 4383.9,
-   "pct": -1.47
+   "pct": -1.37
   },
   {
    "name": "美光MU",
@@ -149,20 +149,16 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 7.16821869626e-05,
-   "rate_pct": 0.0072
+   "rate": 7.04913425508e-05,
+   "rate_pct": 0.007
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.03502981618e-05,
-   "rate_pct": 0.007
+   "rate": 7.13562753e-05,
+   "rate_pct": 0.0071
   }
  ],
  "polymarket": [
-  {
-   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 66.5
-  },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
    "yes": 0.4
@@ -170,6 +166,10 @@
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.2
+  },
+  {
+   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 66.5
   },
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
