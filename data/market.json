@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26T09:01:37.677051+08:00",
+ "generated_at": "2026-09-26T14:07:34.658924+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 92.44,
+   "price": 92.41,
    "previous": 95.78,
-   "pct": -3.49
+   "pct": -3.52
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30921.75,
+   "price": 30889.25,
    "previous": 30784.75,
-   "pct": 0.45
+   "pct": 0.34
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 83930.86,
+   "price": 83925.77,
    "previous": 86172.28,
-   "pct": -2.6
+   "pct": -2.61
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2688.96,
+   "price": 2685.97,
    "previous": 2752.6326,
-   "pct": -2.31
+   "pct": -2.42
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4320.5,
+   "price": 4321.2,
    "previous": 4383.9,
-   "pct": -1.45
+   "pct": -1.43
   },
   {
    "name": "美光MU",
@@ -149,31 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 1.87027348891e-05,
+   "rate": 1.92629138404e-05,
    "rate_pct": 0.0019
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.49230005368e-05,
-   "rate_pct": 0.0025
+   "rate": -1.3346226169e-06,
+   "rate_pct": -0.0001
   }
  ],
  "polymarket": [
   {
-   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 0.4
-  },
-  {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 35.5
+   "yes": 33.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 63.5
+   "yes": 64.5
   },
   {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 0.2
+   "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.9
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
