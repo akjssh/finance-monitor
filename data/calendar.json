@@ -1,94 +1,6 @@
 {
- "generated_at": "2026-09-29T23:54:48.505164+08:00",
+ "generated_at": "2026-09-30T11:53:07.786144+08:00",
  "events": [
-  {
-   "date": "2026-09-29",
-   "time": "01:25",
-   "ts": "2026-09-29T01:25:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Cook Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-09-29",
-   "time": "01:30",
-   "ts": "2026-09-29T01:30:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Barkin Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-09-29",
-   "time": "21:00",
-   "ts": "2026-09-29T21:00:00+08:00",
-   "currency": "USD",
-   "title": "HPI m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "0.1%",
-   "previous": "0.0%",
-   "approx": false
-  },
-  {
-   "date": "2026-09-29",
-   "time": "21:00",
-   "ts": "2026-09-29T21:00:00+08:00",
-   "currency": "USD",
-   "title": "S&P/CS Composite-20 HPI y/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "2.2%",
-   "previous": "2.1%",
-   "approx": false
-  },
-  {
-   "date": "2026-09-29",
-   "time": "22:00",
-   "ts": "2026-09-29T22:00:00+08:00",
-   "currency": "USD",
-   "title": "CB Consumer Confidence",
-   "impact": "Medium",
-   "level": "L1",
-   "forecast": "89.2",
-   "previous": "89.4",
-   "approx": false
-  },
-  {
-   "date": "2026-09-29",
-   "time": "22:00",
-   "ts": "2026-09-29T22:00:00+08:00",
-   "currency": "USD",
-   "title": "JOLTS Job Openings",
-   "impact": "Medium",
-   "level": "L1",
-   "forecast": "7.23M",
-   "previous": "7.27M",
-   "approx": false,
-   "title_zh": "JOLTS职位空缺"
-  },
-  {
-   "date": "2026-09-29",
-   "time": "23:00",
-   "ts": "2026-09-29T23:00:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Bowman Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
   {
    "date": "2026-09-30",
    "time": "00:40",
@@ -341,7 +253,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-1.9M",
+   "forecast": "-0.7M",
    "previous": "3.0M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -371,6 +283,18 @@
    "previous": "",
    "approx": false,
    "title_zh": "FOMC官员讲话"
+  },
+  {
+   "date": "2026-10-01",
+   "time": "03:30",
+   "ts": "2026-10-01T03:30:00+08:00",
+   "currency": "USD",
+   "title": "President Trump Speaks",
+   "impact": "Medium",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false
   },
   {
    "date": "2026-10-01",
@@ -561,7 +485,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "63B",
    "previous": "53B",
    "approx": false,
    "title_zh": "天然气库存"
@@ -706,6 +630,18 @@
    "forecast": "",
    "previous": "",
    "approx": true
+  },
+  {
+   "date": "2026-10-29",
+   "time": "02:00",
+   "ts": "2026-10-29T02:00:00+08:00",
+   "currency": "USD",
+   "title": "FOMC利率决议",
+   "impact": "High",
+   "level": "L3",
+   "forecast": "",
+   "previous": "",
+   "approx": false
   }
  ]
 }
