@@ -1,68 +1,68 @@
 {
- "generated_at": "2026-10-02T16:44:55.913594+08:00",
+ "generated_at": "2026-10-03T07:47:22.689002+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 101.914,
+   "price": 101.924,
    "previous": 101.2,
-   "pct": 0.71
+   "pct": 0.72
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.603,
-   "previous": 5.504,
-   "pct": 1.8
+   "price": 5.63,
+   "previous": 5.561,
+   "pct": 1.24
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.237,
-   "previous": 5.184,
-   "pct": 1.02
+   "price": 5.277,
+   "previous": 5.24,
+   "pct": 0.71
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 5.005,
-   "previous": 5.007,
-   "pct": -0.04
+   "price": 5.055,
+   "previous": 5.068,
+   "pct": -0.26
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 3.9819999,
-   "previous": 4.07,
-   "pct": -2.16
+   "price": 3.993,
+   "previous": 4.057,
+   "pct": -1.58
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.115,
+   "price": 96.07,
    "previous": 96.253,
-   "pct": -0.14
+   "pct": -0.19
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 89.64,
+   "price": 91.26,
    "previous": 92.6,
-   "pct": -3.2
+   "pct": -1.45
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 30983.75,
+   "price": 31049.0,
    "previous": 30566.25,
-   "pct": 1.37
+   "pct": 1.58
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26871.596,
-   "previous": 26939.37,
-   "pct": -0.25
+   "price": 27190.863,
+   "previous": 27068.72,
+   "pct": 0.45
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 86309.71,
+   "price": 84541.79,
    "previous": 83502.61,
-   "pct": 3.36
+   "pct": 1.24
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2758.9,
+   "price": 2669.19,
    "previous": 2688.6687,
-   "pct": 2.61
+   "pct": -0.72
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4211.7,
+   "price": 4172.1,
    "previous": 4168.4,
-   "pct": 1.04
+   "pct": 0.09
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 1097.39,
-   "previous": 1080.53,
-   "pct": 1.56
+   "price": 1074.89,
+   "previous": 1082.28,
+   "pct": -0.68
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1787.69,
-   "previous": 1753.62,
-   "pct": 1.94
+   "price": 1719.99,
+   "previous": 1777.8,
+   "pct": -3.25
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 462.56,
-   "previous": 450.31,
-   "pct": 2.72
+   "price": 415.29,
+   "previous": 456.81,
+   "pct": -9.09
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 945.57,
-   "previous": 905.92,
-   "pct": 4.38
+   "price": 848.99,
+   "previous": 916.83,
+   "pct": -7.4
   },
   {
    "name": "SK海力士",
@@ -137,9 +137,9 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 12829.0,
-   "previous": 12492.54,
-   "pct": 2.69
+   "price": 13136.675,
+   "previous": 12668.93,
+   "pct": 3.69
   }
  ],
  "fng": {
@@ -149,31 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 8.80953743044e-05,
-   "rate_pct": 0.0088
+   "rate": -5.234683391e-07,
+   "rate_pct": -0.0001
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 8.68391031852e-05,
-   "rate_pct": 0.0087
+   "rate": 3.6757343421e-06,
+   "rate_pct": 0.0004
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 74.5
+   "yes": 82.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 24.5
-  },
-  {
-   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 0.5
+   "yes": 17.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.2
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
