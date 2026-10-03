@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T21:39:09.723842+08:00",
+ "generated_at": "2026-10-04T01:39:44.891904+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 84901.92,
+   "price": 84907.51,
    "previous": 83622.43,
-   "pct": 1.53
+   "pct": 1.54
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2680.58,
+   "price": 2684.09,
    "previous": 2676.7222,
-   "pct": 0.14
+   "pct": 0.28
   },
   {
    "name": "黄金",
@@ -149,23 +149,19 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": -1.76139431764e-05,
-   "rate_pct": -0.0018
+   "rate": 6.00595846944e-05,
+   "rate_pct": 0.006
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -4.15163906105e-05,
-   "rate_pct": -0.0042
+   "rate": 3.68498241885e-05,
+   "rate_pct": 0.0037
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
    "yes": 82.5
-  },
-  {
-   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 17.5
   }
  ]
 }
