@@ -1,81 +1,6 @@
 {
- "generated_at": "2026-10-06T23:18:59.441866+08:00",
+ "generated_at": "2026-10-07T08:03:23.506271+08:00",
  "events": [
-  {
-   "date": "2026-10-06",
-   "time": "07:01",
-   "ts": "2026-10-06T07:01:00+08:00",
-   "currency": "CNY",
-   "title": "Bank Holiday",
-   "impact": "Holiday",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
-  {
-   "date": "2026-10-06",
-   "time": "20:14",
-   "ts": "2026-10-06T20:14:00+08:00",
-   "currency": "USD",
-   "title": "ADP Weekly Employment Change",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "20.0K",
-   "approx": false
-  },
-  {
-   "date": "2026-10-06",
-   "time": "20:15",
-   "ts": "2026-10-06T20:15:00+08:00",
-   "currency": "USD",
-   "title": "ADP Weekly Employment Change",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "22.5K",
-   "approx": false
-  },
-  {
-   "date": "2026-10-06",
-   "time": "20:30",
-   "ts": "2026-10-06T20:30:00+08:00",
-   "currency": "USD",
-   "title": "Trade Balance",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "-100.8B",
-   "previous": "-88.6B",
-   "approx": false,
-   "title_zh": "贸易帐"
-  },
-  {
-   "date": "2026-10-06",
-   "time": "22:01",
-   "ts": "2026-10-06T22:01:00+08:00",
-   "currency": "USD",
-   "title": "RCM/TIPP Economic Optimism",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "44.5",
-   "previous": "45.6",
-   "approx": false,
-   "title_zh": "经济乐观指数(RCM/TIPP)"
-  },
-  {
-   "date": "2026-10-06",
-   "time": "22:45",
-   "ts": "2026-10-06T22:45:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Bowman Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
   {
    "date": "2026-10-07",
    "time": "01:15",
@@ -122,7 +47,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "2.1M",
+   "forecast": "1.9M",
    "previous": "0.9M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -159,7 +84,7 @@
    "title": "Consumer Credit m/m",
    "impact": "Low",
    "level": "L1",
-   "forecast": "14.4B",
+   "forecast": "14.5B",
    "previous": "18.1B",
    "approx": false,
    "title_zh": "消费信贷环比"
@@ -210,7 +135,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "79B",
    "previous": "64B",
    "approx": false,
    "title_zh": "天然气库存"
@@ -248,7 +173,7 @@
    "title": "Prelim UoM Consumer Sentiment",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "47.6",
+   "forecast": "47.5",
    "previous": "47.8",
    "approx": false,
    "title_zh": "密歇根消费者信心(初值)"
