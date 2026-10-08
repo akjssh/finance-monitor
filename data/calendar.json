@@ -1,57 +1,6 @@
 {
- "generated_at": "2026-10-07T20:07:43.202597+08:00",
+ "generated_at": "2026-10-08T10:56:39.951477+08:00",
  "events": [
-  {
-   "date": "2026-10-07",
-   "time": "01:15",
-   "ts": "2026-10-07T01:15:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Schmid Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-10-07",
-   "time": "04:30",
-   "ts": "2026-10-07T04:30:00+08:00",
-   "currency": "USD",
-   "title": "API Weekly Statistical Bulletin",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "API周度数据报告"
-  },
-  {
-   "date": "2026-10-07",
-   "time": "07:01",
-   "ts": "2026-10-07T07:01:00+08:00",
-   "currency": "CNY",
-   "title": "Bank Holiday",
-   "impact": "Holiday",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
-  {
-   "date": "2026-10-07",
-   "time": "22:30",
-   "ts": "2026-10-07T22:30:00+08:00",
-   "currency": "USD",
-   "title": "Crude Oil Inventories",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "1.9M",
-   "previous": "0.9M",
-   "approx": false,
-   "title_zh": "EIA原油库存"
-  },
   {
    "date": "2026-10-08",
    "time": "01:00",
@@ -250,6 +199,18 @@
    "forecast": "",
    "previous": "",
    "approx": true
+  },
+  {
+   "date": "2026-11-06",
+   "time": "21:30",
+   "ts": "2026-11-06T21:30:00+08:00",
+   "currency": "USD",
+   "title": "美国非农就业报告",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": false
   }
  ]
 }
