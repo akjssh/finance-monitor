@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T20:37:53.329358+08:00",
+ "generated_at": "2026-10-12T01:50:21.869813+08:00",
  "events": [
   {
    "date": "2026-10-12",
@@ -557,6 +557,18 @@
    "forecast": "",
    "previous": "",
    "approx": false
+  },
+  {
+   "date": "2026-11-10",
+   "time": "21:30",
+   "ts": "2026-11-10T21:30:00+08:00",
+   "currency": "USD",
+   "title": "美国CPI通胀数据（预估日期）",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": true
   }
  ]
 }
