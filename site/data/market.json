@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T13:58:52.898805+08:00",
+ "generated_at": "2026-10-11T20:39:15.707457+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 82963.05,
+   "price": 83089.51,
    "previous": 83275.93,
-   "pct": -0.38
+   "pct": -0.22
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2501.64,
+   "price": 2503.62,
    "previous": 2573.5273,
-   "pct": -2.79
+   "pct": -2.72
   },
   {
    "name": "黄金",
@@ -149,18 +149,22 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": -2.0282437613e-06,
-   "rate_pct": -0.0002
+   "rate": -6.6124668141e-06,
+   "rate_pct": -0.0007
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -5.52834400356e-05,
-   "rate_pct": -0.0055
+   "rate": 4.4618721662e-06,
+   "rate_pct": 0.0004
   }
  ],
  "polymarket": [
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.5
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.4
   }
  ]
