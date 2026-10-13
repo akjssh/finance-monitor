@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T11:25:18.400290+08:00",
+ "generated_at": "2026-10-13T18:57:50.325782+08:00",
  "events": [
   {
    "date": "2026-10-13",
@@ -26,30 +26,6 @@
    "previous": "",
    "approx": false,
    "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-10-13",
-   "time": "16:03",
-   "ts": "2026-10-13T16:03:00+08:00",
-   "currency": "CNY",
-   "title": "M2 Money Supply y/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "7.4%",
-   "previous": "7.5%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-13",
-   "time": "16:03",
-   "ts": "2026-10-13T16:03:00+08:00",
-   "currency": "CNY",
-   "title": "New Loans",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "1025B",
-   "previous": "60B",
-   "approx": false
   },
   {
    "date": "2026-10-13",
@@ -162,6 +138,30 @@
    "level": "L1",
    "forecast": "116.8B",
    "previous": "119.1B",
+   "approx": false
+  },
+  {
+   "date": "2026-10-14",
+   "time": "16:03",
+   "ts": "2026-10-14T16:03:00+08:00",
+   "currency": "CNY",
+   "title": "M2 Money Supply y/y",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "7.4%",
+   "previous": "7.5%",
+   "approx": false
+  },
+  {
+   "date": "2026-10-14",
+   "time": "16:03",
+   "ts": "2026-10-14T16:03:00+08:00",
+   "currency": "CNY",
+   "title": "New Loans",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "1025B",
+   "previous": "60B",
    "approx": false
   },
   {
