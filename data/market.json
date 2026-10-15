@@ -1,61 +1,61 @@
 {
- "generated_at": "2026-10-15T15:50:42.169519+08:00",
+ "generated_at": "2026-10-15T20:58:38.633205+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 102.059,
+   "price": 102.169,
    "previous": 102.58,
-   "pct": -0.51
+   "pct": -0.4
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.525,
-   "previous": 5.606,
-   "pct": -1.44
+   "price": 5.383,
+   "previous": 5.6,
+   "pct": -3.87
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.19,
-   "previous": 5.231,
-   "pct": -0.78
+   "price": 5.048,
+   "previous": 5.244,
+   "pct": -3.74
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.992,
-   "previous": 4.991,
-   "pct": 0.02
+   "price": 4.87,
+   "previous": 5.021,
+   "pct": -3.01
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 4.085,
-   "previous": 4.043,
-   "pct": 1.04
+   "price": 4.08,
+   "previous": 4.057,
+   "pct": 0.57
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.05,
+   "price": 96.045,
    "previous": 96.118,
-   "pct": -0.07
+   "pct": -0.08
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 94.05,
+   "price": 93.97,
    "previous": 93.74,
-   "pct": 0.33
+   "pct": 0.25
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29832.25,
+   "price": 29818.5,
    "previous": 30898.25,
-   "pct": -3.45
+   "pct": -3.49
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81206.11,
+   "price": 80507.6,
    "previous": 83679.47,
-   "pct": -2.96
+   "pct": -3.79
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2370.76,
+   "price": 2345.89,
    "previous": 2534.6992,
-   "pct": -6.47
+   "pct": -7.45
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4165.4,
+   "price": 4162.7,
    "previous": 4190.6,
-   "pct": -0.6
+   "pct": -0.67
   },
   {
    "name": "美光MU",
@@ -149,23 +149,23 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.80610986253e-05,
-   "rate_pct": 0.0058
+   "rate": 4.32325690461e-05,
+   "rate_pct": 0.0043
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.94684777827e-05,
-   "rate_pct": 0.0019
+   "rate": 4.65582415652e-05,
+   "rate_pct": 0.0047
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 75.5
+   "yes": 71.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 24.5
+   "yes": 27.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
