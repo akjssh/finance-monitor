@@ -1,116 +1,6 @@
 {
- "generated_at": "2026-10-19T15:01:05.135798+08:00",
+ "generated_at": "2026-10-20T10:11:37.924000+08:00",
  "events": [
-  {
-   "date": "2026-10-19",
-   "time": "09:30",
-   "ts": "2026-10-19T09:30:00+08:00",
-   "currency": "CNY",
-   "title": "New Home Prices m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "-0.17%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "Fixed Asset Investment ytd/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "-7.3%",
-   "previous": "-7.2%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "GDP q/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "4.4%",
-   "previous": "4.3%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "Industrial Production y/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "5.4%",
-   "previous": "5.2%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "NBS Press Conference",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "Retail Sales y/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "0.5%",
-   "previous": "0.4%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "10:00",
-   "ts": "2026-10-19T10:00:00+08:00",
-   "currency": "CNY",
-   "title": "Unemployment Rate",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "5.3%",
-   "previous": "5.3%",
-   "approx": false,
-   "title_zh": "失业率"
-  },
-  {
-   "date": "2026-10-19",
-   "time": "17:10",
-   "ts": "2026-10-19T17:10:00+08:00",
-   "currency": "CNY",
-   "title": "Foreign Direct Investment ytd/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "-5.3%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-19",
-   "time": "22:00",
-   "ts": "2026-10-19T22:00:00+08:00",
-   "currency": "USD",
-   "title": "NAHB Housing Market Index",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "31",
-   "previous": "32",
-   "approx": false,
-   "title_zh": "NAHB房产市场指数"
-  },
   {
    "date": "2026-10-20",
    "time": "09:00",
@@ -133,6 +23,18 @@
    "level": "L1",
    "forecast": "3.50%",
    "previous": "3.50%",
+   "approx": false
+  },
+  {
+   "date": "2026-10-20",
+   "time": "17:10",
+   "ts": "2026-10-20T17:10:00+08:00",
+   "currency": "CNY",
+   "title": "Foreign Direct Investment ytd/y",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "-5.3%",
    "approx": false
   },
   {
@@ -181,7 +83,7 @@
    "title": "Pending Home Sales m/m",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-0.4%",
+   "forecast": "-0.7%",
    "previous": "0.3%",
    "approx": false
   },

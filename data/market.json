@@ -1,179 +1,179 @@
 {
- "generated_at": "2026-10-19T15:04:33.226796+08:00",
+ "generated_at": "2026-10-20T10:13:16.295317+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 101.819,
+   "price": 101.931,
    "previous": 102.55,
-   "pct": -0.71
+   "pct": -0.6
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.436,
-   "previous": 5.598,
-   "pct": -2.89
+   "price": 5.472,
+   "previous": 5.563,
+   "pct": -1.64
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.098,
-   "previous": 5.24,
-   "pct": -2.71
+   "price": 5.136,
+   "previous": 5.217,
+   "pct": -1.55
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.899,
-   "previous": 5.019,
-   "pct": -2.39
+   "price": 4.929,
+   "previous": 5.007,
+   "pct": -1.56
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 4.07,
-   "previous": 4.05,
-   "pct": 0.49
+   "price": 4.075,
+   "previous": 4.057,
+   "pct": 0.44
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.085,
+   "price": 96.08,
    "previous": 96.11,
    "pct": -0.03
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 96.98,
+   "price": 98.69,
    "previous": 95.09,
-   "pct": 1.99
+   "pct": 3.79
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29768.5,
+   "price": 29712.75,
    "previous": 30182.75,
-   "pct": -1.37
+   "pct": -1.56
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26140.033,
-   "previous": 27366.17,
-   "pct": -4.48
+   "price": 26430.887,
+   "previous": 27245.9,
+   "pct": -2.99
   },
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 5768.01,
-   "previous": 6384.24,
-   "pct": -9.65
+   "price": 5607.63,
+   "previous": 6035.35,
+   "pct": -7.09
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 82790.25,
-   "previous": 82141.46,
-   "pct": 0.79
+   "price": 81533.49,
+   "previous": 81500.805,
+   "pct": 0.04
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2428.42,
-   "previous": 2440.48,
-   "pct": -0.49
+   "price": 2390.17,
+   "previous": 2419.7673,
+   "pct": -1.22
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4200.8,
+   "price": 4147.3,
    "previous": 4107.9,
-   "pct": 2.26
+   "pct": 0.96
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 878.84,
-   "previous": 1029.0,
-   "pct": -14.59
+   "price": 904.9,
+   "previous": 989.04,
+   "pct": -8.51
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1299.3,
-   "previous": 1581.82,
-   "pct": -17.86
+   "price": 1371.12,
+   "previous": 1487.33,
+   "pct": -7.81
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 332.0,
-   "previous": 397.28,
-   "pct": -16.43
+   "price": 352.21,
+   "previous": 386.94,
+   "pct": -8.98
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 639.01,
-   "previous": 783.0,
-   "pct": -18.39
+   "price": 660.81,
+   "previous": 753.25,
+   "pct": -12.27
   },
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1277000.0,
-   "previous": 1605000.0,
-   "pct": -20.44
+   "price": 1227000.0,
+   "previous": 1443000.0,
+   "pct": -14.97
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 218000.0,
-   "previous": 250500.0,
-   "pct": -12.97
+   "price": 214750.0,
+   "previous": 232000.0,
+   "pct": -7.44
   },
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 11137.287,
-   "previous": 12572.42,
-   "pct": -11.41
+   "price": 11316.343,
+   "previous": 12236.79,
+   "pct": -7.52
   }
  ],
  "fng": {
-  "value": 59,
+  "value": 55,
   "label": "Greed"
  },
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.42416542867e-05,
-   "rate_pct": 0.0044
+   "rate": 0.0001,
+   "rate_pct": 0.01
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 7.59630127519e-05,
-   "rate_pct": 0.0076
+   "rate": 6.62511036897e-05,
+   "rate_pct": 0.0066
   }
  ],
  "polymarket": [
-  {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 0.1
-  },
-  {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 87.5
-  },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
    "yes": 0.4
   },
   {
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 85.5
+  },
+  {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 11.5
+   "yes": 14.5
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
