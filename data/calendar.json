@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T15:38:46.675651+08:00",
+ "generated_at": "2026-10-20T21:06:07.333387+08:00",
  "events": [
   {
    "date": "2026-10-20",
@@ -23,18 +23,6 @@
    "level": "L1",
    "forecast": "3.50%",
    "previous": "3.50%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-20",
-   "time": "17:10",
-   "ts": "2026-10-20T17:10:00+08:00",
-   "currency": "CNY",
-   "title": "Foreign Direct Investment ytd/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "-5.3%",
    "approx": false
   },
   {
@@ -83,7 +71,7 @@
    "title": "Pending Home Sales m/m",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-0.7%",
+   "forecast": "-0.6%",
    "previous": "0.3%",
    "approx": false
   },
@@ -102,13 +90,25 @@
   },
   {
    "date": "2026-10-21",
+   "time": "17:10",
+   "ts": "2026-10-21T17:10:00+08:00",
+   "currency": "CNY",
+   "title": "Foreign Direct Investment ytd/y",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "-5.3%",
+   "approx": false
+  },
+  {
+   "date": "2026-10-21",
    "time": "22:30",
    "ts": "2026-10-21T22:30:00+08:00",
    "currency": "USD",
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "-0.1M",
    "previous": "-8.6M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -134,7 +134,7 @@
    "title": "CB Leading Index m/m",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-0.2%",
+   "forecast": "-0.1%",
    "previous": "-0.1%",
    "approx": false
   },
@@ -146,7 +146,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "83B",
    "previous": "67B",
    "approx": false,
    "title_zh": "天然气库存"
@@ -159,7 +159,7 @@
    "title": "Flash Manufacturing PMI",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "55.5",
+   "forecast": "55.4",
    "previous": "57.0",
    "approx": false
   },
@@ -171,7 +171,7 @@
    "title": "Flash Services PMI",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "58.0",
+   "forecast": "57.8",
    "previous": "58.7",
    "approx": false
   },
