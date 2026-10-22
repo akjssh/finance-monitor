@@ -1,68 +1,68 @@
 {
- "generated_at": "2026-10-22T18:38:37.611081+08:00",
+ "generated_at": "2026-10-23T03:37:21.572688+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 101.629,
+   "price": 101.618,
    "previous": 101.98,
-   "pct": -0.34
+   "pct": -0.35
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.439,
-   "previous": 5.429,
-   "pct": 0.18
+   "price": 5.287,
+   "previous": 5.436,
+   "pct": -2.74
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.146,
-   "previous": 5.089,
-   "pct": 1.12
+   "price": 4.953,
+   "previous": 5.098,
+   "pct": -2.84
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.972,
+   "price": 4.768,
    "previous": 4.899,
-   "pct": 1.49
+   "pct": -2.67
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 4.063,
-   "previous": 4.088,
-   "pct": -0.61
+   "price": 4.022,
+   "previous": 4.07,
+   "pct": -1.18
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.09,
+   "price": 96.1,
    "previous": 96.118,
-   "pct": -0.03
+   "pct": -0.02
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 99.24,
+   "price": 99.42,
    "previous": 103.66,
-   "pct": -4.26
+   "pct": -4.09
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29501.5,
+   "price": 29128.5,
    "previous": 29722.5,
-   "pct": -0.74
+   "pct": -2.0
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26702.857,
-   "previous": 26692.87,
-   "pct": 0.04
+   "price": 25945.756,
+   "previous": 26713.03,
+   "pct": -2.87
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81999.31,
+   "price": 81310.62,
    "previous": 82017.6,
-   "pct": -0.02
+   "pct": -0.86
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2405.93,
+   "price": 2385.1,
    "previous": 2408.7415,
-   "pct": -0.12
+   "pct": -0.98
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4108.1,
+   "price": 4044.3,
    "previous": 4160.1,
-   "pct": -1.25
+   "pct": -2.78
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 913.67,
-   "previous": 914.13,
-   "pct": -0.05
+   "price": 853.365,
+   "previous": 931.24,
+   "pct": -8.36
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1378.22,
-   "previous": 1403.34,
-   "pct": -1.79
+   "price": 1252.01,
+   "previous": 1394.83,
+   "pct": -10.24
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 378.51,
-   "previous": 364.1,
-   "pct": 3.96
+   "price": 351.13,
+   "previous": 356.45,
+   "pct": -1.49
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 696.89,
-   "previous": 713.54,
-   "pct": -2.33
+   "price": 638.13,
+   "previous": 690.81,
+   "pct": -7.63
   },
   {
    "name": "SK海力士",
@@ -137,9 +137,9 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 11505.556,
-   "previous": 11684.38,
-   "pct": -1.53
+   "price": 10696.456,
+   "previous": 11581.21,
+   "pct": -7.64
   }
  ],
  "fng": {
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.95761593629e-05,
-   "rate_pct": 0.007
+   "rate": 9.46639438211e-05,
+   "rate_pct": 0.0095
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.92293289424e-05,
-   "rate_pct": 0.0019
+   "rate": 1.65371142431e-05,
+   "rate_pct": 0.0017
   }
  ],
  "polymarket": [
@@ -164,16 +164,16 @@
    "yes": 0.4
   },
   {
-   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 0.2
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 94.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 11.5
+   "yes": 5.5
   },
   {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 87.5
+   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.2
   }
  ]
 }
