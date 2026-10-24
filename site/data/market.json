@@ -1,68 +1,68 @@
 {
- "generated_at": "2026-10-23T19:32:38.565455+08:00",
+ "generated_at": "2026-10-24T09:13:33.943583+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 101.782,
+   "price": 101.752,
    "previous": 101.98,
-   "pct": -0.19
+   "pct": -0.22
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.287,
-   "previous": 5.436,
-   "pct": -2.74
+   "price": 5.315,
+   "previous": 5.472,
+   "pct": -2.87
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 4.953,
-   "previous": 5.098,
-   "pct": -2.84
+   "price": 4.988,
+   "previous": 5.136,
+   "pct": -2.88
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.768,
-   "previous": 4.899,
-   "pct": -2.67
+   "price": 4.805,
+   "previous": 4.929,
+   "pct": -2.52
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 4.022,
-   "previous": 4.07,
-   "pct": -1.18
+   "price": 4.032,
+   "previous": 4.075,
+   "pct": -1.06
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.095,
+   "price": 96.1,
    "previous": 96.118,
    "pct": -0.02
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 100.98,
+   "price": 103.44,
    "previous": 103.66,
-   "pct": -2.59
+   "pct": -0.21
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29120.5,
+   "price": 29175.0,
    "previous": 29722.5,
-   "pct": -2.03
+   "pct": -1.84
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 26008.86,
-   "previous": 26713.03,
-   "pct": -2.64
+   "price": 25955.342,
+   "previous": 26140.03,
+   "pct": -0.71
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81558.8,
-   "previous": 81853.54,
-   "pct": -0.36
+   "price": 80646.08,
+   "previous": 82941.0,
+   "pct": -2.77
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2394.69,
-   "previous": 2404.8152,
-   "pct": -0.42
+   "price": 2374.34,
+   "previous": 2446.7307,
+   "pct": -2.96
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4043.5,
+   "price": 4010.0,
    "previous": 4160.1,
-   "pct": -2.8
+   "pct": -3.61
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 856.49,
-   "previous": 931.24,
-   "pct": -8.03
+   "price": 877.55,
+   "previous": 878.84,
+   "pct": -0.15
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 1260.93,
-   "previous": 1394.83,
-   "pct": -9.6
+   "price": 1238.03,
+   "previous": 1299.3,
+   "pct": -4.72
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 354.19,
-   "previous": 356.45,
-   "pct": -0.63
+   "price": 343.67,
+   "previous": 332.0,
+   "pct": 3.52
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 642.14,
-   "previous": 690.81,
-   "pct": -7.05
+   "price": 630.49,
+   "previous": 639.01,
+   "pct": -1.33
   },
   {
    "name": "SK海力士",
@@ -137,43 +137,43 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 10731.978,
-   "previous": 11581.21,
-   "pct": -7.33
+   "price": 10779.464,
+   "previous": 11137.29,
+   "pct": -3.21
   }
  ],
  "fng": {
-  "value": 50,
+  "value": 51,
   "label": "Neutral"
  },
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 0.0001,
-   "rate_pct": 0.01
+   "rate": 7.14129089907e-05,
+   "rate_pct": 0.0071
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 2.86164065656e-05,
-   "rate_pct": 0.0029
+   "rate": 2.0434975656e-05,
+   "rate_pct": 0.002
   }
  ],
  "polymarket": [
-  {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 93.5
-  },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
    "yes": 6.5
   },
   {
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 92.5
+  },
+  {
    "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
-   "yes": 0.4
+   "yes": 0.2
   },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 0.2
+   "yes": 0.1
   }
  ]
 }
