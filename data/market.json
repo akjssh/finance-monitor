@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-24T18:47:53.860208+08:00",
+ "generated_at": "2026-10-24T22:11:36.679785+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80571.97,
+   "price": 80618.0,
    "previous": 82941.0,
-   "pct": -2.86
+   "pct": -2.8
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2368.16,
+   "price": 2364.95,
    "previous": 2446.7307,
-   "pct": -3.21
+   "pct": -3.34
   },
   {
    "name": "黄金",
@@ -149,30 +149,30 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 9.21005054934e-05,
-   "rate_pct": 0.0092
+   "rate": 0.0001,
+   "rate_pct": 0.01
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 0.0001,
-   "rate_pct": 0.01
+   "rate": 9.17306432338e-05,
+   "rate_pct": 0.0092
   }
  ],
  "polymarket": [
   {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 93.5
+   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 5.5
   },
   {
-   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 6.5
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 94.5
   },
   {
    "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.2
   },
   {
-   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "question": "Will the Fed decrease interest rates by 50+ bps after the October 2026 meeting?",
    "yes": 0.1
   }
  ]
