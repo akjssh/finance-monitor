@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T03:58:48.314694+08:00",
+ "generated_at": "2026-10-26T06:28:19.591523+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 103.27,
+   "price": 101.72,
    "previous": 101.79,
-   "pct": 1.45
+   "pct": -0.07
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29117.75,
+   "price": 29260.0,
    "previous": 29675.25,
-   "pct": -1.88
+   "pct": -1.4
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80453.14,
+   "price": 80405.5,
    "previous": 84011.97,
-   "pct": -4.24
+   "pct": -4.29
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2348.16,
+   "price": 2341.24,
    "previous": 2470.766,
-   "pct": -4.96
+   "pct": -5.24
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4007.9,
+   "price": 4016.5,
    "previous": 4142.6,
-   "pct": -3.25
+   "pct": -3.04
   },
   {
    "name": "美光MU",
@@ -149,27 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 6.9351996248e-05,
-   "rate_pct": 0.0069
+   "rate": 8.46367430294e-05,
+   "rate_pct": 0.0085
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 4.42663289667e-05,
-   "rate_pct": 0.0044
+   "rate": 4.658814318e-05,
+   "rate_pct": 0.0047
   }
  ],
  "polymarket": [
+  {
+   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+   "yes": 93.5
+  },
+  {
+   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 6.5
+  },
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
    "yes": 0.1
   },
   {
-   "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
-   "yes": 5.5
-  },
-  {
-   "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 94.5
+   "question": "Will the Fed increase interest rates by 50+ bps after the October 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
