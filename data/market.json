@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-25T08:15:12.757950+08:00",
+ "generated_at": "2026-10-25T12:57:29.201058+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
    "price": 101.752,
-   "previous": 101.98,
-   "pct": -0.22
+   "previous": 101.73,
+   "pct": 0.02
   },
   {
    "name": "美债30Y",
@@ -40,22 +40,22 @@
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
    "price": 96.095,
-   "previous": 96.118,
+   "previous": 96.115,
    "pct": -0.02
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
    "price": 103.27,
-   "previous": 103.66,
-   "pct": -0.38
+   "previous": 101.79,
+   "pct": 1.45
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
    "price": 29117.75,
-   "previous": 29722.5,
-   "pct": -2.03
+   "previous": 29675.25,
+   "pct": -1.88
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 80664.22,
+   "price": 80842.42,
    "previous": 84011.97,
-   "pct": -3.98
+   "pct": -3.77
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2352.82,
+   "price": 2365.22,
    "previous": 2470.766,
-   "pct": -4.77
+   "pct": -4.27
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
    "price": 4007.9,
-   "previous": 4160.1,
-   "pct": -3.66
+   "previous": 4142.6,
+   "pct": -3.25
   },
   {
    "name": "美光MU",
@@ -149,23 +149,27 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.44791294062e-05,
-   "rate_pct": 0.0024
+   "rate": 8.17157174799e-05,
+   "rate_pct": 0.0082
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 1.29329104941e-05,
-   "rate_pct": 0.0013
+   "rate": 1.06140228934e-05,
+   "rate_pct": 0.0011
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
-   "yes": 94.5
+   "yes": 95.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
    "yes": 4.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the October 2026 meeting?",
+   "yes": 0.1
   }
  ]
 }
