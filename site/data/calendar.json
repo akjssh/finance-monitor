@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T09:29:02.949438+08:00",
+ "generated_at": "2026-10-28T15:19:30.975784+08:00",
  "events": [
   {
    "date": "2026-10-28",
@@ -58,7 +58,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-0.1M",
+   "forecast": "0.1M",
    "previous": "-3.1M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -148,7 +148,7 @@
    "title": "Advance GDP Price Index q/q",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "3.3%",
+   "forecast": "3.2%",
    "previous": "6.2%",
    "approx": false
   },
@@ -199,7 +199,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "75B",
    "previous": "77B",
    "approx": false,
    "title_zh": "天然气库存"
