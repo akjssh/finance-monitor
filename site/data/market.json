@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-29T07:37:36.000358+08:00",
+ "generated_at": "2026-10-29T10:53:19.003047+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 102.155,
+   "price": 102.124,
    "previous": 101.81,
-   "pct": 0.34
+   "pct": 0.31
   },
   {
    "name": "美债30Y",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 96.115,
+   "price": 96.12,
    "previous": 96.118,
-   "pct": -0.0
+   "pct": 0.0
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 101.95,
+   "price": 101.71,
    "previous": 103.27,
-   "pct": -1.28
+   "pct": -1.51
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 29666.75,
+   "price": 29517.0,
    "previous": 29117.75,
-   "pct": 1.89
+   "pct": 1.37
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 6012.44,
-   "previous": 5735.66,
-   "pct": 4.83
+   "price": 5843.45,
+   "previous": 5533.77,
+   "pct": 5.6
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 81247.87,
-   "previous": 80790.836,
-   "pct": 0.57
+   "price": 79782.11,
+   "previous": 80024.01,
+   "pct": -0.3
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2358.27,
-   "previous": 2355.9536,
-   "pct": 0.1
+   "price": 2304.01,
+   "previous": 2326.9202,
+   "pct": -0.98
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4064.3,
+   "price": 4055.3,
    "previous": 4007.9,
-   "pct": 1.41
+   "pct": 1.18
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1487000.0,
-   "previous": 1294000.0,
-   "pct": 14.91
+   "price": 1499000.0,
+   "previous": 1223000.0,
+   "pct": 22.57
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 242000.0,
-   "previous": 223500.0,
-   "pct": 8.28
+   "price": 228000.0,
+   "previous": 214500.0,
+   "pct": 6.29
   },
   {
    "name": "费城半导体",
@@ -149,31 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 0.0001,
-   "rate_pct": 0.01
+   "rate": 6.54921329687e-05,
+   "rate_pct": 0.0065
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 0.0001,
-   "rate_pct": 0.01
+   "rate": 6.6452195141e-05,
+   "rate_pct": 0.0066
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
-   "yes": 17.5
+   "yes": 18.5
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 79.5
+   "yes": 78.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
+   "yes": 0.4
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
    "yes": 0.2
-  },
-  {
-   "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 0.5
   }
  ]
 }
