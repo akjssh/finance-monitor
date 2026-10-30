@@ -1,43 +1,6 @@
 {
- "generated_at": "2026-10-30T21:52:48.959859+08:00",
+ "generated_at": "2026-10-31T06:56:11.004081+08:00",
  "events": [
-  {
-   "date": "2026-10-30",
-   "time": "20:30",
-   "ts": "2026-10-30T20:30:00+08:00",
-   "currency": "USD",
-   "title": "Employment Cost Index q/q",
-   "impact": "Medium",
-   "level": "L1",
-   "forecast": "0.8%",
-   "previous": "0.9%",
-   "approx": false
-  },
-  {
-   "date": "2026-10-30",
-   "time": "20:30",
-   "ts": "2026-10-30T20:30:00+08:00",
-   "currency": "USD",
-   "title": "美国PCE物价指数（预估日期）",
-   "impact": "High",
-   "level": "L2",
-   "forecast": "",
-   "previous": "",
-   "approx": true
-  },
-  {
-   "date": "2026-10-30",
-   "time": "21:45",
-   "ts": "2026-10-30T21:45:00+08:00",
-   "currency": "USD",
-   "title": "Chicago PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "55.8",
-   "previous": "58.8",
-   "approx": false,
-   "title_zh": "芝加哥PMI"
-  },
   {
    "date": "2026-10-31",
    "time": "00:00",
@@ -57,6 +20,19 @@
    "ts": "2026-10-31T00:30:00+08:00",
    "currency": "USD",
    "title": "FOMC Member Musalem Speaks",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "title_zh": "FOMC官员讲话"
+  },
+  {
+   "date": "2026-10-31",
+   "time": "01:30",
+   "ts": "2026-10-31T01:30:00+08:00",
+   "currency": "USD",
+   "title": "FOMC Member Logan Speaks",
    "impact": "Low",
    "level": "L1",
    "forecast": "",
