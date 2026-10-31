@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T10:01:31.514151+08:00",
+ "generated_at": "2026-10-31T16:24:37.707702+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -46,16 +46,16 @@
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 102.95,
+   "price": 104.12,
    "previous": 101.76,
-   "pct": 1.17
+   "pct": 2.32
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 28543.0,
+   "price": 28534.0,
    "previous": 29437.25,
-   "pct": -3.04
+   "pct": -3.07
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77237.76,
+   "price": 77258.75,
    "previous": 80805.08,
-   "pct": -4.41
+   "pct": -4.39
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2239.79,
+   "price": 2239.82,
    "previous": 2347.73,
    "pct": -4.6
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 3884.9,
+   "price": 3898.9,
    "previous": 4038.4,
-   "pct": -3.8
+   "pct": -3.45
   },
   {
    "name": "美光MU",
@@ -149,23 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 9.14883390495e-05,
-   "rate_pct": 0.0091
+   "rate": 0.0001,
+   "rate_pct": 0.01
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -8.28806078598e-05,
-   "rate_pct": -0.0083
+   "rate": -8.84321676784e-05,
+   "rate_pct": -0.0088
   }
  ],
  "polymarket": [
   {
    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
-   "yes": 27.5
+   "yes": 28.0
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 70.5
+   "yes": 69.5
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
+   "yes": 0.8
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
+   "yes": 1.6
   }
  ]
 }
