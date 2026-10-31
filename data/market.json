@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T22:43:28.952681+08:00",
+ "generated_at": "2026-11-01T06:01:04.160621+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 77378.69,
+   "price": 77503.43,
    "previous": 80805.08,
-   "pct": -4.24
+   "pct": -4.09
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2249.37,
+   "price": 2253.78,
    "previous": 2347.73,
-   "pct": -4.19
+   "pct": -4.0
   },
   {
    "name": "黄金",
@@ -154,18 +154,9 @@
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -8.39181598307e-05,
-   "rate_pct": -0.0084
+   "rate": 3.399615321e-07,
+   "rate_pct": 0.0
   }
  ],
- "polymarket": [
-  {
-   "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
-   "yes": 27.5
-  },
-  {
-   "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 70.5
-  }
- ]
+ "polymarket": []
 }

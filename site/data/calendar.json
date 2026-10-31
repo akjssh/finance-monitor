@@ -1,71 +1,6 @@
 {
- "generated_at": "2026-10-31T22:40:47.347988+08:00",
+ "generated_at": "2026-11-01T05:58:46.865546+08:00",
  "events": [
-  {
-   "date": "2026-10-31",
-   "time": "00:00",
-   "ts": "2026-10-31T00:00:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Daly Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-10-31",
-   "time": "00:30",
-   "ts": "2026-10-31T00:30:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Musalem Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-10-31",
-   "time": "01:30",
-   "ts": "2026-10-31T01:30:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Logan Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-10-31",
-   "time": "09:30",
-   "ts": "2026-10-31T09:30:00+08:00",
-   "currency": "CNY",
-   "title": "Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "49.9",
-   "previous": "50.1",
-   "approx": false,
-   "title_zh": "制造业PMI"
-  },
-  {
-   "date": "2026-10-31",
-   "time": "09:30",
-   "ts": "2026-10-31T09:30:00+08:00",
-   "currency": "CNY",
-   "title": "Non-Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "50.0",
-   "previous": "50.2",
-   "approx": false,
-   "title_zh": "非制造业PMI"
-  },
   {
    "date": "2026-11-06",
    "time": "21:30",
@@ -102,6 +37,18 @@
    "previous": "",
    "approx": true,
    "note": "名单见msci.com；海力士/三星等亚洲权重变化影响KOSPI资金流"
+  },
+  {
+   "date": "2026-11-30",
+   "time": "21:30",
+   "ts": "2026-11-30T21:30:00+08:00",
+   "currency": "USD",
+   "title": "美国PCE物价指数（预估日期）",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": true
   }
  ]
 }
