@@ -1,18 +1,6 @@
 {
- "generated_at": "2026-11-01T22:28:44.593338+08:00",
+ "generated_at": "2026-11-02T03:08:37.733493+08:00",
  "events": [
-  {
-   "date": "2026-11-01",
-   "time": "15:00",
-   "ts": "2026-11-01T15:00:00+08:00",
-   "currency": "USD",
-   "title": "Daylight Saving Time Shift",
-   "impact": "Holiday",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
   {
    "date": "2026-11-02",
    "time": "09:45",
@@ -486,6 +474,19 @@
    "forecast": "",
    "previous": "",
    "approx": true
+  },
+  {
+   "date": "2026-12-01",
+   "time": "05:00",
+   "ts": "2026-12-01T05:00:00+08:00",
+   "currency": "USD",
+   "title": "MSCI季度审议·生效日",
+   "impact": "High",
+   "level": "L2",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "note": "按各市场收盘生效；韩国收盘=北京时间15:30前后"
   }
  ]
 }
