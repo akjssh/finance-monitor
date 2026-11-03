@@ -1,75 +1,10 @@
 {
- "generated_at": "2026-11-02T17:08:49.385803+08:00",
+ "generated_at": "2026-11-03T16:42:08.478399+08:00",
  "events": [
   {
-   "date": "2026-11-02",
-   "time": "09:45",
-   "ts": "2026-11-02T09:45:00+08:00",
-   "currency": "CNY",
-   "title": "RatingDog Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "52.0",
-   "previous": "52.1",
-   "approx": false,
-   "title_zh": "RatingDog制造业PMI"
-  },
-  {
-   "date": "2026-11-02",
-   "time": "22:45",
-   "ts": "2026-11-02T22:45:00+08:00",
-   "currency": "USD",
-   "title": "Final Manufacturing PMI",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "56.0",
-   "previous": "56.0",
-   "approx": false,
-   "title_zh": "制造业PMI(终值)"
-  },
-  {
-   "date": "2026-11-02",
-   "time": "23:00",
-   "ts": "2026-11-02T23:00:00+08:00",
-   "currency": "USD",
-   "title": "ISM Manufacturing PMI",
-   "impact": "Medium",
-   "level": "L1",
-   "forecast": "54.5",
-   "previous": "54.5",
-   "approx": false,
-   "title_zh": "ISM制造业PMI"
-  },
-  {
-   "date": "2026-11-02",
-   "time": "23:00",
-   "ts": "2026-11-02T23:00:00+08:00",
-   "currency": "USD",
-   "title": "Construction Spending m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "0.4%",
-   "previous": "0.9%",
-   "approx": false,
-   "title_zh": "营建支出环比"
-  },
-  {
-   "date": "2026-11-02",
-   "time": "23:00",
-   "ts": "2026-11-02T23:00:00+08:00",
-   "currency": "USD",
-   "title": "ISM Manufacturing Prices",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "77.2",
-   "previous": "77.9",
-   "approx": false,
-   "title_zh": "ISM制造业物价指数"
-  },
-  {
    "date": "2026-11-03",
-   "time": "03:03",
-   "ts": "2026-11-03T03:03:00+08:00",
+   "time": "03:00",
+   "ts": "2026-11-03T03:00:00+08:00",
    "currency": "USD",
    "title": "Loan Officer Survey",
    "impact": "Low",
@@ -86,7 +21,7 @@
    "title": "JOLTS Job Openings",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "7.11M",
+   "forecast": "7.15M",
    "previous": "7.08M",
    "approx": false,
    "title_zh": "JOLTS职位空缺"
@@ -125,7 +60,7 @@
    "title": "Omdia Total Vehicle Sales",
    "impact": "Low",
    "level": "L1",
-   "forecast": "15.9M",
+   "forecast": "15.8M",
    "previous": "16.0M",
    "approx": false,
    "title_zh": "汽车总销量(Omdia)"
@@ -163,7 +98,7 @@
    "title": "RatingDog Services PMI",
    "impact": "Low",
    "level": "L1",
-   "forecast": "51.5",
+   "forecast": "51.7",
    "previous": "51.6",
    "approx": false,
    "title_zh": "RatingDog服务业PMI"
@@ -176,7 +111,7 @@
    "title": "ADP Non-Farm Employment Change",
    "impact": "Low",
    "level": "L2",
-   "forecast": "68K",
+   "forecast": "67K",
    "previous": "90K",
    "approx": false,
    "title_zh": "ADP非农就业"
@@ -215,7 +150,7 @@
    "title": "ISM Services PMI",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "54.9",
+   "forecast": "54.8",
    "previous": "54.9",
    "approx": false,
    "title_zh": "ISM服务业PMI"
@@ -356,7 +291,7 @@
    "title": "Non-Farm Employment Change",
    "impact": "High",
    "level": "L2",
-   "forecast": "63K",
+   "forecast": "65K",
    "previous": "29K",
    "approx": false,
    "title_zh": "非农就业人数"
@@ -395,7 +330,7 @@
    "title": "Prelim UoM Consumer Sentiment",
    "impact": "Medium",
    "level": "L1",
-   "forecast": "47.8",
+   "forecast": "48.1",
    "previous": "46.3",
    "approx": false,
    "title_zh": "密歇根消费者信心(初值)"
@@ -433,7 +368,7 @@
    "title": "Consumer Credit m/m",
    "impact": "Low",
    "level": "L1",
-   "forecast": "12.0B",
+   "forecast": "13.4B",
    "previous": "8.3B",
    "approx": false,
    "title_zh": "消费信贷环比"
