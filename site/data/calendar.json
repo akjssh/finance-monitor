@@ -1,82 +1,6 @@
 {
- "generated_at": "2026-11-03T16:42:08.478399+08:00",
+ "generated_at": "2026-11-04T10:19:22.970748+08:00",
  "events": [
-  {
-   "date": "2026-11-03",
-   "time": "03:00",
-   "ts": "2026-11-03T03:00:00+08:00",
-   "currency": "USD",
-   "title": "Loan Officer Survey",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
-  {
-   "date": "2026-11-03",
-   "time": "23:00",
-   "ts": "2026-11-03T23:00:00+08:00",
-   "currency": "USD",
-   "title": "JOLTS Job Openings",
-   "impact": "Medium",
-   "level": "L1",
-   "forecast": "7.15M",
-   "previous": "7.08M",
-   "approx": false,
-   "title_zh": "JOLTS职位空缺"
-  },
-  {
-   "date": "2026-11-03",
-   "time": "23:00",
-   "ts": "2026-11-03T23:00:00+08:00",
-   "currency": "USD",
-   "title": "Factory Orders m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "1.2%",
-   "previous": "0.1%",
-   "approx": false,
-   "title_zh": "工厂订单环比"
-  },
-  {
-   "date": "2026-11-03",
-   "time": "23:10",
-   "ts": "2026-11-03T23:10:00+08:00",
-   "currency": "USD",
-   "title": "RCM/TIPP Economic Optimism",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "46.2",
-   "previous": "46.8",
-   "approx": false,
-   "title_zh": "经济乐观指数(RCM/TIPP)"
-  },
-  {
-   "date": "2026-11-03",
-   "time": "23:15",
-   "ts": "2026-11-03T23:15:00+08:00",
-   "currency": "USD",
-   "title": "Omdia Total Vehicle Sales",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "15.8M",
-   "previous": "16.0M",
-   "approx": false,
-   "title_zh": "汽车总销量(Omdia)"
-  },
-  {
-   "date": "2026-11-03",
-   "time": "23:16",
-   "ts": "2026-11-03T23:16:00+08:00",
-   "currency": "USD",
-   "title": "Congressional Elections",
-   "impact": "High",
-   "level": "L2",
-   "forecast": "",
-   "previous": "",
-   "approx": false
-  },
   {
    "date": "2026-11-04",
    "time": "05:30",
@@ -163,7 +87,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "-1.7M",
    "previous": "-1.9M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -252,7 +176,7 @@
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "81B",
    "previous": "80B",
    "approx": false,
    "title_zh": "天然气库存"
