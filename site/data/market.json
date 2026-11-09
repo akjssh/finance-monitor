@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-09T08:54:28.761846+08:00",
+ "generated_at": "2026-11-09T15:34:48.495585+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 102.197,
-   "previous": 101.87,
-   "pct": 0.32
+   "price": 102.041,
+   "previous": 101.51,
+   "pct": 0.52
   },
   {
    "name": "美债30Y",
@@ -40,22 +40,22 @@
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
    "price": 95.92,
-   "previous": 96.118,
+   "previous": 96.12,
    "pct": -0.21
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.57,
-   "previous": 96.09,
-   "pct": -5.74
+   "price": 89.82,
+   "previous": 88.12,
+   "pct": 1.93
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 26930.25,
-   "previous": 28305.75,
-   "pct": -4.86
+   "price": 26988.75,
+   "previous": 28566.75,
+   "pct": -5.52
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 5074.5,
+   "price": 5018.85,
    "previous": 5859.08,
-   "pct": -13.39
+   "pct": -14.34
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 75052.02,
+   "price": 73915.45,
    "previous": 75942.125,
-   "pct": -1.17
+   "pct": -2.67
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2140.98,
+   "price": 2088.06,
    "previous": 2234.4763,
-   "pct": -4.18
+   "pct": -6.55
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4110.6,
-   "previous": 3940.4,
-   "pct": 4.32
+   "price": 4107.9,
+   "previous": 4073.0,
+   "pct": 0.86
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1156000.0,
+   "price": 1136000.0,
    "previous": 1472000.0,
-   "pct": -21.47
+   "pct": -22.83
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 192100.0,
+   "price": 189900.0,
    "previous": 229000.0,
-   "pct": -16.11
+   "pct": -17.07
   },
   {
    "name": "费城半导体",
@@ -149,13 +149,13 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.81266672322e-05,
-   "rate_pct": 0.0028
+   "rate": 0.0001,
+   "rate_pct": 0.01
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -9.07698394364e-05,
-   "rate_pct": -0.0091
+   "rate": -2.8730263421e-06,
+   "rate_pct": -0.0003
   }
  ],
  "polymarket": []
