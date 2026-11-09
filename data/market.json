@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-09T05:10:28.128956+08:00",
+ "generated_at": "2026-11-09T08:54:28.761846+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 102.279,
+   "price": 102.197,
    "previous": 101.87,
-   "pct": 0.4
+   "pct": 0.32
   },
   {
    "name": "美债30Y",
@@ -39,23 +39,23 @@
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 95.925,
+   "price": 95.92,
    "previous": 96.118,
-   "pct": -0.2
+   "pct": -0.21
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 90.83,
+   "price": 90.57,
    "previous": 96.09,
-   "pct": -5.47
+   "pct": -5.74
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 27085.25,
+   "price": 26930.25,
    "previous": 28305.75,
-   "pct": -4.31
+   "pct": -4.86
   },
   {
    "name": "纳斯达克",
@@ -67,30 +67,30 @@
   {
    "name": "韩国KOSPI",
    "symbol": "^KS11",
-   "price": 5059.69,
-   "previous": 5730.74,
-   "pct": -11.71
+   "price": 5074.5,
+   "previous": 5859.08,
+   "pct": -13.39
   },
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 75642.22,
-   "previous": 80405.29,
-   "pct": -5.92
+   "price": 75052.02,
+   "previous": 75942.125,
+   "pct": -1.17
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 2223.2,
-   "previous": 2422.3118,
-   "pct": -8.22
+   "price": 2140.98,
+   "previous": 2234.4763,
+   "pct": -4.18
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 4074.9,
+   "price": 4110.6,
    "previous": 3940.4,
-   "pct": 3.41
+   "pct": 4.32
   },
   {
    "name": "美光MU",
@@ -123,16 +123,16 @@
   {
    "name": "SK海力士",
    "symbol": "000660.KS",
-   "price": 1132000.0,
-   "previous": 1418000.0,
-   "pct": -20.17
+   "price": 1156000.0,
+   "previous": 1472000.0,
+   "pct": -21.47
   },
   {
    "name": "三星电子",
    "symbol": "005930.KS",
-   "price": 188700.0,
-   "previous": 225000.0,
-   "pct": -16.13
+   "price": 192100.0,
+   "previous": 229000.0,
+   "pct": -16.11
   },
   {
    "name": "费城半导体",
@@ -143,19 +143,19 @@
   }
  ],
  "fng": {
-  "value": 28,
+  "value": 29,
   "label": "Fear"
  },
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 4.54796379594e-05,
-   "rate_pct": 0.0045
+   "rate": 2.81266672322e-05,
+   "rate_pct": 0.0028
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -2.28259155459e-05,
-   "rate_pct": -0.0023
+   "rate": -9.07698394364e-05,
+   "rate_pct": -0.0091
   }
  ],
  "polymarket": []
