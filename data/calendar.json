@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T09:44:48.873476+08:00",
+ "generated_at": "2026-11-11T16:27:47.735064+08:00",
  "events": [
   {
    "date": "2026-11-11",
@@ -212,7 +212,7 @@
    "title": "Crude Oil Inventories",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "-0.6M",
    "previous": "-0.9M",
    "approx": false,
    "title_zh": "EIA原油库存"
@@ -263,7 +263,7 @@
    "title": "Federal Budget Balance",
    "impact": "Low",
    "level": "L1",
-   "forecast": "-286.3B",
+   "forecast": "-298.6B",
    "previous": "-26.9B",
    "approx": false,
    "title_zh": "联邦预算"
@@ -322,13 +322,26 @@
   },
   {
    "date": "2026-11-13",
+   "time": "22:40",
+   "ts": "2026-11-13T22:40:00+08:00",
+   "currency": "USD",
+   "title": "FOMC Member Logan Speaks",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "",
+   "approx": false,
+   "title_zh": "FOMC官员讲话"
+  },
+  {
+   "date": "2026-11-13",
    "time": "23:30",
    "ts": "2026-11-13T23:30:00+08:00",
    "currency": "USD",
    "title": "Natural Gas Storage",
    "impact": "Low",
    "level": "L1",
-   "forecast": "",
+   "forecast": "65B",
    "previous": "77B",
    "approx": false,
    "title_zh": "天然气库存"
