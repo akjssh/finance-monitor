@@ -1,68 +1,68 @@
 {
- "generated_at": "2026-11-13T23:42:35.287953+08:00",
+ "generated_at": "2026-11-14T23:16:18.872290+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
-   "price": 103.276,
+   "price": 103.411,
    "previous": 101.65,
-   "pct": 1.6
+   "pct": 1.73
   },
   {
    "name": "美债30Y",
    "symbol": "^TYX",
-   "price": 5.469,
+   "price": 5.481,
    "previous": 5.256,
-   "pct": 4.05
+   "pct": 4.28
   },
   {
    "name": "美债10Y",
    "symbol": "^TNX",
-   "price": 5.1330004,
+   "price": 5.154,
    "previous": 4.864,
-   "pct": 5.53
+   "pct": 5.96
   },
   {
    "name": "美债5Y",
    "symbol": "^FVX",
-   "price": 4.951,
+   "price": 4.981,
    "previous": 4.659,
-   "pct": 6.27
+   "pct": 6.91
   },
   {
    "name": "美债13周",
    "symbol": "^IRX",
-   "price": 4.118,
+   "price": 4.122,
    "previous": 4.035,
-   "pct": 2.06
+   "pct": 2.16
   },
   {
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
-   "price": 95.83,
+   "price": 95.82,
    "previous": 96.122,
-   "pct": -0.3
+   "pct": -0.31
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
-   "price": 89.26,
+   "price": 88.56,
    "previous": 86.85,
-   "pct": 2.77
+   "pct": 1.97
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
-   "price": 27818.75,
+   "price": 28034.75,
    "previous": 28014.5,
-   "pct": -0.7
+   "pct": 0.07
   },
   {
    "name": "纳斯达克",
    "symbol": "^IXIC",
-   "price": 24962.447,
+   "price": 25136.273,
    "previous": 24579.43,
-   "pct": 1.56
+   "pct": 2.27
   },
   {
    "name": "韩国KOSPI",
@@ -74,51 +74,51 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 68154.24,
-   "previous": 75223.15,
-   "pct": -9.4
+   "price": 65661.85,
+   "previous": 73720.12,
+   "pct": -10.93
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 1916.57,
-   "previous": 2131.4985,
+   "price": 1843.59,
+   "previous": 2050.181,
    "pct": -10.08
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
-   "price": 3879.5,
+   "price": 3886.3,
    "previous": 4114.5,
-   "pct": -5.71
+   "pct": -5.55
   },
   {
    "name": "美光MU",
    "symbol": "MU",
-   "price": 760.76,
+   "price": 778.31,
    "previous": 690.0,
-   "pct": 10.26
+   "pct": 12.8
   },
   {
    "name": "闪迪SNDK",
    "symbol": "SNDK",
-   "price": 855.38,
+   "price": 885.01,
    "previous": 835.06,
-   "pct": 2.43
+   "pct": 5.98
   },
   {
    "name": "西数WDC",
    "symbol": "WDC",
-   "price": 289.63,
+   "price": 295.65,
    "previous": 263.78,
-   "pct": 9.8
+   "pct": 12.08
   },
   {
    "name": "希捷STX",
    "symbol": "STX",
-   "price": 513.13,
+   "price": 528.29,
    "previous": 460.99,
-   "pct": 11.31
+   "pct": 14.6
   },
   {
    "name": "SK海力士",
@@ -137,43 +137,43 @@
   {
    "name": "费城半导体",
    "symbol": "^SOX",
-   "price": 9920.992,
+   "price": 10146.323,
    "previous": 9390.25,
-   "pct": 5.65
+   "pct": 8.05
   }
  ],
  "fng": {
-  "value": 20,
+  "value": 13,
   "label": "Extreme Fear"
  },
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 2.590326063e-05,
-   "rate_pct": 0.0026
+   "rate": 5.63636509585e-05,
+   "rate_pct": 0.0056
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -2.92888778707e-05,
-   "rate_pct": -0.0029
+   "rate": -2.04386763981e-05,
+   "rate_pct": -0.002
   }
  ],
  "polymarket": [
   {
-   "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 0.4
+   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
+   "yes": 9.2
   },
   {
-   "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
-   "yes": 0.2
+   "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+   "yes": 3.8
   },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 90.5
+   "yes": 87.5
   },
   {
-   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
-   "yes": 5.9
+   "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
+   "yes": 0.4
   }
  ]
 }
