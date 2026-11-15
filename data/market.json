@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-15T11:39:28.615397+08:00",
+ "generated_at": "2026-11-15T19:33:41.302779+08:00",
  "quotes": [
   {
    "name": "美元指数",
    "symbol": "DX-Y.NYB",
    "price": 103.411,
-   "previous": 101.65,
-   "pct": 1.73
+   "previous": 102.23,
+   "pct": 1.16
   },
   {
    "name": "美债30Y",
@@ -40,22 +40,22 @@
    "name": "联邦基金期货",
    "symbol": "ZQ=F",
    "price": 95.82,
-   "previous": 96.122,
+   "previous": 96.12,
    "pct": -0.31
   },
   {
    "name": "WTI原油",
    "symbol": "CL=F",
    "price": 88.56,
-   "previous": 86.85,
-   "pct": 1.97
+   "previous": 86.04,
+   "pct": 2.93
   },
   {
    "name": "纳指期货",
    "symbol": "NQ=F",
    "price": 28034.75,
-   "previous": 28014.5,
-   "pct": 0.07
+   "previous": 27835.25,
+   "pct": 0.72
   },
   {
    "name": "纳斯达克",
@@ -74,23 +74,23 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 65051.0,
+   "price": 65440.61,
    "previous": 73964.47,
-   "pct": -12.05
+   "pct": -11.52
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 1821.06,
+   "price": 1834.29,
    "previous": 2055.8762,
-   "pct": -11.42
+   "pct": -10.78
   },
   {
    "name": "黄金",
    "symbol": "GC=F",
    "price": 3886.3,
-   "previous": 4114.5,
-   "pct": -5.55
+   "previous": 4030.2,
+   "pct": -3.57
   },
   {
    "name": "美光MU",
@@ -149,27 +149,27 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": -6.9199807546e-06,
+   "rate": -6.835885244e-06,
    "rate_pct": -0.0007
   },
   {
    "symbol": "ETHUSDT",
-   "rate": -5.93157610559e-05,
-   "rate_pct": -0.0059
+   "rate": -6.78198433129e-05,
+   "rate_pct": -0.0068
   }
  ],
  "polymarket": [
-  {
-   "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
-   "yes": 3.6
-  },
   {
    "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
    "yes": 86.5
   },
   {
-   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
-   "yes": 9.2
+   "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+   "yes": 4.0
+  },
+  {
+   "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
+   "yes": 0.2
   }
  ]
 }
