@@ -1,83 +1,6 @@
 {
- "generated_at": "2026-11-18T18:35:15.524733+08:00",
+ "generated_at": "2026-11-19T09:10:13.906308+08:00",
  "events": [
-  {
-   "date": "2026-11-18",
-   "time": "03:25",
-   "ts": "2026-11-18T03:25:00+08:00",
-   "currency": "USD",
-   "title": "FOMC Member Williams Speaks",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-11-18",
-   "time": "05:30",
-   "ts": "2026-11-18T05:30:00+08:00",
-   "currency": "USD",
-   "title": "API Weekly Statistical Bulletin",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "",
-   "approx": false,
-   "title_zh": "API周度数据报告"
-  },
-  {
-   "date": "2026-11-18",
-   "time": "21:30",
-   "ts": "2026-11-18T21:30:00+08:00",
-   "currency": "USD",
-   "title": "Building Permits",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "1.38M",
-   "previous": "1.40M",
-   "approx": false,
-   "title_zh": "营建许可"
-  },
-  {
-   "date": "2026-11-18",
-   "time": "21:30",
-   "ts": "2026-11-18T21:30:00+08:00",
-   "currency": "USD",
-   "title": "Housing Starts",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "1.25M",
-   "previous": "1.22M",
-   "approx": false,
-   "title_zh": "新屋开工"
-  },
-  {
-   "date": "2026-11-18",
-   "time": "23:00",
-   "ts": "2026-11-18T23:00:00+08:00",
-   "currency": "USD",
-   "title": "Pending Home Sales m/m",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "-2.0%",
-   "previous": "-7.3%",
-   "approx": false
-  },
-  {
-   "date": "2026-11-18",
-   "time": "23:30",
-   "ts": "2026-11-18T23:30:00+08:00",
-   "currency": "USD",
-   "title": "Crude Oil Inventories",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "0.4M",
-   "previous": "4.7M",
-   "approx": false,
-   "title_zh": "EIA原油库存"
-  },
   {
    "date": "2026-11-19",
    "time": "01:15",
@@ -153,18 +76,6 @@
    "previous": "",
    "approx": false,
    "title_zh": "FOMC官员讲话"
-  },
-  {
-   "date": "2026-11-19",
-   "time": "15:02",
-   "ts": "2026-11-19T15:02:00+08:00",
-   "currency": "CNY",
-   "title": "Foreign Direct Investment ytd/y",
-   "impact": "Low",
-   "level": "L1",
-   "forecast": "",
-   "previous": "-4.3%",
-   "approx": false
   },
   {
    "date": "2026-11-19",
@@ -329,6 +240,18 @@
    "level": "L1",
    "forecast": "3.50%",
    "previous": "3.50%",
+   "approx": false
+  },
+  {
+   "date": "2026-11-20",
+   "time": "15:02",
+   "ts": "2026-11-20T15:02:00+08:00",
+   "currency": "CNY",
+   "title": "Foreign Direct Investment ytd/y",
+   "impact": "Low",
+   "level": "L1",
+   "forecast": "",
+   "previous": "-4.3%",
    "approx": false
   },
   {
