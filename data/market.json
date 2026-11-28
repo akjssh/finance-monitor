@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T10:17:28.765681+08:00",
+ "generated_at": "2026-11-28T18:42:09.836340+08:00",
  "quotes": [
   {
    "name": "美元指数",
@@ -74,16 +74,16 @@
   {
    "name": "比特币",
    "symbol": "BTC-USD",
-   "price": 60188.89,
+   "price": 59217.47,
    "previous": 59747.766,
-   "pct": 0.74
+   "pct": -0.89
   },
   {
    "name": "以太坊",
    "symbol": "ETH-USD",
-   "price": 1671.04,
+   "price": 1648.85,
    "previous": 1677.6948,
-   "pct": -0.4
+   "pct": -1.72
   },
   {
    "name": "黄金",
@@ -149,31 +149,31 @@
  "funding": [
   {
    "symbol": "BTCUSDT",
-   "rate": 5.61389608458e-05,
+   "rate": 5.64057529909e-05,
    "rate_pct": 0.0056
   },
   {
    "symbol": "ETHUSDT",
-   "rate": 6.1974500761e-06,
-   "rate_pct": 0.0006
+   "rate": -2.92852774077e-05,
+   "rate_pct": -0.0029
   }
  ],
  "polymarket": [
   {
    "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
-   "yes": 0.2
+   "yes": 0.1
   },
   {
    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
-   "yes": 4.0
-  },
-  {
-   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
-   "yes": 1.8
+   "yes": 3.5
   },
   {
    "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
    "yes": 0.1
+  },
+  {
+   "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
+   "yes": 1.8
   }
  ]
 }
